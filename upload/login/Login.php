@@ -1,7 +1,7 @@
 <?PHP
     header("Content-Type: text/html; charset=utf8");
     if(!isset($_POST["submit"])){
-        exit("错误执行");
+        exit("Wrong execution");
     }//检测是否有submit操作 Check whether there is a submit operation
 
     include('Connect.php');//链接数据库Link to the database
@@ -16,7 +16,7 @@
                    header("refresh:0;url=welcome.html");//如果成功跳转至welcome.html页面If successful, jump to welcome.html page
                    exit;
              }else{
-                echo "用户名或密码错误";
+                echo "wrong user name or password";
                 echo "
                     <script>
                             setTimeout(function(){window.location.href='login.html';},1000);
@@ -27,7 +27,7 @@
              
 
     }else{//如果用户名或密码有空If the username or password is available
-                echo "表单填写不完整";
+                echo "Incomplete form";
                 echo "
                       <script>
                             setTimeout(function(){window.location.href='login.html';},1000);
