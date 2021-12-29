@@ -3,17 +3,14 @@
     <head>
         <meta charset="UTF-8">
         <title>Login</title>
-        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/Login.css">
     </head>
-    <body>
-        <div class="banner">
-            <img src="../img/banner.png" alt="cool banner" class="img-fluid">
-          </div>
-        
+    <body id="bgimage">
         <form name="login" action="login.php" method="post">
-                <h1 style="color: white;">username<input type=text name="name"></h1>
-                <h1 style="color: white;">password<input type=password name="password"></h1>
-                <p><input type="submit" name="submit" value="Login"></p>
-            </form>
+                <h1>username<input type=text name="name"></h1>
+                <h1>password<input type=password name="password"></h1>
+                <button class="button" style="vertical-align:middle"><span><a style="color: white;">LOGIN</a></span></button>
+        </form>
+        <button class="button" style="vertical-align:middle"><span><a style="color: white;" href="../login/signup.html">jetzt registrieren</a></span></button>   
     </body>
 </html>
