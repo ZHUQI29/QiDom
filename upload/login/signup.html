@@ -10,36 +10,52 @@
         <section class="blogpost">
         <form action="/action_page.php" style="font-size: x-large; display: flex; justify-content: center;"  >
             <fieldset style="color: #9B775A; text-align-last: justify;">
-                <legend style="color:#EB841C ;">Persönliche Daten:</legend>
+                <h3><legend >Persönliche Daten:</legend></h3>
+                    <label for="cbox1">Angestellter?</label>
+                    <input type="checkbox" id="cbox" value="checkbox" name="employed"><br>
                 <label for="Anrede">Anrede:</label>
-                <select name="Anrede" id="Anrede">
+                <select name="anrede" id="anrede">
                     <option value="---">---</option>
                     <option value="Herr">Herr</option>
                     <option value="Frau">Frau</option>
-                    <option value="Doktor">Doktor</option>
                 </select><br>
                 <label for="Vname">Vorname:</label>
                 <input type="text" id="Vname" name="Vname" value=" "><br>
                 <label for="Nname">Nachname:</label>
                 <input type="text" id="Nname" name="Nname" value=" " ><br>
+                <label for="PLZ">Postleitzahl:</label>
+                <input type="text" id="PLZ" name="PLZ" value=" "><br>
+                <label for="Ort">Ort:</label>
+                <input type="text" id="Ort" name="Ort" value=" "><br>
+                <label for="Straße">Straße:</label>
+                <input type="text" id="Straße" name="Straße" value=" "><br>
+                <label for="Hausnummer">Hausnummer:</label>
+                <input type="text" id="Hausnummer" name="Hausnummer" value=" "><br>
+                <form>
+                    <div class="nativeDatePicker">
+                      <label for="bday">Geburtstag:</label>
+                      <input type="date" id="birthday" name="birthday">
+                      <span class="validity"></span>
+                    </div>
+                </form>
                 <label for="Email">Email-Adresse:</label>
                 <input type="text" id="Email" name="Email" value=" "><br>
-                
-                
-            </fieldset>
-            <fieldset style="color: #9B775A;">
-                <label for="Straße">Straße:</label><br>
-                <input type="text" id="Straße" name="Straße" value=" "><br>
-                <label for="Hausnummer">Hausnummer:</label><br>
-                <input type="text" id="Hausnummer" name="Hausnummer" value=" "><br>
-                <label for="Ort">Ort:</label><br>
-                <input type="text" id="Ort" name="Ort" value=" "><br>
-                <label for="PLZ">Postleitzahl:</label><br>
-                <input type="text" id="PLZ" name="PLZ" value=" ">
+
             </fieldset> 
-        </form>
-            <h3>Username:<input type="text" name="name"></h3>
-            <h3>password <input type="text" name="password"></h3>
+            
+            <form action="/action_page.php" style="font-size: x-large; display: flex; justify-content: center;"  >
+                <fieldset style="color: #9B775A; text-align-last: justify;">
+                    <h3><legend>User:</legend></h3>
+            <p>Username: <input type="text" name="name"></p>
+            <p>password: <input type="text" name="password"></p>
+            <label for="level">Level:</label>
+                <select name="level" id="level">
+                    <option value="---">---</option>
+                    <option value="gast">gast</option>
+                    <option value="servicetechniker">servicetechniker</option>
+                    <option value="admin">admin</option>
+                </select>
+                <br>
             <button class="button" style="vertical-align:middle"><span><a style="color: white;">register</a></span></button>
         </form>
     </section>
