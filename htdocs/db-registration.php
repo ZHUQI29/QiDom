@@ -44,21 +44,27 @@
                 $stmt->execute();
                 $registrationProcess++;
             }
-
-            if ($stmt = $conn->prepare("INSERT INTO personal_data (ID,anrede,vorname, nachname,plz,ort,strasse,hausnummer,birthday,email) VALUES (?,?,?,?,?,?,?,?,?,?)")) {
-              $stmt->bindValue(1, $id);
-              $stmt->bindValue(2, $gAnrede);
-              $stmt->bindValue(3, $gVorname);
-              $stmt->bindValue(4, $gNachname);
-              $stmt->bindValue(5, $gPlz);
-              $stmt->bindValue(6, $gOrt);
-              $stmt->bindValue(7, $gStrasse);
-              $stmt->bindValue(8, $gHausnummer);
-              $stmt->bindValue(9, $gBday);
-              $stmt->bindValue(10, $gEmail);
-              $stmt->execute();
-              $registrationProcess++;
+            try {
+              if ($stmt = $conn->prepare("INSERT INTO personal_data (ID,anrede,vorname, nachname,plz,ort,strasse,hausnummer,birthday,email) VALUES (?,?,?,?,?,?,?,?,?,?)")) {
+                $stmt->bindValue(1, $id);
+                $stmt->bindValue(2, $gAnrede);
+                $stmt->bindValue(3, $gVorname);
+                $stmt->bindValue(4, $gNachname);
+                $stmt->bindValue(5, $gPlz);
+                $stmt->bindValue(6, $gOrt);
+                $stmt->bindValue(7, $gStrasse);
+                $stmt->bindValue(8, $gHausnummer);
+                $stmt->bindValue(9, $gBday);
+                $stmt->bindValue(10, $gEmail);
+                $stmt->execute();
+                $registrationProcess++;
+              }
+            } catch (exception $e) {
+              $conn = null; // close connection
+              echo "<script>window.location.href='index.php?site=welcome&';</script>";
             }
+
+
             if ($registrationProcess == 2) {
               // success!
               $conn = null; // close connection

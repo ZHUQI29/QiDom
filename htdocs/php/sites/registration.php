@@ -1,23 +1,23 @@
 <div class="container-fluid login-container">
-  <form name="registration" action="db-registration.php" method="POST">
+  <form class="qd-bg-light"name="registration" action="db-registration.php" method="POST">
     <fieldset>
       <legend>Login</legend>
       <label for="username">Username: </label>
       <br>
-      <input type="text" id="username" name="username" value=" ">
+      <input type="text" id="username" name="username" value="">
       <br>
-      <label for="password">Password: </label>
+      <label for="password">Passwort: </label>
       <br>
-      <input type="password" id="password1" name="password1" value=" " onkeyup="checkPasswordMatch()">
+      <input type="password" id="password1" name="password1" value="" onkeyup="checkPasswordMatch()">
       <br>
-      <label for="password2">Re-enter: </label>
+      <label for="password2">Wiederholen: </label>
       <br>
-      <input type="password" id="password2" name="password2" value=" " onkeyup="checkPasswordMatch()">
+      <input type="password" id="password2" name="password2" value="" onkeyup="checkPasswordMatch()">
       <br>
       <span id='message'> </span>
     </fieldset>
     <fieldset>
-      <legend>Guest-Registration</legend>
+      <legend>Persönliche Daten</legend>
       <label for="anrede">Anrede:</label>
       <br>
       <select name="anrede" id="anrede">
@@ -29,35 +29,35 @@
       <br>
       <label for="vorname">Vorname:</label>
       <br>
-      <input type="text" id="vorname" name="vorname" value=" ">
+      <input type="text" id="vorname" name="vorname" value="">
       <br>
       <label for="nachname">Nachname:</label>
       <br>
-      <input type="text" id="nachname" name="nachname" value=" ">
+      <input type="text" id="nachname" name="nachname" value="">
       <br>
       <label for="email">Email-Adresse:</label>
       <br>
-      <input type="email" id="email" name="email" value=" ">
+      <input type="email" id="email" name="email" value="">
       <br>
       <label for="strasse">Straße:</label>
       <br>
-      <input type="text" id="strasse" name="strasse" value=" ">
+      <input type="text" id="strasse" name="strasse" value="">
       <br>
       <label for="hausnummer">Hausnummer:</label>
       <br>
-      <input type="text" id="hausnummer" name="hausnummer" value=" ">
+      <input type="text" id="hausnummer" name="hausnummer" value="">
       <br>
       <label for="plz">PLZ:</label>
       <br>
-      <input type="text" id="plz" name="plz" value=" ">
+      <input type="text" id="plz" name="plz" value="">
       <br>
       <label for="ort">Ort:</label>
       <br>
-      <input type="text" id="ort" name="ort" value=" ">
+      <input type="text" id="ort" name="ort" value="">
       <br>
       <label for="bday">Geburtstag:</label>
       <br>
-      <input type="date" id="bday" name="bday" value=" ">
+      <input type="date" id="bday" name="bday" value="">
     </fieldset>
       <!-- <h1>username<input type="text" name="username"></h1>
       <h1>password<input type="password" name="password"></h1>

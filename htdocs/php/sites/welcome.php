@@ -1,3 +1,3 @@
-<div style="">
-  <h1 style="color: white;">WELCOME</h1>
+<div class="login-container welcome-con">
+  <h1><a class="submit-button container" style="text-decoration: none;" href='index.php?site=login'>WELCOME</a></h1>
 </div>

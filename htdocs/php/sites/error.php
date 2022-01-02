@@ -1,4 +1,6 @@
+<div class="error">
 <?php
+
   $err = isset($_GET["err"]) ?  $_GET["err"] : "default";
 
   switch ($err) {
@@ -15,8 +17,19 @@
       echo "<h1>UserName already taken!</h1><p>Enter a new UserName or Login.</p>";
       break;
 
+    case "l100":
+      echo "<h1>Incomplete information!</h1><p>Please re-enter them.</p>";
+      echo "<script>setTimeout(function(){window.location.href='index.php?site=login';},3000);</script>";
+      break;
+
+    case "l101":
+      echo "<h1>Wrong password!</h1><p>Please re-enter password or contact Administration.</p>";
+      echo "<script>setTimeout(function(){window.location.href='index.php?site=login';},3000);</script>";
+      break;
+
     default:
       echo "<h1>Unexpected Error!</h1><p>Something went wrong. Please try again later or check input.</p>";
       break;
   }
  ?>
+</div>

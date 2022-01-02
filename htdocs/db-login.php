@@ -23,13 +23,12 @@
                   $conn = null; // close connection
                   echo "<script>window.location.href='index.php?site=welcome';</script>";
                 } else {
-                    echo"wrong password";
+                    echo "<script>window.location.href='index.php?site=error&err=l101';</script>";
                 }
             }
-        } else {//如果用户名或密码有空 If the username or password is available
+        } else {
             $conn = null; // close connection
-            echo "Incomplete form";
-            echo "<script>setTimeout(function(){window.location.href='../../test.php';},2000);</script>";
+            echo "<script>window.location.href='index.php?site=error&err=l100';</script>";
         }
     } else {
         $conn = null; // close connection

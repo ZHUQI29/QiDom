@@ -11,12 +11,13 @@
 * {
    /* color: var(--light-shade);  */
 }
+
 .qd-bg-dark {
   background: var(--dark-shade);
 }
 
 .qd-bg-light {
-  background: var(--light-accent);
+  background: rgba(255,255,255,0.2);
 }
 
 .qd-text-col-main {
@@ -191,8 +192,10 @@
 
 form {
   color: var(--main-color);
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.1);
+  max-width: 430px;
   padding: 20px 10px;
+  text-align: center;
 }
 
 label {
@@ -205,6 +208,37 @@ fieldset {
 }
 
 .submit-button {
-  width: 100%;
+  width: 60%;
   height: 3em;
+  color: var(--dark-shade);
+  font-weight: bold;
+  background: var(--light-shade);
+  border: 1px solid var(--main-color);
+  box-shadow: 0 0 30px transparent;
+  -webkit-transition: all 1.5s;
+  -moz-transition: all 1.5s;
+  -o-transition: all 1.5s;
+  transition: all 1.5s;
+}
+
+.submit-button:hover {
+  box-shadow: 0 0 30px var(--main-color);
+  color: var(--main-color);
+}
+
+.welcome-con {
+  margin-top: 10%;
+}
+
+
+/* ERROR */
+
+.error {
+  margin-top: 10%;
+  padding: 20px 30px;
+  background: rgba(0,0,0,0.7);
+}
+
+.error h1, p {
+  color: var(--light-shade);
 }
