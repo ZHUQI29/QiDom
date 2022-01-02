@@ -17,48 +17,23 @@
                 // Result = the HASHED password, this will not give out a unhashed password.
                 $result = $stmt->fetchColumn();
 
-                // Now we verify it.
+                // verify password.
                 if (password_verify($password, $result)) {
-                    echo"1"; // password MATCHES (HASH) (LOGIN SUCCESSFUL!)
+                  // password MATCHES (HASH) (LOGIN SUCCESSFUL!)
+                  $conn = null; // close connection
+                  echo "<script>window.location.href='index.php?site=welcome';</script>";
                 } else {
-                    echo"00";// wrong password
+                    echo"wrong password";
                 }
             }
         } else {//如果用户名或密码有空 If the username or password is available
+            $conn = null; // close connection
             echo "Incomplete form";
             echo "<script>setTimeout(function(){window.location.href='../../test.php';},2000);</script>";
         }
-    } elseif (isset($_POST["registration"])) {
-        $username=$_POST['username'];//post 获取表单里的 name post to get the name in the form
-        $password=$_POST['password'];//post 获取表单里的 password
-        $id=random_int(100000, 999999);
-        $level=0;
-        // Encrypt password with a strength of 10 (Higher = More time needed to make a stronger pass)
-		    // NOT RECOMMENDED to go above 12, unless the server-hardware can handle it.
-        $options = ['cost' => 10,];
-        $passwordNew = password_hash($password, PASSWORD_BCRYPT, $options);
-        $stmt = $conn->prepare('SELECT * FROM user WHERE username=:uname');
-        $stmt->bindParam(":uname", $username);
-        $stmt->execute();
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        // If Account (DON'T EXIST) { CREATE IT! }.
-        if (!$row) {
-            if ($stmt = $conn->prepare("INSERT INTO user (ID,username,password,level) VALUES (?,?,?,?)")) {
-                $stmt->bindValue(1, $id);
-                $stmt->bindValue(2, $username);
-                $stmt->bindValue(3, $passwordNew);
-                $stmt->bindValue(4, $level);
-                $stmt->execute();
-                echo"1";
-            }
-        } else {
-            // Else - if account DOES already exist
-            die('Account Exists!');
-            echo"00";
-        }
     } else {
+        $conn = null; // close connection
         exit("Wrong execution");
     }
-    $conn = null;
+    $conn = null; // close connection
 ?>
