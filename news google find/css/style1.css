@@ -1,0 +1,74 @@
+article .content p{
+    position:relative;
+    line-height: 1.4em;
+    height: 4.2em;
+    overflow: hidden;
+}
+article .content p::after {
+    content: "...";
+    font-weight: bold;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0 20px 1px 45px;
+    background: #FAFAFA;
+}
+.content p + div{
+	display:none;
+}
+#log_in{
+    float: right;
+    width: 200px;
+}
+.box_lg,
+.box_zc{
+    position: absolute;
+    float: left;
+    left: 50%;
+    top: 50%;
+    width: 400px;
+    height: 400px;
+    background: #fff;
+    margin-left: -200px;
+    margin-top: -200px;
+    z-index:9999;
+    display: none;
+    opacity:0.95;
+}
+.box_tit{
+    height: 50px;
+    background:#bcbcbc;
+    padding: 0 5px;
+    font-size:20px;
+    line-height: 50px;
+}
+.box_con{
+    width: 400px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -200px;
+    margin-top: -100px;
+}
+.box_con p{
+    height: 35px;
+    line-height:35px;
+    margin: 10px;
+    border: 1px solid #babadf;
+}
+.box_con p.log input,
+.box_con p.zc input,
+select{
+    background: #babadf;
+    color: #fff;
+    height: 35px;
+    width: 378px;
+}
+.box_con span a{
+    position: absolute;
+    right: 10px;
+    bottom: -20px;
+    color: #babadf;
+}
+.close{float: right;}
