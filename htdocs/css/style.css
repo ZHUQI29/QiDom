@@ -9,7 +9,7 @@
 }
 
 * {
-  /* color: var(--light-shade); */
+   /* color: var(--light-shade);  */
 }
 .qd-bg-dark {
   background: var(--dark-shade);

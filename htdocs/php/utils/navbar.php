@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <div class="container">
-    <a class="qd-btn-hover px-3 logo" href="../index.html">
+    <a class="qd-btn-hover px-3 logo" href='index.php?site=home'>
       <strong>QiÐom</strong>
     </a>
 
@@ -16,7 +16,7 @@
           <a href="../impressum.html" class="nav-link qd-btn-hover">Contact</a>
         </li>
         <li class="nav-item">
-          <a href="../login.html" class="nav-link qd-btn-hover">Login</a>
+          <a href='index.php?site=login' class="nav-link qd-btn-hover">Login</a>
         </li>
       </ul>
     </div>
