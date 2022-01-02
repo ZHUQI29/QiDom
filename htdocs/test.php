@@ -11,7 +11,7 @@
      <?php include "php/utils/navbar.php" ?>
      <?php include "php/utils/BG-Banner.php" ?>
 
-     <?php include "php/sites/home.php" ?>
+     <?php include "php/sites/login.php" ?>
 
 
 
