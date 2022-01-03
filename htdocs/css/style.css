@@ -12,6 +12,14 @@
    /* color: var(--light-shade);  */
 }
 
+body {
+  background: black;
+}
+
+h1 {
+  color: var(--main-color);
+}
+
 .qd-bg-dark {
   background: var(--dark-shade);
 }
@@ -67,6 +75,10 @@
   position: sticky;
 }
 
+.nav-link {
+
+}
+
 /*
 .navbar a {
   background: none;
@@ -88,6 +100,11 @@
 .banner img {
   min-width: 100vw;
   height: 100vh;
+  opacity: 100%;
+  -webkit-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  -o-transition: all 0.1s;
+  transition: all 0.1s;
 }
 
 /* INDEX */

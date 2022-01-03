@@ -10,7 +10,7 @@
 
     case "r100":
       echo "<h1>Entered passwords are not matching!</h1><p>You've entered not matching passwords. Please re-enter them.</p>";
-      echo "<script>setTimeout(function(){window.location.href='index.php?site=registration';},3000);</script>";
+      echo "<script>setTimeout(function(){window.location.href='index.php?site=registration';},5000);</script>";
       break;
 
     case "r101":
@@ -19,12 +19,12 @@
 
     case "l100":
       echo "<h1>Incomplete information!</h1><p>Please re-enter them.</p>";
-      echo "<script>setTimeout(function(){window.location.href='index.php?site=login';},3000);</script>";
+      echo "<script>setTimeout(function(){window.location.href='index.php?site=login';},5000);</script>";
       break;
 
     case "l101":
       echo "<h1>Wrong password!</h1><p>Please re-enter password or contact Administration.</p>";
-      echo "<script>setTimeout(function(){window.location.href='index.php?site=login';},3000);</script>";
+      echo "<script>setTimeout(function(){window.location.href='index.php?site=login';},5000);</script>";
       break;
 
     default:

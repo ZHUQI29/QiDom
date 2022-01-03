@@ -14,7 +14,7 @@
       <br>
       <input type="password" id="password2" name="password2" value="" onkeyup="checkPasswordMatch()">
       <br>
-      <span id='message'> </span>
+      <span id='pw-message'> </span>
     </fieldset>
     <fieldset>
       <legend>Persönliche Daten</legend>
@@ -47,9 +47,9 @@
       <br>
       <input type="text" id="hausnummer" name="hausnummer" value="">
       <br>
-      <label for="plz">PLZ:</label>
+      <label for="plz" id='plz-message' >PLZ:</label>
       <br>
-      <input type="text" id="plz" name="plz" value="">
+      <input type="text" id="plz" name="plz" value="" onkeyup="checkPlz()">
       <br>
       <label for="ort">Ort:</label>
       <br>
@@ -70,11 +70,20 @@
   var checkPasswordMatch = function() {
     if (document.getElementById('password1').value ==
       document.getElementById('password2').value) {
-      document.getElementById('message').style.color = 'green';
-      document.getElementById('message').innerHTML = 'ok';
+      document.getElementById('pw-message').style.color = 'green';
+      document.getElementById('pw-message').innerHTML = 'ok';
     } else {
-      document.getElementById('message').style.color = 'red';
-      document.getElementById('message').innerHTML = 'no match';
+      document.getElementById('pw-message').style.color = 'red';
+      document.getElementById('pw-message').innerHTML = 'no match';
+    }
+  }
+  var checkPlz = function() {
+    if (document.getElementById('plz').value < 0 || document.getElementById('plz').value > 99999) {
+      document.getElementById('plz-message').style.color = 'red';
+      document.getElementById('plz-message').innerHTML = ' ungültige PLZ';
+    } else {
+      document.getElementById('plz-message').style.color = 'white';
+      document.getElementById('plz-message').innerHTML = 'PLZ:';
     }
   }
   </script>

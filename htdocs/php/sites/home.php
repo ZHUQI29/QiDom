@@ -77,7 +77,7 @@
 
           <div class="col-6 start-button-parent ">
             <div class="start-button-child sb-contact">
-              <a class="start-button-grandchild" href="#">
+              <a class="start-button-grandchild" href='index.php?site=contact'>
                 Contact
               </a>
             </div>
@@ -120,7 +120,7 @@
 
         <div class="col-lg-3 col-6 start-button-parent ">
           <div class="start-button-child sb-contact">
-            <a class="start-button-grandchild" href="#">
+            <a class="start-button-grandchild" href='index.php?site=contact'>
               Contact
             </a>
           </div>

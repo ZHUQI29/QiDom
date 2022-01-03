@@ -1,0 +1,9 @@
+@media (max-width: 980px) {
+  
+  .nav-item {
+    margin-left: auto;
+    width: 25%;
+    text-align: right;
+    margin-right: 7px;
+  }
+}
