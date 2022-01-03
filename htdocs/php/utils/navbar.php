@@ -13,7 +13,7 @@
     <div class="collapse navbar-collapse" id="navmenu">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a href="../news.html" class="nav-link qd-btn-hover">News </a>
+          <a href='index.php?site=news' class="nav-link qd-btn-hover">News </a>
         </li>
         <li class="nav-item">
           <a href='index.php?site=contact' class="nav-link qd-btn-hover">Contact </a>

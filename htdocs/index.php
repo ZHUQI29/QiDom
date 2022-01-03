@@ -25,7 +25,7 @@
                   "registration" => "php/sites/registration.php",
                   "welcome" => "php/sites/welcome.php",
                   "contact" => "php/sites/contact.php",
-                  "faq" => "php/sites/faq.php",  // to do
+                  //"faq" => "php/sites/faq.php",  // to do
                   "error" => "php/sites/error.php"];
 
     ?>
