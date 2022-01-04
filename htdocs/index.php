@@ -3,17 +3,8 @@
   <?php include "php/head.php" ?>
   <body>
 
-    <?php
-    if(!isset($_SESSION["user"])) {   // if not logged in, in this session,
-      session_start();
-      $_SESSION["user"] = "anonymous";
-      if (!isset($_COOKIE["level"])) {
-        setcookie("level", 0, time()+86400); // expires in 24h
-      }
-    }
 
-     ?>
-
+     <?php include "php/utils/session.php" ?>
      <?php include "php/utils/navbar.php" ?>
      <?php include "php/utils/BG-Banner.php" ?>
 
@@ -25,6 +16,8 @@
                   "registration" => "php/sites/registration.php",
                   "welcome" => "php/sites/welcome.php",
                   "contact" => "php/sites/contact.php",
+                  "news" => "php/sites/upload.php",
+                  "tickets" => "php/sites/upload.php",
                   //"faq" => "php/sites/faq.php",  // to do
                   "error" => "php/sites/error.php"];
 

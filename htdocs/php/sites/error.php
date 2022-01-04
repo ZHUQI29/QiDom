@@ -1,4 +1,6 @@
 <div class="error">
+  <div class="container-lg">
+
 <?php
 
   $err = isset($_GET["err"]) ?  $_GET["err"] : "default";
@@ -27,9 +29,25 @@
       echo "<script>setTimeout(function(){window.location.href='index.php?site=login';},5000);</script>";
       break;
 
+    case "u100":
+      echo "<h1>Upload Error!</h1><p>Please retry later or contact Administration.</p>";
+      echo "<script>setTimeout(function(){window.location.href='index.php?site=upload';},5000);</script>";
+      break;
+
+    case "u101":
+      echo "<h1>Something went wrong!</h1><p>Please retry later or contact Administration.</p>";
+      echo "<script>setTimeout(function(){window.location.href='index.php?site=upload';},5000);</script>";
+      break;
+
+    case "u102":
+      echo "<h1>Upload Successful!</h1><p>Thank you for your entry!.</p>";
+      echo "<script>setTimeout(function(){window.location.href='index.php?site=home';},5000);</script>";
+      break;
+
     default:
       echo "<h1>Unexpected Error!</h1><p>Something went wrong. Please try again later or check input.</p>";
       break;
   }
  ?>
+ </div>
 </div>
