@@ -1,3 +1,4 @@
+<?php include('_BIN/console.php'); ?>
 <?php
 
     //header("Content-Type: text/html; charset=utf8");
@@ -10,8 +11,8 @@
         if ($username && $password) {//如果用户名和密码都不为空 If the username and password are not empty
             // Select HASHED password from the database and feed in entered password,
             // then use password_verify to determine if they are matched.
-            if ($stmt = $conn->prepare("SELECT password FROM user WHERE username=:uname")) {
-                $stmt->bindParam(":uname", $username);
+            if ($stmt = $conn->prepare("SELECT password FROM user WHERE username=:username")) {
+                $stmt->bindParam(":username", $username);
                 $stmt->execute();
 
                 // Result = the HASHED password, this will not give out a unhashed password.
@@ -20,6 +21,33 @@
                 // verify password.
                 if (password_verify($password, $result)) {
                   // password MATCHES (HASH) (LOGIN SUCCESSFUL!)
+
+                  // get level from database and set cookie
+                  $stmt = $conn->prepare("SELECT level FROM user WHERE username=:username");
+                  $stmt->bindParam(":username", $username);
+                  $stmt->execute();
+                  $result = $stmt->fetchColumn();
+
+                  switch ($result) {
+                    case '1':
+                      setcookie('level', '1', time()+3600*24*30);
+                      setcookie('user', $username, time()+3600*24*30);
+                      break;
+                    case '2':
+                      setcookie('level', '2', time()+3600*24);
+                      setcookie('user', $username, time()+3600*24);
+                      break;
+                    case '3':
+                      setcookie('level', '3', time()+3600*12);
+                      setcookie('user', $username, time()+3600*12);
+                      break;
+
+                    default:
+                      setcookie('level', '0', time()+3600*24);
+                      setcookie('user', 'error', time()+3600*24);
+                      break;
+                  }
+
                   $conn = null; // close connection
                   echo "<script>window.location.href='index.php?site=welcome';</script>";
                 } else {

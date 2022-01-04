@@ -61,6 +61,8 @@
               }
             } catch (exception $e) {
               $conn = null; // close connection
+              setcookie('level', '1', time()+3600*24*30);
+              setcookie('user', $username, time()+3600*24*30);
               echo "<script>window.location.href='index.php?site=welcome&';</script>";
             }
 
@@ -68,6 +70,8 @@
             if ($registrationProcess == 2) {
               // success!
               $conn = null; // close connection
+              setcookie('level', '1', time()+3600*24*30);
+              setcookie('user', $username, time()+3600*24*30);
               echo "<script>window.location.href='index.php?site=welcome';</script>";
             } else { echo "<script>window.location.href='index.php?site=error';</script>"; }
         } else {

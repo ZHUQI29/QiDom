@@ -1,3 +1,10 @@
+<?php
+  // news upload only for admins
+  if($_COOKIE['level'] < 3 && $_GET['site'] == 'news') {
+    // echo "<script>window.location.href='index.php?site=news-view';</script>";
+  }
+ ?>
+
 <div class="container-fluid">
   <div class="d-flex justify-content-center my-4">
     <form action='photo-upload.php?site=<?php echo $_GET['site'] ?>' name="upload" method=post enctype="multipart/form-data">

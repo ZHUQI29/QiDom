@@ -1,9 +1,15 @@
 <?php
 if (!isset($_SESSION['user'])) {   // if not logged in, in this session,
     session_start();
-    $_SESSION['user'] = "anonymous";
-    if (!isset($_COOKIE["level"])) {
-        setcookie("level", 0, time()+86400); // expires in 24h
+    if (isset($_COOKIE['user'])) {
+        $_SESSION['user'] = $_COOKIE['user'];
+    } else {
+      $_SESSION['user'] = 'anonymous';
+      // expires in 24h
+      setcookie('user', 'anonymous', time()+3600*24);
+      setcookie('level', 0, time()+3600*24);
     }
+
+
 }
 ?>
