@@ -1,0 +1,4 @@
+1. check all input via JS.
+  ex: max amount of photo upload
+
+2. Make site transition smoother

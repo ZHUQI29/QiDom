@@ -1,57 +1,59 @@
-<?php
-  error_reporting(-1); // ALL messages
-  ini_set('display_errors', 'On');
- ?>
+<?php //include('_BIN/console.php'); /* For Debugging & Testing */?>
+
 <?php include "php/utils/session.php" ?>
 <?php
 
+// Check for "upload" folder. create it, if not found
 $dest_folder = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'upload' . DIRECTORY_SEPARATOR;
 if (!file_exists($dest_folder)) {
     mkdir($dest_folder, 0755, true);
 }
-$status = 0;
+
+$error = 0;  // status of upload
 $titel = $_POST['title'];
 $text = $_POST['text'];
-$a=explode(".", $_FILES['photo']['name']);
-$id = date('YmdHis') . mt_rand(100, 999) . '.' . $a[1];
 $username = $_SESSION['user'];
 $table = $_GET['site'];
+$maxsize = 10000000;  // approx. 10 MB
+$id = '';
 
-$maxsize = 10000000;
+foreach ($_FILES['photo']['name'] as $key => $value) {
 
-//check associated error code
-if ($_FILES['photo']['error'] == UPLOAD_ERR_OK) {
+  $a=explode(".", $_FILES['photo']['name'][$key]); // Catch file-extension
+  $name = date('mdHis') . mt_rand(100, 999); // [date] + [random number] + . + [file-extension]
+  $id .= $name . ',';
+  //check associated error code
+  if ($_FILES['photo']['error'][$key] == UPLOAD_ERR_OK) {
 
-  //check whether file is uploaded with HTTP POST
-    if (is_uploaded_file($_FILES['photo']['tmp_name'])) {
+    //check whether file is uploaded with HTTP POST
+      if (is_uploaded_file($_FILES['photo']['tmp_name'][$key])) {
 
-    //checks size of uploaded image on server side
-        if ($_FILES['photo']['size'] < $maxsize) {
+      //checks size of uploaded image on server side
+          if ($_FILES['photo']['size'][$key] < $maxsize) {
 
-      // echo 'upload start6';
-            $finfo = finfo_open(FILEINFO_MIME_TYPE);
+        // echo 'upload start6';
+              $finfo = finfo_open(FILEINFO_MIME_TYPE);
 
-            //checks whether uploaded file is of image type
-            if (strpos(finfo_file($finfo, $_FILES['photo']['tmp_name']), "image") === 0) {
+              //checks whether uploaded file is of image type
+              if (strpos(finfo_file($finfo, $_FILES['photo']['tmp_name'][$key]), "image") === 0) {
 
-                // move photo to /htdocs/upload/
-                if (move_uploaded_file($_FILES['photo']['tmp_name'], $dest_folder . $id)) {
-                    $status++;
-                } else {
-                    // echo 'move error';
-                }
-            } else {
-                echo 'upload error4';
-            }
-        } else {
-            echo 'upload error3';
-        }
-    } else {
-        echo 'upload error2';
-    }
-} else {
-    echo 'upload error1';
+                  // move photo to /htdocs/upload/
+                  move_uploaded_file($_FILES['photo']['tmp_name'][$key], $dest_folder . $name . '.' . $a[1]);
+
+              } else {
+                  $error = 1;
+              }
+          } else {
+              $error = 2;
+          }
+      } else {
+          $error = 3;
+      }
+  } else {
+      $error = 3;
+  }
 }
+
 
 
 // database entry
@@ -64,14 +66,13 @@ try {
         $stmt->bindValue(3, $id);
         $stmt->bindValue(4, $username);
         $stmt->execute();
-        $status++;
     }
 } catch (PDOException $e) {
-    echo $e->getMessage();
+    // console_log($e->getMessage());
 }
 
 $gotoSite = '';
-switch ($status) {
+switch ($error) {
   case 0:
     $gotoSite = 'error&err=u100';
     break;
@@ -84,9 +85,13 @@ switch ($status) {
     $gotoSite = 'error&err=u102';
     break;
 
+  case 3:
+    $gotoSite = 'error&err=u103';
+    break;
+
   default:
     $gotoSite = 'error';
     break;
 }
-echo "<script>window.location.href='index.php?site=".$gotoSite."';</script>";
+//echo "<script>window.location.href='index.php?site=".$gotoSite."';</script>";
  ?>

@@ -26,13 +26,9 @@
           if (isset($pages[$site])) {
               include $pages[$site];
           } else {
-              // echo "404 site not found";
               echo "<script>window.location.href='index.php?site=error&err=e404';</script>";
           }
       ?>
-
-
-
 
 
   </body>

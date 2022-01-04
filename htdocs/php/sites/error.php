@@ -1,53 +1,80 @@
 <div class="error">
   <div class="container-lg">
 
-<?php
+  <?php
 
-  $err = isset($_GET["err"]) ?  $_GET["err"] : "default";
+    $err = isset($_GET["err"]) ? $_GET["err"] : "default";
+    $nextPage = '';
 
-  switch ($err) {
-    case "e404":
-      echo "<h1>404, Page not found!</h1><p>You've entered a invalid site or this site was deprecated.</p>";
-      break;
+    switch ($err) {
+      case "e404":
+        $title = "404, Page not found!";
+        $text = "You've entered a invalid site or this site was deprecated.";
+        $nextPage = "home";
+        break;
 
-    case "r100":
-      echo "<h1>Entered passwords are not matching!</h1><p>You've entered not matching passwords. Please re-enter them.</p>";
-      echo "<script>setTimeout(function(){window.location.href='index.php?site=registration';},5000);</script>";
-      break;
+      case "r100":
+        $title = "Entered passwords are not matching!";
+        $text = "You've entered not matching passwords. Please re-enter them.";
+        $nextPage = "registration";
+        break;
 
-    case "r101":
-      echo "<h1>UserName already taken!</h1><p>Enter a new UserName or Login.</p>";
-      break;
+      case "r101":
+        $title = "UserName already taken!";
+        $text = "Enter a new UserName or Login.";
+        $nextPage = "home";
+        break;
 
-    case "l100":
-      echo "<h1>Incomplete information!</h1><p>Please re-enter them.</p>";
-      echo "<script>setTimeout(function(){window.location.href='index.php?site=login';},5000);</script>";
-      break;
+      case "l100":
+        $title = "Incomplete Information!";
+        $text = "Please re-enter them.";
+        $nextPage = "login";
+        break;
 
-    case "l101":
-      echo "<h1>Wrong password!</h1><p>Please re-enter password or contact Administration.</p>";
-      echo "<script>setTimeout(function(){window.location.href='index.php?site=login';},5000);</script>";
-      break;
+      case "l101":
+        $title = "Wrong Password!";
+        $text = "Please re-enter password or contact Administration.";
+        $nextPage = "login";
+        break;
 
-    case "u100":
-      echo "<h1>Upload Error!</h1><p>Please retry later or contact Administration.</p>";
-      echo "<script>setTimeout(function(){window.location.href='index.php?site=upload';},5000);</script>";
-      break;
+      case "u100":
+        $title = "Upload Successful!";
+        $text = "Thank you for your entry!";
+        $nextPage = "home";
+        break;
 
-    case "u101":
-      echo "<h1>Something went wrong!</h1><p>Please retry later or contact Administration.</p>";
-      echo "<script>setTimeout(function(){window.location.href='index.php?site=upload';},5000);</script>";
-      break;
+      case "u101":
+        $title = "Wrong Image-Format!";
+        $text = "Please upload a valid photo.";
+        $nextPage = '';
+        break;
 
-    case "u102":
-      echo "<h1>Upload Successful!</h1><p>Thank you for your entry!.</p>";
-      echo "<script>setTimeout(function(){window.location.href='index.php?site=home';},5000);</script>";
-      break;
+      case "u102":
+        $title = "Upload too big!";
+        $text = "Please upload a smaller photo.<br>MaxSize = 10 MB";
+        $nextPage = '';
+        break;
 
-    default:
-      echo "<h1>Unexpected Error!</h1><p>Something went wrong. Please try again later or check input.</p>";
-      break;
-  }
- ?>
+      case "u103":
+        $title = "Upload Error!";
+        $text = "Something went wrong. Please try again later or check input.";
+        $nextPage = '';
+        break;
+
+      default:
+        $title = "Unexpected Error!";
+        $text = "Something went wrong. Please try again later or check input.";
+        $nextPage = "home";
+        break;
+    }
+
+    // error output
+    echo "<h1>" . $title . "</h1><p>" . $text . "</p>";
+    if ($nextPage !== '') {
+        echo "<script>setTimeout(function(){window.location.href='index.php?site=". $nextPage ."';},5000);</script>";
+    }
+
+   ?>
+
  </div>
 </div>

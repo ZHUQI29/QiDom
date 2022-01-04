@@ -11,7 +11,7 @@
       <textarea type="text" id="text" name="text" cols="30" rows="15"></textarea>
       <br>
       <label class="mx-3" for="photo">Photo: </label>
-      <input class="" type="file" id="photo" name="photo" value="">
+      <input class="" type="file" id="photo" name="photo[]" value="" multiple>
       <br>
       <input class="my-3" type="submit" value="Upload" name="upload">
     </form>
