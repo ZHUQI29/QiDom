@@ -8,9 +8,9 @@
   --light-shade: #fbfafb;
 }
 
-* {
+/* * {
    color: var(--light-shade);
-}
+} */
 
 p {
   color: var(--light-shade);
