@@ -9,15 +9,15 @@
       break;
 
     case 1:
-      $navItems = ['news','contact','profile'];
+      $navItems = ['news','contact','profile','logout'];
       break;
 
     case 2:
-      $navItems = ['news','contact','tickets','profile'];
+      $navItems = ['news','contact','tickets','profile','logout'];
       break;
 
     case 3:
-      $navItems = ['news','contact','tickets','users','profile'];
+      $navItems = ['news','contact','tickets','users','profile','logout'];
       break;
 
     default:
