@@ -9,7 +9,5 @@ if (!isset($_SESSION['user'])) {   // if not logged in, in this session,
       setcookie('user', 'anonymous', time()+3600*24);
       setcookie('level', 0, time()+3600*24);
     }
-
-
 }
 ?>

@@ -12,5 +12,5 @@
   }
 ?>
 <style media="screen">
-  .banner { display: none } body { background: lightgrey;}
+  .banner { display: none } body { background: lightgrey; }
 </style>

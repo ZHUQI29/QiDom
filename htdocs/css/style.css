@@ -9,7 +9,7 @@
 }
 
 * {
-   /* color: var(--light-shade);  */
+   color: var(--light-shade);
 }
 
 p {
@@ -53,6 +53,10 @@ h1 {
   background: rgba(30, 30, 30, 0.8);
 }
 
+.container {
+  max-width: 1600px;
+}
+
 .qd-btn-hover {
   background: none;
   transition: 1.5s ease-out;
@@ -79,9 +83,9 @@ h1 {
   position: sticky;
 }
 
-.nav-link {
+/* .nav-link {
 
-}
+} */
 
 /*
 .navbar a {
@@ -262,4 +266,92 @@ fieldset {
 
 .error h1, p {
   color: var(--light-shade);
+}
+
+
+/* ADMIN-VIEW */
+
+table {
+  color: white;
+}
+
+table, td, th, tr{
+  border: 1px solid white;
+}
+
+th, td {
+  padding: 4px 10px 5px 5px;
+  vertical-align: top;
+
+}
+
+th {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 980px) {
+  .t-desktop {
+    display: none !important;
+  }
+}
+@media (min-width: 980px) {
+  .t-mobile {
+    display: none !important;
+  }
+}
+
+.td-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.td-of-webkit {
+  display: -webkit-box;
+ -webkit-line-clamp: 3;
+ -webkit-box-orient: vertical;
+ overflow: hidden;
+ border: none;
+ margin-top: auto;
+}
+
+.tdn-title {
+  max-width: 20vw;
+}
+.tdn-text {
+  max-width: 30vw;
+}
+.tdn-photos {
+  max-width: 10vw;
+  overflow: hidden;
+}
+.tdn-photos img{
+  width: 100%;
+}
+.tdn-photos div{
+  max-height: 85px;
+}
+.tdn-author {
+  max-width: 10vw;
+}
+.tdn-options {
+  border: none;
+  max-width: 10vw;
+}
+
+.nph-card-content {
+  min-width: 100px;
+  max-width: 20vw;
+  max-height: 20vh;
+  overflow: hidden;
+}
+.nph-card-content img {
+  width: 100%;
+}
+.nt-card-content {
+  min-width: 50vw;
+  max-width: 75vw;
+}
+.ni-card-content {
+  min-width: 40px;
 }
