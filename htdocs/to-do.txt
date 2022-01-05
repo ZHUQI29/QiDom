@@ -6,7 +6,6 @@
 3. close all PDO connections
 
 
-
 ----------------------------
 SEMESTERPROJEKT CHECKLISTE |
 ----------------------------

@@ -66,8 +66,6 @@
 
 <?php include('_BIN/console.php'); ?>
 <?php
-  error_reporting(-1); // ALL messages
-  ini_set('display_errors', 'On');
   $var = 'dsgasdgag';
   console_log($var);
  ?>
