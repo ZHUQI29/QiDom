@@ -93,5 +93,5 @@ switch ($error) {
     $gotoSite = 'error';
     break;
 }
-// echo "<script>window.location.href='index.php?site=".$gotoSite."';</script>";
+echo "<script>window.location.href='index.php?site=".$gotoSite."';</script>";
  ?>
