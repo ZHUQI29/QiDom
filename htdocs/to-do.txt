@@ -6,46 +6,71 @@
 3. close all PDO connections
 
 
-----------------------------
-SEMESTERPROJEKT CHECKLISTE |
-----------------------------
-
+------------------------------
+| SEMESTERPROJEKT CHECKLISTE |
+------------------------------
+| BASIC |
+---------
 x Sie haben ein 2er Team gebildet.
 x Sie haben eine index.php mit dem Grundlayout erstellt.
-x Sie haben eine Datenbank für die Hotelverwaltung angelegt
-- Sie haben eine dbaccess.php angelegt, das zentral die Zugangsdaten beinhaltet.
 - Sie haben das Projekt vollständig (inklusive Kopie der MySQL Datenbank) als zip/rar hochgeladen.
 - Sie haben komplexere Abläufe und Funktionen kommentiert.
-- Es gibt 4 verschiedene Zustände für User: anonym (nicht eingeloggt), Gast (registrierter User), Administrator*in, Servicetechniker (nur im 2er Team))
-x Datenbank hat eine geeignete Struktur (Usertypen, News-Beiträge, Tickets, ...)
-x Administrator*innen können News-Beiträge posten inkl. Bildupload.
-- Administrator*innen können User-Accounts für Gäste und Servicetechniker*innen anlegen.
-- Gäste können Tickets anlegen inkl. Bildupload, die von Servicetechniker*innen gelesen und bearbeitet werden können.
-- Servicetechniker*innen können den Status von Tickets ändern (z.B. "erfolgreich abgeschlossen")
-- Es gibt einen Hilfebereich auf der Website mit Benutzer*innenanleitung.
-- Es gibt ein Impressum (Standard-Impressum), Namen und Bilder der Hotelverwaltung.
 - Die gesamte Website ist responisve und "mobile first" gestaltet.
-- Alle Usertypen können Hilfebereich, Impressum und die Newsbeiträge auf der Startseite einsehen.
-- Der eingeloggte Nutzer kann neue Tickets anlegen und bereits angelegte Tickets einsehen.
-- Administrator*innen können neue Gäste anlegen, Gäste deaktivieren, News-Beiträge erstellen und löschen.
-- Administrator*innen haben eine Userverwaltung (übersicht bestehender und deaktivieren einzelner Nutzer).
-- Administrator*innen können Servicetechniker*innen anlegen und deaktivieren.
-- Servicetechniker*innen können Tickets aller Gäste einsehen und den Status der Tickets ändern.
 x Der Datenbankzugriff erfolgt mittels mySQLi.
-x Beim anlegen neuer Accounts wird folgendes gesetzt: Anrede, Vorname, Nachname, E-Mail-Adresse, Benutzername, Passwort.
 - Alle Eingaben aller Formulare (Registrierung, Login, etc ...) werden clientseitig und serverseitig überprüft und validiert.
+- Bilder werden serverseitig verkleinert.
+- Sie haben eine gute User Experience für Ihr User Interface umgestezt.
+- Sie haben mehrfach überprüft ob alle Punkte aus der Angabe zum Semesterprojekt umgesetzt wurden.
+
+------------
+| DATABASE |
+------------
+x Sie haben eine Datenbank für die Hotelverwaltung angelegt
+- Sie haben eine dbaccess.php angelegt, das zentral die Zugangsdaten beinhaltet.
+x Datenbank hat eine geeignete Struktur (Usertypen, News-Beiträge, Tickets, ...)
+x Beim anlegen neuer Accounts wird folgendes gesetzt: Anrede, Vorname, Nachname, E-Mail-Adresse, Benutzername, Passwort.
 x Passwörter sind gehasht in der Datenbank gespeichert.
+
+--------
+| USER |
+--------
+- Es gibt 4 verschiedene Zustände für User: anonym (nicht eingeloggt), Gast (registrierter User), Administrator*in, Servicetechniker (nur im 2er Team))
+- Alle Usertypen können Hilfebereich, Impressum und die Newsbeiträge auf der Startseite einsehen.
 - Der Login Status ist permanent auf der Seite sichtbar und eingeloggte Nutzer können sich ausloggen.
 x Auf Basis des Usertyps (Gast, Administrator*in, Servicetechniker*in) werden auf der Website verschiedene Features freigeschalten.
 - Eingeloggte Nutzer können die eigenen Profildaten einsehen und bearbeiten. Achten Sie darauf dass das Passwort niemals am Client angezeigt wird.
-- Bilder werden serverseitig verkleinert.
+
+--------
+| NEWS |
+--------
+x Administrator*innen können News-Beiträge posten inkl. Bildupload.
+
+-------------
+| DASHBOARD |
+-------------
+- Administrator*innen können User-Accounts für Gäste und Servicetechniker*innen anlegen.
+- Administrator*innen können neue Gäste anlegen, Gäste deaktivieren, News-Beiträge erstellen und löschen.
+- Administrator*innen haben eine Userverwaltung (übersicht bestehender und deaktivieren einzelner Nutzer).
+- Administrator*innen haben eine News-Beiträgeübersicht in der Sie alle News-Beiträge bearbeiten und in einer Liste filtern können.
+- Administrator*innen können Servicetechniker*innen anlegen und deaktivieren.
 - Administrator*innen können alle User bearbeiten.
 - Administrator*innen können alle Tickets einsehen.
+- Servicetechniker*innen haben eine ticketübersicht in der Sie Tickets bearbeiten und in einer Liste filtern können.
+- Servicetechniker*innen können Tickets aller Gäste einsehen und den Status der Tickets ändern.
+- Servicetechniker*innen können den Status von Tickets ändern (z.B. "erfolgreich abgeschlossen")
+- Servicetechniker*innen können auf Tickets antworten.
+
+-----------
+| TICKETS |
+-----------
+- Gäste können Tickets anlegen inkl. Bildupload, die von Servicetechniker*innen gelesen und bearbeitet werden können.
+- Der eingeloggte Nutzer kann neue Tickets anlegen und bereits angelegte Tickets einsehen.
 x Tickets haben 3 Status: offen, erfolgreich geschlossen, und erfolglos geschlossen.
 - Tickets können wieder geöffnet werden.
 x Ein Ticket besteht aus: Titel, Beschreibung und Bildupload, sowie aktuelles Datum und Uhrzeit.
-- Servicetechniker*innen haben eine ticketübersicht in der Sie Tickets bearbeiten und in einer Liste filtern können.
-- Servicetechniker*innen können auf Tickets antworten.
-- Administrator*innen haben eine News-Beiträgeübersicht in der Sie alle News-Beiträge bearbeiten und in einer Liste filtern können.
-- Sie haben eine gute User Experience für Ihr User Interface umgestezt.
-- Sie haben mehrfach überprüft ob alle Punkte aus der Angabe zum Semesterprojekt umgesetzt wurden.
+
+-------
+| FAQ |
+-------
+- Es gibt einen Hilfebereich auf der Website mit Benutzer*innenanleitung.
+- Es gibt ein Impressum (Standard-Impressum), Namen und Bilder der Hotelverwaltung.

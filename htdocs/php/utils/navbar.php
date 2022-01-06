@@ -17,7 +17,7 @@
       break;
 
     case 3:
-      $navItems = ['news','contact','tickets','users','profile','logout'];
+      $navItems = ['dashboard','news','contact','users','profile','logout'];
       break;
 
     default:

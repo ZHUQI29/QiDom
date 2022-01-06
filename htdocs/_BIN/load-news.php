@@ -9,36 +9,34 @@
     if($stmt = $conn->prepare("SELECT * FROM news ORDER BY timestamp DESC LIMIT " . $startColumn . ",10")) {
       $stmt->execute();
       return $stmt->fetchAll();
-      // $size = sizeof($result);
     } else { /*echo "error";*/ }
   }
 
   $result = loadNews(0);
-  // console_log($result);
   prepareDashboardDesktop($result);
 
   function prepareDashboardDesktop($data) {
     $counter = 1;
-    $json_a = file_get_contents('php/sites/dashboard/newsView.json');
-    $trimmed = ltrim($json_a, "{\"data\":\"");
-    $a = explode("$", $trimmed);
+    $json_a = file_get_contents('php/sites/dashboard/tnViewDesktop.json');
+    $a = explode("$", $json_a);
 
-    echo $a[0];
+    echo $a[1];
     foreach ($data as $key) {
       createRow($key, $counter, $a);
+      $counter++;
     }
-    echo $a[10];
+    echo $a[12];
   }
 
   function createRow($row, $counter, $a) {
-    echo $a[1] . $counter++ . $a[2] . $row[0] . $a[3] . $row[1] . $a[4];
+    echo $a[2] . $row[5] . $a[3] . $counter . $a[4] . $row[0] . $a[5] . $row[1] . $a[6];
     if ($row[2] != '') {
       $pics = explode(",", $row[2]);
       foreach ($pics as $key) {
-        echo $a[5] . $key . $a[6];
+        echo $a[7] . $key . $a[8];
       }
     }
-    echo $a[7] . $row[3] . $a[8] . $row[4] . $a[9];
+    echo $a[9] . $row[3] . $a[10] . $row[4] . $a[11];
   }
 
 

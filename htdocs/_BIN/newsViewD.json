@@ -1,5 +1,5 @@
 {"data":"
-  <div class='t-desktop container my-3 d-flex justify-content-center'>
+  $<div class='t-desktop container my-3 d-flex justify-content-center'>
     <table class='box-1'>
       <tr>
         <th> </th>
@@ -11,7 +11,7 @@
         <th>Options</th>
       </tr>
       $<tr>
-        <td>$</td>
+        <td class='ticket-status-$'>$</td>
         <td class='tdn-title'>
           <div>
             <p class='td-of-webkit'>$</p>
@@ -31,7 +31,7 @@
         <td>$</td>
         <td class='tdn-options d-flex flex-column align-items-center'>
           <i class='material-icons p-1' style='font-size:36px'>highlight_off</i>
-          <i class='material-icons pt-1' style='font-size:36px'>edit_note</i>
+          <i class='material-icons p-1' style='font-size:36px'>edit_note</i>
         </td>
       </tr>
     $</table>

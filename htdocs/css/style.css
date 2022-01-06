@@ -6,6 +6,10 @@
   --dark-accent: #eb5f6c;
   --light-accent: #b0a1a7;
   --light-shade: #fbfafb;
+
+  --t-status-2: #EB5F6C;
+  --t-status-1: #F4D35E; /* 083D77 */
+  --t-status-0: #136F63;
 }
 
 /* * {
@@ -354,4 +358,20 @@ th {
 }
 .ni-card-content {
   min-width: 40px;
+}
+
+
+/* TICKETS */
+.ticket-status-0 {
+  background: var(--t-status-0);
+}
+.ticket-status-1 {
+  background: var(--t-status-1);
+}
+.ticket-status-2 {
+  background: var(--t-status-2);
+}
+
+.ticket-status- {
+  background: var(--main-color);
 }

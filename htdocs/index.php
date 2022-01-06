@@ -18,6 +18,7 @@
                   "contact" => "php/sites/contact.php",
                   "news" => "php/sites/upload.php",
                   "tickets" => "php/sites/upload.php",
+                  "dashboard" => "php/sites/dashboard.php",
                   "logout" => "php/sites/logout.php",
                   //"faq" => "php/sites/faq.php",  // to do
                   "error" => "php/sites/error.php"];
