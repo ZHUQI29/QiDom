@@ -10,8 +10,8 @@
         <th>Time</th>
         <th>Options</th>
       </tr>
-      $<tr>
-        <td class='ticket-status-$'>$</td>
+      $<tr class='row-$'>
+        <td class='status-$'>$</td>
         <td class='tdn-title'>
           <div>
             <p class='td-of-webkit'>$</p>
