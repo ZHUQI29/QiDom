@@ -8,7 +8,10 @@
 
 
 <?php
-
+  $json_a = file_get_contents('php/sites/dashboard/newsView.json');
+  $trimmed = ltrim($json_a, "{\"data\":\"");
+  $a = explode("$", $trimmed);
+  console_log($a);
 ?>
 
 
