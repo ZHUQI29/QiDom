@@ -1,4 +1,4 @@
-    <?php
+<?php
     $server="localhost";
     $db_username="root";
     $db_password="";
@@ -6,10 +6,15 @@
 
 $conn = mysqli_connect($server, $db_username, $db_password, $db_name);
 
- 
-$sql = "SELECT anrede, vorname, nachname, plz, ort, strasse, hausnummer, birthday, email, photo FROM personal_data";
+// Get ID from user-table
+$sql = "SELECT ID FROM user WHERE username='" . $_COOKIE['user'] . "'";
 $result = mysqli_query($conn, $sql);
- 
+$id = mysqli_fetch_assoc($result);
+
+// Get info from personal_data-table
+$sql = "SELECT anrede, vorname, nachname, plz, ort, strasse, hausnummer, birthday, email, photo FROM personal_data WHERE ID='" . $id['ID'] . "'";
+$result = mysqli_query($conn, $sql);
+
 if (mysqli_num_rows($result) > 0) {
     // 输出数据
     while($row = mysqli_fetch_assoc($result)) {
@@ -27,6 +32,6 @@ if (mysqli_num_rows($result) > 0) {
 } else {
     echo "0 ";
 }
- 
+
 mysqli_close($conn);
 ?>
