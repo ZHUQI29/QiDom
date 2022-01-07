@@ -20,6 +20,7 @@
                   "tickets" => "php/sites/upload.php",
                   "dashboard" => "php/sites/dashboard.php",
                   "logout" => "php/sites/logout.php",
+                  "users" =>"php/sites/All-User.php",
                   //"faq" => "php/sites/faq.php",  // to do
                   "error" => "php/sites/error.php"];
 
