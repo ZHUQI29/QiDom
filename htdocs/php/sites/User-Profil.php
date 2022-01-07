@@ -13,7 +13,7 @@
       <br>
       <label for="vorname">Vorname:</label>
       <br>
-      <input type="text" id="vorname" name="vorname" value="<?php echo $row["anrede"] ?>">
+      <input type="text" id="vorname" name="vorname" value="<?php echo. $row["anrede"]. ?>">
       <br>
       <label for="nachname">Nachname:</label>
       <br>
