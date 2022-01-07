@@ -3,6 +3,7 @@
 
 <?php
   $navItems = ['news','contact','login'];
+  $dashItems = null;
   switch ($_COOKIE['level']) {
     case 0:
       $navItems = ['news','contact','login'];
@@ -13,11 +14,15 @@
       break;
 
     case 2:
-      $navItems = ['news','contact','tickets','profile','logout'];
+      $navItems = ['news','contact','profile','logout'];
+      $dashItems = ['D-Tickets' => 'tickets'];
       break;
 
     case 3:
-      $navItems = ['dashboard','news','contact','users','profile','logout'];
+      $navItems = ['news','contact','profile','logout'];
+      $dashItems = ['D-Users' => 'personal_data',
+                    'D-News' => 'news',
+                    'D-Tickets' => 'tickets'];
       break;
 
     default:
@@ -38,6 +43,9 @@
     <div class="collapse navbar-collapse" id="navmenu">
       <ul class="navbar-nav ms-auto">
         <?php
+          foreach ($dashItems as $key => $value) {
+            echo "<li class='nav-item'><a href='index.php?site=dashboard&view=".$value."' class='nav-link qd-btn-hover' style='text-transform: capitalize'>".$key." </a></li>";
+          }
           foreach ($navItems as $key => $value) {
             echo "<li class='nav-item'><a href='index.php?site=".$navItems[$key]."' class='nav-link qd-btn-hover' style='text-transform: capitalize'>".$navItems[$key]." </a></li>";
           }
