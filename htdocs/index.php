@@ -22,7 +22,7 @@
                   "dashboard" => "php/sites/dashboard.php", // not needed
                   "logout" => "php/sites/logout.php",
                   "users" => "php/sites/All-User.php",
-                  "profile" => "db-profile.php",
+                  "profile" => "db-profil.php",
                   //"faq" => "php/sites/faq.php",  // to do
                   "error" => "php/sites/error.php"];
 
