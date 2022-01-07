@@ -1,0 +1,31 @@
+{"data":"
+  $<div class='t-desktop container my-3 d-flex justify-content-center'>
+    <table class='box-1'>
+      <tr>
+        <th>S</th>
+        <th>Username</th>
+        <th>Vorname</th>
+        <th>Nachname</th>
+        <th>Email</th>
+        <th>Ort</th>
+        <th>Adresse</th>
+        <th>Birthday</th>
+        <th></th>
+      </tr>
+      $<tr class='row-$'>
+        <td class='status-$'>$</td>
+        $<td class='user-td'>
+          <div>
+            <p class='td-overflow'>
+            $
+            </p>
+          </div>
+        </td>
+        $<td>$</td>
+        <td class='p-0 pt-1 px-1'>
+          <i class='material-icons' style='font-size:24px'>edit_note</i>
+        </td>
+      </tr>
+    $</table>
+  </div>
+    $"}

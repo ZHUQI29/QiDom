@@ -3,6 +3,7 @@
   <?php include "php/head.php" ?>
   <body>
 
+     <?php //include('_BIN/console.php'); ?>
 
      <?php include "php/utils/session.php" ?>
      <?php include "php/utils/navbar.php" ?>
@@ -18,10 +19,10 @@
                   "contact" => "php/sites/contact.php",
                   "news" => "php/sites/upload.php",
                   "tickets" => "php/sites/upload.php",
-                  "dashboard" => "php/sites/dashboard.php",
+                  "dashboard" => "php/sites/dashboard.php", // not needed
                   "logout" => "php/sites/logout.php",
-                  "users" =>"php/sites/All-User.php",
-                  "profile" =>"db-profil.php",
+                  "users" => "php/sites/All-User.php",
+                  "profile" => "db-profile.php",
                   //"faq" => "php/sites/faq.php",  // to do
                   "error" => "php/sites/error.php"];
 
