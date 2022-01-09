@@ -22,5 +22,6 @@
 	"photos4": "</div></td>",
 	"author1": "<td class='tdn-author td-overflow'>",
 	"author2": "</td>",
-  "TNoptions": "<td class='tdn-options d-flex flex-column align-items-center'> <i class='material-icons p-1'style='font-size:36px'>highlight_off</i><i class='material-icons p-1'style ='font-size:36px'>edit_note</i></td></tr>"
+  "TNoptions1": "<td class='tdn-options d-flex flex-column align-items-center'><button class='",
+	"TNoptions2": " material-icons p-1 tn-options' name='delete_row' id='delete_row' style=''>highlight_off</button><button class='material-icons p-1 tn-options' name='edit_row' id='edit_row' >edit_note</button></td>"
 }

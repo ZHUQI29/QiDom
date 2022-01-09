@@ -364,6 +364,13 @@ th {
   background: rgba(255, 255, 255, 0.1);
 }
 
+.tn-options {
+  color: var(--light-shade);
+  background: transparent;
+  border: none;
+  font-size: 2rem !important;
+}
+
 
 /* TICKETS */
 .status-0 {
@@ -377,7 +384,7 @@ th {
 }
 
 .status- {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 
@@ -394,6 +401,7 @@ table p {
 
 /* MODAL (POPUP) */
 .confirm-modal {
+  display: none;
   position: fixed;
   z-index: 100;
   left: 0;
@@ -428,7 +436,7 @@ table p {
   color: var(--t-status-2);
 }
 
-#close-modal {
+#close_modal {
   margin-left: auto;
   width: 30px;
   height: 30px;
@@ -437,16 +445,21 @@ table p {
   border: 1px solid rgba(255, 255, 255, 0.4);
   background: rgba(255, 255, 255, 0.4);
   border-radius: 2px;
+  color: var(--light-shade);
+  font-weight: 100;
 }
-#close-modal > span {
+
+#close_modal span {
   color: var(--light-shade);
   position: relative;
   top: -4px;
 }
 
-#confirm-modal {
+#confirm_modal {
+
   width: 40%;
   margin: 0 auto;
   border: 1px solid var(--t-status-2);
   background: rgba(255,255,255,0.9);
+
 }

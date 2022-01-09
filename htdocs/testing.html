@@ -118,49 +118,65 @@
         <td class='tdn-author td-overflow'>author</td>
         <td>2022-20-01-20:30</td>
         <td class='tdn-options d-flex flex-column align-items-center'>
-          <i class='material-icons p-1' id='delete-row $' style='font-size:36px'>highlight_off</i>
-          <i class='material-icons p-1' style='font-size:36px'>edit_note</i>
+          <button class='xxx material-icons p-1 tn-options' name='delete_row' id='delete_row' style=''>highlight_off</button>
+          <button class='material-icons p-1 tn-options' name='edit_row' id='edit_row' >edit_note</button>
         </td>
       </tr>
     </table>
   </div>
 
-  <div id="confirm-delete" class="confirm-modal">
-    <div class="modal-content">
+  <div id='confirm_delete' class='confirm-modal'>
+    <div class='modal-content'>
       <div>
         <h2>Confirm delete?</h2>
-        <button id="close-modal"><span>&times;</span></button>
+        <button class='material-icons' id='close_modal'>close</button>
       </div>
-      <button id="confirm-modal">Delete</button>
+      <button id='confirm_modal'>Delete</button>
     </div>
   </div>
 
 
   <script>
   // Get the modal
-var modal = document.getElementById("confirm-delete");
+  var modal = document.getElementById("confirm_delete");
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+  // Get the button that opens the modal
+  var del_row = document.getElementById("delete_row");
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close-modal")[0];
+  // Get the <Close-Button> element that closes the modal
+  var cls_btn = document.getElementById("close_modal");
 
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-modal.style.display = "block";
-}
+  // Get the <Confirm-Button> element that refreshes the page with added $_GET['del']
+  var cnfm_btn = document.getElementById("confirm_modal");
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-modal.style.display = "none";
-}
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-if (event.target == modal) {
+  console.log(del_row.classList[0]);
+  console.log(window.location.href);
+  // When the user clicks on the button, open the modal
+  del_row.onclick = function() {
+  modal.style.display = "block";
+  }
+
+  // When the user clicks on <Close-Button> (x), close the modal
+  cls_btn.onclick = function() {
   modal.style.display = "none";
-}
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+
+  // When the user clicks on <Confirm-Button>, refresh page with $_GET['del']
+  cnfm_btn.onclick = function() {
+  var url = window.location.href;
+  var extension = "&del=".concat(del_row.classList[0]);
+  url = url.concat(extension);
+  window.location.href = url;
+  }
+
+
 }
   </script>
 
@@ -247,10 +263,10 @@ if (event.target == modal) {
     <div class="container-fluid n-card box-1 d-flex p-0">
 
       <div class="nph-card-content p-2">
-        <img class="p-1" src="upload/20220104212508146.png" alt="preview">
-        <img class="p-1" src="upload/20220104212508146.png" alt="preview">
-        <img class="p-1" src="upload/20220104212508146.png" alt="preview">
-        <img class="p-1" src="upload/20220104212508146.png" alt="preview">
+        <img class="p-1" src="upload/0105214015446.png" alt="preview">
+        <img class="p-1" src="upload/0105214015446.png" alt="preview">
+        <img class="p-1" src="upload/0105214015446.png" alt="preview">
+        <img class="p-1" src="upload/0105214015446.png" alt="preview">
       </div>
 
       <div class="nt-card-content p-1">
@@ -275,12 +291,12 @@ if (event.target == modal) {
     <div class="container-fluid n-card box-1 d-flex p-0">
 
       <div class="nph-card-content p-2">
-        <img class="p-1" src="upload/20220104212508146.png" alt="preview">
-        <img class="p-1" src="upload/20220104212508146.png" alt="preview">
-        <img class="p-1" src="upload/20220104212508146.png" alt="preview">
-        <img class="p-1" src="upload/20220104212508146.png" alt="preview">
-        <img class="p-1" src="upload/20220104212508146.png" alt="preview">
-        <img class="p-1" src="upload/20220104212508146.png" alt="preview">
+        <img class="p-1" src="upload/0105214015446.png" alt="preview">
+        <img class="p-1" src="upload/0105214015446.png" alt="preview">
+        <img class="p-1" src="upload/0105214015446.png" alt="preview">
+        <img class="p-1" src="upload/0105214015446.png" alt="preview">
+        <img class="p-1" src="upload/0105214015446.png" alt="preview">
+        <img class="p-1" src="upload/0105214015446.png" alt="preview">
       </div>
 
       <div class="nt-card-content p-1">
