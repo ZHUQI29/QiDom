@@ -1,3 +1,5 @@
+<?php include('_BIN/console.php'); ?>
+
 <?php
     $server="localhost";
     $db_username="root";

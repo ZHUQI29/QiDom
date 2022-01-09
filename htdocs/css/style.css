@@ -380,6 +380,7 @@ th {
   background: rgba(255, 255, 255, 0.1);
 }
 
+
 /* USERS */
 .user-td {
   max-width: 13vw;
@@ -388,4 +389,64 @@ th {
 
 table p {
   margin: 0;
+}
+
+
+/* MODAL (POPUP) */
+.confirm-modal {
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Enable scroll, if needed. */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: var(--dark-shade);
+  margin: 30vh auto;
+  padding: 20px;
+  border: 1px solid var(--t-status-2);
+  width: 400px;
+}
+
+@media (max-width: 405px) {
+  .modal-content {
+    width: 100%;
+  }
+}
+
+.modal-content div {
+ display: flex;
+}
+
+.modal-content h2 {
+  padding-bottom: 15px;
+  color: var(--t-status-2);
+}
+
+#close-modal {
+  margin-left: auto;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  font-size: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 2px;
+}
+#close-modal > span {
+  color: var(--light-shade);
+  position: relative;
+  top: -4px;
+}
+
+#confirm-modal {
+  width: 40%;
+  margin: 0 auto;
+  border: 1px solid var(--t-status-2);
+  background: rgba(255,255,255,0.9);
 }
