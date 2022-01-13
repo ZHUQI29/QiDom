@@ -273,14 +273,42 @@ fieldset {
 }
 
 
-/* ADMIN-VIEW */
+/* DASHBOARD */
+
+.dash-bar {
+  background: var(--dark-shade);
+  border: 1px solid var(--light-shade);
+  margin-bottom: 10px;
+}
+
+.dash-bar input {
+  margin-right: 10px;
+}
+
+.dash-form {
+  min-width: 100%;
+}
+
+.dash-form input {
+  background: var(--dark-shade);
+  color: var(--light-shade);
+  border: 1px solid var(--light-shade);
+}
+
+.go-button {
+  margin-left: 10px;
+  width: 5rem;
+  border: 1px solid var(--main-color);
+  background: var(--dark-shade);
+  color: var(--light-shade);
+}
 
 table {
   color: white;
 }
 
 table, td, th, tr{
-  border: 1px solid white;
+  border: 1px solid var(--light-shade);
 }
 
 th, td {

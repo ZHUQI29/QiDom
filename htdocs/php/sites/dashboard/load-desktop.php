@@ -7,15 +7,6 @@
 
   include('php/utils/prepareDashData.php');
 
-  // get data from database, based on $_GET['view']
-  function loadData($startColumn, $view) {
-    include('php/utils/connect.php');
-    if($stmt = $conn->prepare("SELECT * FROM ".$view." ORDER BY timestamp DESC LIMIT " . $startColumn . ",10")) {
-      $stmt->execute();
-      return $stmt->fetchAll();
-    } else { /*echo "error";*/ }
-  }
-
   // Decide on displaying News/Tickets or User-Data
   $result = loadData(0, $view);
   if($view == 'personal_data') {
@@ -27,7 +18,9 @@
   // Prepare User-Dashboard
   function prepareDesktopU($data) {
     $a = getViewJson();
-    echo $a['uViewStart'];
+    echo $a['uViewStart1'];
+    initializeDashBar($a);
+    echo $a['uViewStart2'];
     $counter = -1;
     foreach ($data as $key) {
       createRowU($key, $counter, $a);
@@ -54,7 +47,9 @@
   // Prepare TicketsNews-Dashboard
   function prepareDesktopTN($data) {
     $a = getViewJson();
-    echo $a['tnViewStart'];
+    echo $a['tnViewStart1'];
+    initializeDashBar($a);
+    echo $a['tnViewStart2'];
     // console_log($data);
     $counter = 1;
     foreach ($data as $key) {
@@ -88,6 +83,39 @@
     echo $a['author1'] . $data[4] . $a['author2'];
     echo $a['date1'] . $data[5] . $a['date2'];
     echo $a['TNoptions1'] . $data[0] . $a['TNoptions2'];
+
+  }
+
+  function initializeDashBar($a) {
+    $view = $_GET['view'];
+    echo $a['dashBarStart'];
+    echo $a['searchDate1'] . date('Y-m-d') . $a['searchDate2'];
+    console_log(date('Y-m-d'));
+    switch ($view) {
+
+      case 'news':
+        break;
+
+      case 'tickets':
+        echo $a['optionA1'] . 'open' . $a['optionA2'];
+        echo $a['optionB1'] . 'bad close' . $a['optionB2'];
+        echo $a['optionC1'] . 'good close' . $a['optionC2'];
+        break;
+
+      case 'personal_data':
+        echo $a['optionA1'] . 'Guest' . $a['optionA2'];
+        echo $a['optionB1'] . 'Service' . $a['optionB2'];
+        echo $a['optionC1'] . 'Admin' . $a['optionC2'];
+        break;
+
+      default:
+        break;
+    }
+    $substring = explode('&', $_SERVER['REQUEST_URI']);
+    $url = $substring[0] . '&view=' . $view;
+    echo $a['url1'] . $url . $a['url2'];
+    echo $a['url3'] . $view . $a['url4'];
+    echo $a['dashBarEnd'];
 
   }
 

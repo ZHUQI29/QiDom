@@ -48,46 +48,28 @@
 
 
 
-<!-- echo 1 -->
-  <div class='t-desktop container my-3 d-flex justify-content-center'>
-    <table class='box-1'>
-      <tr>
-        <th> </th>
-        <th>Titel</th>
-        <th>Text</th>
-        <th>Photos</th>
-        <th>Author</th>
-        <th>Time</th>
-        <th>Options</th>
-      </tr>$
-      <tr>
-        <td>$</td>
-        <td class='tdn-title'>
-          <div>
-            <p class='td-of-webkit'>$</p>
-          </div>
-        </td>
-        <td class='tdn-text'>
-          <div>
-            <p class='td-of-webkit'>$</p>
-          </div>
-        </td>
-        <td class='tdn-photos'>
-          <div class='d-flex flex-column td-overflow'>
-            <img class='p-1' src='upload/$.png' alt='preview'>
-          </div>
-        </td>
-        <td class='tdn-author td-overflow'>$</td>
-        <td>$</td>
-        <td class='tdn-options d-flex flex-column align-items-center'>
-          <i class='material-icons p-1' style='font-size:36px'>highlight_off</i>
-          <i class='material-icons p-1' style='font-size:36px'>edit_note</i>
-        </td>
-      </tr>
-    </table>
-  </div>
 
-  <div class='t-desktop container my-3 d-flex justify-content-center'>
+  <div class='t-desktop container my-3 d-flex flex-column justify-content-center'>
+
+    <div class='dash-bar'>
+      <form action='' class='dash-form py-1'>
+        <label for='search'>Search: </label>
+        <input type='text' name='searchText'>
+        <label for='von'>von:</label>
+        <input type='date' name='vDate'>
+        <label for='bis'>bis:</label>
+        <input type='date' name='bDate'>
+        <label for='A'>open:</label>
+        <input type='checkbox' name='A'>
+        <label for='B'>bad closed:</label>
+        <input type='checkbox' name='B'>
+        <label for='C'>closed:</label>
+        <input type='checkbox' name='C' checked>
+        <input type='submit' class='go-button' name='search' value='Go!'>
+        <input type='hidden' value=''>
+      </form>
+    </div>
+
     <table class='box-1'>
       <tr>
         <th> </th>
@@ -97,7 +79,7 @@
         <th>Author</th>
         <th>Time</th>
         <th>Options</th>
-      </tr>$
+      </tr>
       <tr>
         <td class="status-2">$</td>
         <td class='tdn-title'>
@@ -259,8 +241,29 @@
 
 
 
-  <div class="t-mobile container-lg my-3 d-flex justify-content-center">
-    <div class="container-fluid n-card box-1 d-flex p-0">
+  <div class="t-mobile container-lg my-3 d-flex flex-column justify-content-center">
+
+    <div class='dash-bar'>
+      <form action='' class='dash-form py-1'>
+        <label for='search'>Search: </label>
+        <input type='text' name='searchText'>
+        <br>
+        <label for='von'>von:</label>
+        <input type='date' name='vDate'>
+        <label for='bis'>bis:</label>
+        <input type='date' name='bDate'>
+        <br>
+        <label for='A'>open:</label>
+        <input type='checkbox' name='A'>
+        <label for='B'>bad closed:</label>
+        <input type='checkbox' name='B'>
+        <label for='C'>closed:</label>
+        <input type='checkbox' name='C'>
+        <input type='submit' class='go-button' name='search' value='Go!'>
+      </form>
+    </div>
+
+    <div class="container-fluid n-card box-1 d-flex  p-0">
 
       <div class="nph-card-content p-2">
         <img class="p-1" src="upload/0105214015446.png" alt="preview">

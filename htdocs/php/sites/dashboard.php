@@ -1,4 +1,4 @@
-<?php //include('_BIN/console.php'); ?>
+<?php include('_BIN/console.php'); ?>
 
 <?php
   $view = isset($_GET['view']) ? $_GET['view'] : 'tickets';
