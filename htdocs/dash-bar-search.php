@@ -35,12 +35,13 @@ $view = $_POST['view'];
     }
   }
 
+  // console_log($_POST);
   if (isset($_POST['ls'])) {
     $url = $url . '&ls=' . $_POST['ls'] . '&le=' . $POST['le'];
   }
 
   if (isset($_POST['ob'])) {
-    $url = $url . '&ob=' . $_POST['ob'];
+    $url = $url . '&ob=' . $_POST['ob'] . '&order=' . $_POST['order'];
   }
 
   echo "<script>window.location.href='". $url ."';</script>";

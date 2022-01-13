@@ -65,6 +65,19 @@
         <input type='checkbox' name='B'>
         <label for='C'>closed:</label>
         <input type='checkbox' name='C' checked>
+        <label for='ob'>Sort:</label>
+        <select name='ob' id='ob'>
+          <option value='timestamp'>Datum</option>
+          <option value='status'>Status</option>
+          <option value='titel'>Titel</option>
+          <option value='text'>Text</option>
+          <option value='photo_id'>Photos</option>
+          <option value='username'>Author</option>
+        </select>
+        <select name="order" id="order">
+          <option value='ASC'>Aufsteigend</option>
+          <option value='DESC'>Absteigend</option>
+        </select>
         <input type='submit' class='go-button' name='search' value='Go!'>
         <input type='hidden' value=''>
       </form>
@@ -259,7 +272,22 @@
         <input type='checkbox' name='B'>
         <label for='C'>closed:</label>
         <input type='checkbox' name='C'>
+        <br>
+        <label for='ob'>Sort:</label>
+        <select name='ob' id='ob'>
+          <option value='timestamp'>Datum</option>
+          <option value='status'>Status</option>
+          <option value='titel'>Titel</option>
+          <option value='text'>Text</option>
+          <option value='photo_id'>Photos</option>
+          <option value='username'>Author</option>
+        </select>
+        <select name="order" id="order">
+          <option value='ASC'>Aufsteigend</option>
+          <option value='DESC'>Absteigend</option>
+        </select>
         <input type='submit' class='go-button' name='search' value='Go!'>
+        <input type='hidden' value=''>
       </form>
     </div>
 

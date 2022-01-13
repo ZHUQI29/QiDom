@@ -12,6 +12,8 @@
 	"url2": "'>",
 	"url3": "<input type='hidden' name='view' value='",
 	"url4": "'>",
+	"tnSelect": "<label for='ob'>Sort:</label><select name='ob' id='ob'><option value='timestamp'>Datum</option><option value='status'>Status</option><option value='titel'>Titel</option><option value='text'>Text</option><option value='photo_id'>Photos</option><option value='username'>Author</option></select><select name='order' id='order'><option value='ASC'>Aufsteigend</option><option value='DESC'>Absteigend</option></select>",
+	"uSelect": "<label for='ob'>Sort:</label><select name='ob' id='ob'><option value='username'>Username</option><option value='vorname'>Vorname</option><option value='nachname'>Nachname</option><option value='email'>E-Mail</option><option value='ort'>Ort</option><option value='adresse'>Adresse</option><option value='birthday'>Birthday</option></select><select name='order' id='order'><option value='ASC'>Aufsteigend</option><option value='DESC'>Absteigend</option></select>",
 	"dashBarEnd": "<button type='submit' class='go-button'>Go!</button></form></div>",
 
 	"uViewStart1": "<div class='t-desktop container my-3 d-flex flex-column justify-content-center'>",

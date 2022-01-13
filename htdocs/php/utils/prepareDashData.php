@@ -21,8 +21,10 @@
     $sql= "SELECT * FROM " . $view;
     if (isset($_GET['search'])) {
       $search = $_GET['search'];
-      $sql = $sql . " WHERE (titel LIKE '%" . $search . "%' or text LIKE '%" . $search . "%' or username LIKE '%". $search . "%') and (timestamp > Convert('" . $_GET['vDate'] . "', datetime)) and (timestamp < Convert('" . $_GET['bDate'] . "', datetime))";
-
+      $bDate = date('Y-m-d', strtotime($_GET['bDate'] . ' +1 day'));
+      $sql = $sql . " WHERE (titel LIKE '%" . $search . "%' or text LIKE '%" . $search . "%' or username LIKE '%". $search . "%') and (timestamp > Convert('" . $_GET['vDate'] . "', datetime)) and (timestamp <= Convert('" . $bDate . "', datetime))";
+      // console_log($_GET['bDate']);
+      // console_log(date('Y-m-d', strtotime($_GET['bDate'] . ' +1 day')));
       if (isset($_GET['status'])) {
         $status = intval($_GET['status']);
         if ($status > 0) {
@@ -54,9 +56,9 @@
     }
 
     if (isset($_GET['ob'])) {
-      $sql = $sql . " ORDER BY " . $_GET['ob'] . " DESC ";
+      $sql = $sql . " ORDER BY " . $_GET['ob'] . " " . $_GET['order'];
     } else {
-        $sql = $sql . " ORDER BY timestamp DESC ";
+        $sql = $sql . " ORDER BY timestamp ASC ";
     }
 
     if (isset($_GET['ls'])) {
@@ -64,7 +66,7 @@
     } else {
       $sql = $sql . " LIMIT 1,10";
     }
-    // console_log($sql);
+     // console_log($sql);
 
     include('php/utils/connect.php');
     if($stmt = $conn->prepare($sql)) {

@@ -31,6 +31,7 @@
 
   // Make rows out of database- and uViewDesktop-Fragments
   function createRowU($data, $counter, $a) {
+
     $username = getUserName($data[0]);
     echo $a['row1'] . $counter;
     echo $a['row2'] . $data[1] . $a['row3'] . $data[1] . $a['row4'];
@@ -81,7 +82,7 @@
     }
 
     echo $a['author1'] . $data[4] . $a['author2'];
-    echo $a['date1'] . $data[5] . $a['date2'];
+    echo $a['date1'] . date('Y-m-d H:i', strtotime($data['timestamp'])) . $a['date2'];
     echo $a['TNoptions1'] . $data[0] . $a['TNoptions2'];
 
   }
@@ -90,7 +91,7 @@
     $view = $_GET['view'];
     echo $a['dashBarStart'];
     echo $a['searchDate1'] . date('Y-m-d') . $a['searchDate2'];
-    console_log(date('Y-m-d'));
+    // console_log(date('Y-m-d'));
     switch ($view) {
 
       case 'news':
@@ -115,6 +116,11 @@
     $url = $substring[0] . '&view=' . $view;
     echo $a['url1'] . $url . $a['url2'];
     echo $a['url3'] . $view . $a['url4'];
+    if ($view != 'personal_data') {
+      echo $a['tnSelect'];
+    } else {
+      echo $a['uSelect'];
+    }
     echo $a['dashBarEnd'];
 
   }
