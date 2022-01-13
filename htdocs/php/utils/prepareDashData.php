@@ -19,10 +19,18 @@
   function loadData($startColumn, $view) {
     $counter = 0;
     $sql= "SELECT * FROM " . $view;
+
     if (isset($_GET['search'])) {
       $search = $_GET['search'];
       $bDate = date('Y-m-d', strtotime($_GET['bDate'] . ' +1 day'));
-      $sql = $sql . " WHERE (titel LIKE '%" . $search . "%' or text LIKE '%" . $search . "%' or username LIKE '%". $search . "%') and (timestamp > Convert('" . $_GET['vDate'] . "', datetime)) and (timestamp <= Convert('" . $bDate . "', datetime))";
+
+      if ($view == 'personal_data') {
+        $sql = $sql . " WHERE (vorname LIKE '%" . $search . "%' or nachname LIKE '%" . $search . "%' or plz LIKE '%". $search . "%' or ort LIKE '%" .$search . "%' or strasse LIKE '%" . $search . "%' or hausnummer LIKE '%" . $search . "%' or email LIKE '%" ."%')";
+      } else {
+        $sql = $sql . " WHERE (titel LIKE '%" . $search . "%' or text LIKE '%" . $search . "%' or username LIKE '%". $search . "%')";
+      }
+
+      $sql = $sql . " and (timestamp > Convert('" . $_GET['vDate'] . "', datetime)) and (timestamp <= Convert('" . $bDate . "', datetime))";
       // console_log($_GET['bDate']);
       // console_log(date('Y-m-d', strtotime($_GET['bDate'] . ' +1 day')));
       if (isset($_GET['status'])) {

@@ -184,21 +184,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <div class='t-desktop container my-3 d-flex justify-content-center'>
     <table class='box-1'>
       <tr>
@@ -254,25 +239,38 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
   <div class="t-mobile container-lg my-3 d-flex flex-column justify-content-center">
 
     <div class='dash-bar'>
       <form action='' class='dash-form py-1'>
         <label for='search'>Search: </label>
-        <input type='text' name='searchText'>
-        <br>
+        <input type='text' name='search'>
+        <br class='break'>
         <label for='von'>von:</label>
         <input type='date' name='vDate'>
+        <br class='break'>
         <label for='bis'>bis:</label>
         <input type='date' name='bDate'>
-        <br>
+        <br class='dbreak'>
         <label for='A'>open:</label>
         <input type='checkbox' name='A'>
         <label for='B'>bad closed:</label>
         <input type='checkbox' name='B'>
         <label for='C'>closed:</label>
         <input type='checkbox' name='C'>
-        <br>
+        <br class='break'>
         <label for='ob'>Sort:</label>
         <select name='ob' id='ob'>
           <option value='timestamp'>Datum</option>
@@ -318,38 +316,50 @@
 
 
 
-  <div class="t-mobile container-lg my-3 d-flex justify-content-center">
-    <div class="container-fluid n-card box-1 d-flex p-0">
+  <div class='t-mobile container-lg my-3 d-flex justify-content-center'>
+    <div class='container-fluid n-card box-1 d-flex p-0'>
 
-      <div class="nph-card-content p-2">
-        <img class="p-1" src="upload/0105214015446.png" alt="preview">
-        <img class="p-1" src="upload/0105214015446.png" alt="preview">
-        <img class="p-1" src="upload/0105214015446.png" alt="preview">
-        <img class="p-1" src="upload/0105214015446.png" alt="preview">
-        <img class="p-1" src="upload/0105214015446.png" alt="preview">
-        <img class="p-1" src="upload/0105214015446.png" alt="preview">
+      <div class='nph-card-content p-2'>
+        <img class='p-1' src='upload/0105214015446.png' alt='preview'>
       </div>
 
-      <div class="nt-card-content p-1">
-        <h4 class="td-overflow my-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde neque repellat, velit totam. Quod molestias, mollitia laudantium soluta nulla maiores ipsam animi libero repellendus. Ducimus odio soluta molestias optio maxime, qui doloribus laudantium incidunt, provident eaque assumenda perspiciatis iusto dolorem, cupiditate numquam et reiciendis? Excepturi quidem doloremque velit, incidunt, fuga cum aut omnis in neque consectetur at similique, nisi est veritatis dicta ad! Vero autem minus soluta fugit recusandae ratione doloribus vitae, velit aspernatur fugiat porro architecto omnis itaque excepturi eligendi at explicabo. Eveniet, incidunt aliquid quod ipsa distinctio dolores cum veniam mollitia dolore maxime, eos eligendi a libero aperiam.</h4>
-        <p class="td-of-webkit mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde neque repellat, velit totam. Quod molestias, mollitia laudantium soluta nulla maiores ipsam animi libero repellendus. Ducimus odio soluta molestias optio maxime, qui doloribus laudantium incidunt, provident eaque assumenda perspiciatis iusto dolorem, cupiditate numquam et reiciendis? Excepturi quidem doloremque velit, incidunt, fuga cum aut omnis in neque consectetur at similique, nisi est veritatis dicta ad! Vero autem minus soluta fugit recusandae</p>
-
-        <p class="mb-0">2002-12-31-13:45</p>
-        <p class="mb-0">admin</p>
+      <div class='nt-card-content p-1'>
+        <h4 class='td-overflow my-1'>Lorem ipsum dolor.</h4>
+        <p class='td-of-webkit mb-0'>Lorem ipsmtias, </p>
+        <p class='mb-0'>2002-12-31-13:45</p>
+        <p class='mb-0'>admin</p>
       </div>
 
-      <div class="ni-card-content p-1 py-4 d-flex flex-column align-items-center">
-        <i class="material-icons" style="font-size:36px;">highlight_off</i>
-        <i class="material-icons mt-auto" style="font-size:36px;">edit_note</i>
+      <div class='ni-card-content p-1 py-4 d-flex flex-column align-items-center'>
+        <button class=' material-icons p-1 tn-options' name='delete_row' id='delete_row'>highlight_off</button>
+        <button class=' material-icons p-1 tn-options' name='delete_row' id='delete_row'>edit_note</button>
       </div>
 
     </div>
   </div>
 
 
+  <div class='changeDevice mobile'>
+    <button id='chDevice'>Mobile Ansicht</button>
+  </div>
 
+  <div class='changeDevice desktop'>
+    <button id='chDevice'>Desktop Ansicht</button>
+  </div>
 
+  <script>
+    var btn = document.getElementById('chDevice');
+    btn.onclick = function() {
+      var Ucookie = document.cookie.split('; ').find(row => row.startsWith('device')).split('=')[1];
 
+      if(Ucookie == 'mobile') {
+        document.cookie = 'device=desktop';
+      } else {
+        document.cookie = 'device=mobile';
+      }
+      window.location.href=window.location.href;
+    }
+  </script>
 
 
 

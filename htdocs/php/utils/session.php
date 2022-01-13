@@ -10,4 +10,5 @@ if (!isset($_SESSION['user'])) {   // if not logged in, in this session,
       setcookie('level', 0, time()+3600*24);
     }
 }
+
 ?>

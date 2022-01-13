@@ -1,0 +1,18 @@
+{
+	"dashBarStart": "<div class='dash-bar'><form action='dash-bar-search.php' class='dash-form py-1' method='POST'>",
+	"searchDate1": "<label for='search'>Search: </label><input type='text' name='search' value=''><br class='break'><label for='von'>von:</label><input type='date' name='vDate' value='2022-01-01'><br class='break'><label for='bis'>bis:</label><input type='date' name='bDate' value='",
+	"searchDate2": "'><br class='dbreak'>",
+	"optionA1": "<label for='A'>",
+	"optionA2": ":</label><input type='checkbox' name='A' checked>",
+	"optionB1": "<label for='B'>",
+	"optionB2": ":</label><input type='checkbox' name='B' checked>",
+	"optionC1": "<label for='C'>",
+	"optionC2": ":</label><input type='checkbox' name='C' checked><br class='break'>",
+	"url1": "<input type='hidden' name='url' value='",
+	"url2": "'>",
+	"url3": "<input type='hidden' name='view' value='",
+	"url4": "'>",
+	"tnSelect": "<label for='ob'>Sort:</label><select name='ob' id='ob'><option value='timestamp'>Datum</option><option value='status'>Status</option><option value='titel'>Titel</option><option value='text'>Text</option><option value='photo_id'>Photos</option><option value='username'>Author</option></select><select name='order' id='order'><option value='ASC'>Aufsteigend</option><option value='DESC'>Absteigend</option></select>",
+	"uSelect": "<label for='ob'>Sort:</label><select name='ob' id='ob'><option value='vorname'>Vorname</option><option value='nachname'>Nachname</option><option value='email'>E-Mail</option><option value='plz'>Ort</option><option value='adresse'>Adresse</option><option value='birthday'>Birthday</option></select><select name='order' id='order'><option value='ASC'>Aufsteigend</option><option value='DESC'>Absteigend</option></select>",
+	"dashBarEnd": "<button type='submit' class='go-button'>Go!</button></form></div>"
+}

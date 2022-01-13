@@ -6,6 +6,7 @@
   }
 
   include('php/utils/prepareDashData.php');
+  include('php/utils/dashUtils.php');
 
   // Decide on displaying News/Tickets or User-Data
   $result = loadData(0, $view);
@@ -17,9 +18,9 @@
 
   // Prepare User-Dashboard
   function prepareDesktopU($data) {
-    $a = getViewJson();
+    $a = getJson('desktop');
     echo $a['uViewStart1'];
-    initializeDashBar($a);
+    initializeDashBar();
     echo $a['uViewStart2'];
     $counter = -1;
     foreach ($data as $key) {
@@ -27,6 +28,7 @@
       $counter *= -1;
     }
     echo $a['end'];
+    echo $a['changeDevice'];
   }
 
   // Make rows out of database- and uViewDesktop-Fragments
@@ -47,9 +49,9 @@
 
   // Prepare TicketsNews-Dashboard
   function prepareDesktopTN($data) {
-    $a = getViewJson();
+    $a = getJson('desktop');
     echo $a['tnViewStart1'];
-    initializeDashBar($a);
+    initializeDashBar();
     echo $a['tnViewStart2'];
     // console_log($data);
     $counter = 1;
@@ -59,6 +61,7 @@
       $counter++;
     }
     echo $a['end'];
+    echo $a['changeDevice'];
   }
 
   // Make rows out of database- and tnViewDesktop-Fragments
@@ -85,56 +88,6 @@
     echo $a['date1'] . date('Y-m-d H:i', strtotime($data['timestamp'])) . $a['date2'];
     echo $a['TNoptions1'] . $data[0] . $a['TNoptions2'];
 
-  }
-
-  function initializeDashBar($a) {
-    $view = $_GET['view'];
-    echo $a['dashBarStart'];
-    echo $a['searchDate1'] . date('Y-m-d') . $a['searchDate2'];
-    // console_log(date('Y-m-d'));
-    switch ($view) {
-
-      case 'news':
-        break;
-
-      case 'tickets':
-        echo $a['optionA1'] . 'open' . $a['optionA2'];
-        echo $a['optionB1'] . 'bad close' . $a['optionB2'];
-        echo $a['optionC1'] . 'good close' . $a['optionC2'];
-        break;
-
-      case 'personal_data':
-        echo $a['optionA1'] . 'Guest' . $a['optionA2'];
-        echo $a['optionB1'] . 'Service' . $a['optionB2'];
-        echo $a['optionC1'] . 'Admin' . $a['optionC2'];
-        break;
-
-      default:
-        break;
-    }
-    $substring = explode('&', $_SERVER['REQUEST_URI']);
-    $url = $substring[0] . '&view=' . $view;
-    echo $a['url1'] . $url . $a['url2'];
-    echo $a['url3'] . $view . $a['url4'];
-    if ($view != 'personal_data') {
-      echo $a['tnSelect'];
-    } else {
-      echo $a['uSelect'];
-    }
-    echo $a['dashBarEnd'];
-
-  }
-
-  function getViewJson() {
-    $json_a = file_get_contents('php/sites/dashboard/viewDesktop.json');
-    return json_decode($json_a, true);
-  }
-
-  function getUserName($ID) {
-    include('php/utils/connect.php');
-    $stmt = $conn->prepare("SELECT username FROM user WHERE ID=".$ID);
-    $stmt->execute();
-    return $stmt->fetchColumn();
   }
 
   include('js/modal.php');

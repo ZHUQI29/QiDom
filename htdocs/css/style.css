@@ -24,7 +24,7 @@ body {
   background: black;
 }
 
-h1 {
+h1, h4 {
   color: var(--main-color);
 }
 
@@ -289,11 +289,12 @@ fieldset {
   min-width: 100%;
 }
 
-.dash-form input {
+.dash-form input, select {
   background: var(--dark-shade);
   color: var(--light-shade);
   border: 1px solid var(--light-shade);
 }
+
 
 .go-button {
   margin-left: 10px;
@@ -328,6 +329,18 @@ th {
 }
 @media (min-width: 980px) {
   .t-mobile {
+    display: none !important;
+  }
+}
+
+
+@media (min-width: 980px) {
+  .break {
+    display: none !important;
+  }
+}
+@media (min-width: 1350px) {
+  .dbreak {
     display: none !important;
   }
 }
@@ -381,8 +394,8 @@ th {
   width: 100%;
 }
 .nt-card-content {
-  min-width: 50vw;
-  max-width: 75vw;
+  min-width: 30vw;
+  max-width: 70vw;
 }
 .ni-card-content {
   min-width: 40px;
@@ -426,6 +439,41 @@ table p {
   margin: 0;
 }
 
+
+/* CHANGE DEVICE */
+.changeDevice {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.changeDevice button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25vw;
+  height: 10vh;
+  background: var(--dark-shade);
+  border: none;
+  margin-bottom: 5px;
+  text-decoration: none;
+  color: var(--main-color);
+  font-size: 1.5rem;
+}
+
+@media (min-width: 980px) {
+  .mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 980px) {
+  .desktop {
+    display: none;
+  }
+}
 
 /* MODAL (POPUP) */
 .confirm-modal {

@@ -2,16 +2,21 @@
 
 <?php
   $view = isset($_GET['view']) ? $_GET['view'] : 'tickets';
-  $desktop = 'desktop';
+  if (isset($_COOKIE['device'])) {
+    $device = $_COOKIE['device'];
+  } else {
+    $device = 'mobile';
+    setcookie('device', $device, time()+3600*12);
+  }
 
-  switch ($desktop) {
+  switch ($device) {
 
     case 'desktop':
       include('php/sites/dashboard/load-desktop.php');
       break;
 
     case 'mobile':
-      // include('load-tickets.php');
+      include('php/sites/dashboard/load-mobile.php');
       break;
 
 
