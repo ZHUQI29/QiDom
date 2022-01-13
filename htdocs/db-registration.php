@@ -66,7 +66,6 @@
               echo "<script>window.location.href='index.php?site=welcome&';</script>";
             }
 
-
             if ($registrationProcess == 2) {
               // success!
               $conn = null; // close connection

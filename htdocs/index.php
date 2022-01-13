@@ -19,7 +19,7 @@
                   "contact" => "php/sites/contact.php",
                   "news" => "php/sites/upload.php",
                   "tickets" => "php/sites/upload.php",
-                  "dashboard" => "php/sites/dashboard.php", // not needed
+                  "dashboard" => "php/sites/dashboard.php",
                   "logout" => "php/sites/logout.php",
                   "users" => "php/sites/All-User.php",
                   "profile" => "db-profil.php",

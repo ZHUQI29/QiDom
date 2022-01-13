@@ -14,7 +14,6 @@
     }
   }
 
-
   // get data from database, based on $_GET['view']
   function loadData($startColumn, $view) {
     $counter = 0;
@@ -94,7 +93,7 @@
 
   // SELECT * FROM `tickets`
   // WHERE
-  // (titel LIKE '%d%' or text LIKE '%d%' or username LIKE '%d%')
+  // (titel LIKE '%%' or text LIKE '%%' or username LIKE '%%')
   // and
   // (timestamp > Convert('2022-01-08', datetime))
   // and

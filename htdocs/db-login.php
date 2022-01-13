@@ -33,10 +33,12 @@
                       setcookie('level', '1', time()+3600*24*30);
                       setcookie('user', $username, time()+3600*24*30);
                       break;
+
                     case '2':
                       setcookie('level', '2', time()+3600*24);
                       setcookie('user', $username, time()+3600*24);
                       break;
+                      
                     case '3':
                       setcookie('level', '3', time()+3600*12);
                       setcookie('user', $username, time()+3600*12);

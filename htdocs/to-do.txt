@@ -34,7 +34,7 @@ x Passwörter sind gehasht in der Datenbank gespeichert.
 --------
 | USER |
 --------
-- Es gibt 4 verschiedene Zustände für User: anonym (nicht eingeloggt), Gast (registrierter User), Administrator*in, Servicetechniker (nur im 2er Team))
+x Es gibt 4 verschiedene Zustände für User: anonym (nicht eingeloggt), Gast (registrierter User), Administrator*in, Servicetechniker (nur im 2er Team))
 - Alle Usertypen können Hilfebereich, Impressum und die Newsbeiträge auf der Startseite einsehen.
 - Der Login Status ist permanent auf der Seite sichtbar und eingeloggte Nutzer können sich ausloggen.
 x Auf Basis des Usertyps (Gast, Administrator*in, Servicetechniker*in) werden auf der Website verschiedene Features freigeschalten.
@@ -50,11 +50,11 @@ x Administrator*innen können News-Beiträge posten inkl. Bildupload.
 -------------
 - Administrator*innen können User-Accounts für Gäste und Servicetechniker*innen anlegen.
 - Administrator*innen können neue Gäste anlegen, Gäste deaktivieren, News-Beiträge erstellen und löschen.
-- Administrator*innen haben eine Userverwaltung (übersicht bestehender und deaktivieren einzelner Nutzer).
+x Administrator*innen haben eine Userverwaltung (übersicht bestehender und deaktivieren einzelner Nutzer).
 - Administrator*innen haben eine News-Beiträgeübersicht in der Sie alle News-Beiträge bearbeiten und in einer Liste filtern können.
 - Administrator*innen können Servicetechniker*innen anlegen und deaktivieren.
 - Administrator*innen können alle User bearbeiten.
-- Administrator*innen können alle Tickets einsehen.
+x Administrator*innen können alle Tickets einsehen.
 - Servicetechniker*innen haben eine ticketübersicht in der Sie Tickets bearbeiten und in einer Liste filtern können.
 - Servicetechniker*innen können Tickets aller Gäste einsehen und den Status der Tickets ändern.
 - Servicetechniker*innen können den Status von Tickets ändern (z.B. "erfolgreich abgeschlossen")

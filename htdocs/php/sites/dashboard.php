@@ -1,5 +1,4 @@
 <?php //include('_BIN/console.php'); ?>
-
 <?php
   $view = isset($_GET['view']) ? $_GET['view'] : 'tickets';
   if (isset($_COOKIE['device'])) {
@@ -10,7 +9,6 @@
   }
 
   switch ($device) {
-
     case 'desktop':
       include('php/sites/dashboard/load-desktop.php');
       break;
@@ -19,9 +17,7 @@
       include('php/sites/dashboard/load-mobile.php');
       break;
 
-
     default:
-      // code...
       break;
   }
 ?>
