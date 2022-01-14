@@ -11,7 +11,8 @@
   // Decide on displaying News/Tickets or User-Data
   $result = loadData(0, $view);
   prepareMobile($result);
-
+  createNextPageBtn();
+  
   // Prepare User-Dashboard
   function prepareMobile($data) {
     $a = getJson('mobile');

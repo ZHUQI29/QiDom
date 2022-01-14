@@ -28,6 +28,24 @@ h1, h4 {
   color: var(--main-color);
 }
 
+button {
+  /* display: flex; */
+  /* justify-content: center;
+  align-items: center; */
+  background: var(--dark-shade);
+  border: none;
+  color: var(--main-color);
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+}
+
+button:hover {
+  box-shadow: 0 0 30px var(--main-color);
+  color: var(--light-shade);
+}
+
 .qd-bg-dark {
   background: var(--dark-shade);
 }
@@ -440,6 +458,18 @@ table p {
 }
 
 
+/* LOAD NEXT DASHBOARD PAGE */
+.next-page button {
+  width: 70px;
+  height: 30px;
+  border: 1px solid var(--light-shade);
+  font-size: 30px;
+}
+.next-page form {
+  width: 100%;
+}
+
+
 /* CHANGE DEVICE */
 .changeDevice {
   width: 100%;
@@ -532,10 +562,11 @@ table p {
 }
 
 #confirm_modal {
-
   width: 40%;
   margin: 0 auto;
   border: 1px solid var(--t-status-2);
   background: rgba(255,255,255,0.9);
-
 }
+
+
+/* NEWSVIEW */

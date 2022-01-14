@@ -14,5 +14,10 @@
 	"url4": "'>",
 	"tnSelect": "<label for='ob'>Sort:</label><select name='ob' id='ob'><option value='timestamp'>Datum</option><option value='status'>Status</option><option value='titel'>Titel</option><option value='text'>Text</option><option value='photo_id'>Photos</option><option value='username'>Author</option></select><select name='order' id='order'><option value='ASC'>Aufsteigend</option><option value='DESC'>Absteigend</option></select>",
 	"uSelect": "<label for='ob'>Sort:</label><select name='ob' id='ob'><option value='vorname'>Vorname</option><option value='nachname'>Nachname</option><option value='email'>E-Mail</option><option value='plz'>Ort</option><option value='strasse'>Adresse</option><option value='birthday'>Birthday</option></select><select name='order' id='order'><option value='ASC'>Aufsteigend</option><option value='DESC'>Absteigend</option></select>",
-	"dashBarEnd": "<button type='submit' class='go-button'>Go!</button></form></div>"
+	"dashBarEnd": "<button type='submit' class='go-button'>Go!</button></form></div>",
+
+	"nextPage1": "<div class='next-page container d-flex'><form action='dash-bar-search.php' method='post' class='d-flex ms-auto'><input type='hidden' name='url' value='",
+	"nextPage2": "'><input type='hidden' name='view' value='",
+	"nextPage3": "'><input type='hidden' name='le' value='",
+	"nextPage4": "'><button type='submit' class='material-icons ms-auto' id='nextPage' >expand_more</button></form></div>"
 }

@@ -29,7 +29,7 @@
     }
 
     $substring = explode('&', $_SERVER['REQUEST_URI']);
-    $url = $substring[0] . '&view=' . $view;
+    $url = $_SERVER['REQUEST_URI'];//$substring[0] . '&view=';
     echo $d['url1'] . $url . $d['url2'];
     echo $d['url3'] . $view . $d['url4'];
 
@@ -70,5 +70,37 @@
     $stmt = $conn->prepare("SELECT username FROM user WHERE ID=".$ID);
     $stmt->execute();
     return $stmt->fetchColumn();
+  }
+
+  function changeURL($getVar, $newValue) {
+    $url = explode('&', $_SERVER['REQUEST_URI']);
+    foreach ($url as $key => $value) {
+      if (substr_compare($value, $getVar, 0, 2) == 0) {
+        $url[$key] = $getVar . '=' . $newValue;
+      }
+    }
+    $newURI = '';
+    foreach ($url as $key => $value) {
+      $newURI = ($newURI == '') ? $value : $newURI . "&" . $value;
+    }
+    return $newURI;
+
+  }
+
+  function createNextPageBtn() {
+    $d = getJson('dashbar');
+    $url = $_SERVER['REQUEST_URI'];
+
+    if (isset($_GET['le'])) {
+      $le = intval($_GET['le']) + 10;
+      $url = changeURL('le', $le);
+
+    } else {
+      $le = 20;
+    }
+    echo $d['nextPage1'] . $url;
+    echo $d['nextPage2'] . $_GET['view'];
+    echo $d['nextPage3'] . $le;
+    echo $d['nextPage4'];
   }
  ?>

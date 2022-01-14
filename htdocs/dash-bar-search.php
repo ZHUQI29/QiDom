@@ -1,49 +1,69 @@
 <?php //include('_BIN/console.php'); ?>
 <?php
 
-$url = $_POST['url'];
-$view = $_POST['view'];
+  $view = $_POST['view'];
+  $url = $_POST['url'];
 
   if (isset($_POST['search'])) {
-    $url = $url . '&search=' . $_POST['search'];
+    $url = checkURL('search', $_POST['search'], $url);
   }
 
   if (isset($_POST['vDate'])) {
-    $url = $url . '&vDate=' . $_POST['vDate'];
+    $url = checkURL('vDate', $_POST['vDate'], $url);
   }
 
   if (isset($_POST['bDate'])) {
-    $url = $url . '&bDate=' . $_POST['bDate'];
+    $url = checkURL('bDate', $_POST['bDate'], $url);
   }
 
   if (isset($_POST['A']) || isset($_POST['B']) || isset($_POST['C']) ) {
-    $url = $url . '&status=';
+    $status = '';
     if (isset($_POST['A'])) {
-      $url = $url . '1';
+      $status = $status . '1';
     } else {
-      $url = $url . '0';
+      $status = $status . '0';
     }
     if (isset($_POST['B'])) {
-      $url = $url . '1';
+      $status = $status . '1';
     } else {
-      $url = $url . '0';
+      $status = $status . '0';
     }
     if (isset($_POST['C'])) {
-      $url = $url . '1';
+      $status = $status . '1';
     } else {
-      $url = $url . '0';
+      $status = $status . '0';
     }
+    $url = checkURL('status', $status, $url);
   }
 
-  // console_log($_POST);
-  if (isset($_POST['ls'])) {
-    $url = $url . '&ls=' . $_POST['ls'] . '&le=' . $POST['le'];
+  if (isset($_POST['le'])) {
+    $url = checkURL('le', $_POST['le'], $url);
   }
 
   if (isset($_POST['ob'])) {
-    $url = $url . '&ob=' . $_POST['ob'] . '&order=' . $_POST['order'];
+    $url = checkURL('ob', $_POST['ob'], $url);
   }
-
+  
   echo "<script>window.location.href='". $url ."';</script>";
+
+  function checkURL($getVar, $newValue, $url) {
+    $url = explode('&', $url);
+    $checker = 0;
+    foreach ($url as $key => $value) {
+      if (substr_compare($value, $getVar, 0, 2) == 0) {
+        $url[$key] = $getVar . '=' . $newValue;
+        $checker++;
+      }
+    }
+    $newURI = '';
+    foreach ($url as $key => $value) {
+      $newURI = ($newURI == '') ? $value : $newURI . "&" . $value;
+    }
+    if ($checker == 0) {
+      $newURI = $newURI . $getVar . '=' . $newValue;
+    }
+
+    return $newURI;
+  }
 
  ?>

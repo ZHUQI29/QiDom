@@ -1,4 +1,4 @@
-<?php include('_BIN/console.php'); ?>
+<?php //include('_BIN/console.php'); ?>
 <?php
   if ($_COOKIE['level'] != '3')
   {
@@ -15,6 +15,7 @@
   } else {
     prepareDesktopTN($result);
   }
+  createNextPageBtn();
 
   // Prepare User-Dashboard
   function prepareDesktopU($data) {
@@ -87,6 +88,16 @@
     echo $a['TNoptions1'] . $data['ID'] . $a['TNoptions2'];
   }
 
+
   include('js/modal.php');
 
  ?>
+
+ <!-- <div class='next-page container d-flex'>
+   <form action='dash-bar-search.php' method='post' class='d-flex ms-auto'>
+     <input type='hidden' name='url' value='index.php?site=dashboard&view='>
+     <input type='hidden' name='view' value='news'>
+     <input type='hidden' name='le' value='20'>
+     <button type='submit' class='material-icons ms-auto' id='nextPage' >expand_more</button>
+   </form>
+ </div> -->

@@ -68,12 +68,12 @@
         $sql = $sql . " ORDER BY timestamp ASC ";
     }
 
-    if (isset($_GET['ls'])) {
-      $sql = $sql . " LIMIT " . $_GET['ls'] . "," . $_GET['le'] ;
+    if (isset($_GET['le'])) {
+      $sql = $sql . " LIMIT 1," . $_GET['le'] ;
     } else {
       $sql = $sql . " LIMIT 1,10";
     }
-     // console_log($sql);
+    //console_log($sql);
 
     include('php/utils/connect.php');
     if($stmt = $conn->prepare($sql)) {
