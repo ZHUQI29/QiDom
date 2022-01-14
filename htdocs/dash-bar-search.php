@@ -43,7 +43,7 @@
   if (isset($_POST['ob'])) {
     $url = checkURL('ob', $_POST['ob'], $url);
   }
-  
+
   echo "<script>window.location.href='". $url ."';</script>";
 
   function checkURL($getVar, $newValue, $url) {
@@ -60,7 +60,7 @@
       $newURI = ($newURI == '') ? $value : $newURI . "&" . $value;
     }
     if ($checker == 0) {
-      $newURI = $newURI . $getVar . '=' . $newValue;
+      $newURI = $newURI . '&' . $getVar . '=' . $newValue;
     }
 
     return $newURI;

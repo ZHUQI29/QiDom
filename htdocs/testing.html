@@ -12,7 +12,6 @@
 </head>
 
 <body>
-
   <!-- Bootstrap Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
@@ -46,104 +45,115 @@
     <img src="../img/banner.png" alt="cool banner" class="img-fluid">
   </div>
 
+  <div class="container-fluid login-container">
+    <form class="qd-bg-light reg-form-con d-lg-flex justify-content-center"name="registration" action="db-registration.php" method="POST">
+      <div class="d-flex flex-column align-items-center justify-content-between">
+        <fieldset class="mx-3">
+          <legend>Login</legend>
+          <br>
+          <br>
+          <label for="username">Username: </label>
+          <br>
+          <input type="text" id="username" name="username" value="">
+          <br>
+          <label for="password">Passwort: </label>
+          <br>
+          <input type="password" id="password1" name="password1" value="" onkeyup="checkPasswordMatch()">
+          <br>
+          <label for="password2">Wiederholen: </label>
+          <br>
+          <input type="password" id="password2" name="password2" value="" onkeyup="checkPasswordMatch()">
+          <br>
+          <span id='pw-message'> </span>
+
+          <?php
+          if (isset($_COOKIE['level']) && $_COOKIE['level'] == '3') {
+            include('php/misc/regStatusSelect.php');
+          }
+           ?>
+
+        </fieldset>
+        <input class="submit-button mt-3 mb-5 mb-lg-auto" type="submit" name="registration" value="REGISTRATION">
+      </div>
+
+      <div>
+        <fieldset class="mx-3">
+            <legend>Persönliche Daten</legend>
+            <label for="anrede">Anrede:</label>
+            <br>
+            <select name="anrede" id="anrede">
+              <option value="---">-----</option>
+              <option value="Herr">Herr</option>
+              <option value="Frau">Frau</option>
+              <option value="Divers">Divers</option>
+            </select>
+            <br>
+            <label for="vorname">Vorname:</label>
+            <br>
+            <input type="text" id="vorname" name="vorname" value="">
+            <br>
+            <label for="nachname">Nachname:</label>
+            <br>
+            <input type="text" id="nachname" name="nachname" value="">
+            <br>
+            <label for="email">Email-Adresse:</label>
+            <br>
+            <input type="email" id="email" name="email" value="">
+            <br>
+            <label for="strasse">Straße:</label>
+            <br>
+            <input type="text" id="strasse" name="strasse" value="">
+            <br>
+            <label for="hausnummer">Hausnummer:</label>
+            <br>
+            <input type="text" id="hausnummer" name="hausnummer" value="">
+            <br>
+            <label for="plz" id='plz-message' >PLZ:</label>
+            <br>
+            <input type="text" id="plz" name="plz" value="" onkeyup="checkPlz()">
+            <br>
+            <label for="ort">Ort:</label>
+            <br>
+            <input type="text" id="ort" name="ort" value="">
+            <br>
+            <label for="bday">Geburtstag:</label>
+            <br>
+            <input type="date" id="bday" name="bday" value="">
+
+        </fieldset>
+      </div>
 
 
-  <div class="container">
+        <!-- <h1>username<input type="text" name="username"></h1>
+        <h1>password<input type="password" name="password"></h1>
+        <h1>re-enter<input type="password_Re" name="password_Re"></h1> -->
+
+
+    </form>
+
+    <script type="text/javascript">
+    var checkPasswordMatch = function() {
+      if (document.getElementById('password1').value ==
+        document.getElementById('password2').value) {
+        document.getElementById('pw-message').style.color = 'green';
+        document.getElementById('pw-message').innerHTML = 'ok';
+      } else {
+        document.getElementById('pw-message').style.color = 'red';
+        document.getElementById('pw-message').innerHTML = 'no match';
+      }
+    }
+    var checkPlz = function() {
+      if (document.getElementById('plz').value < 0 || document.getElementById('plz').value > 99999) {
+        document.getElementById('plz-message').style.color = 'red';
+        document.getElementById('plz-message').innerHTML = ' ungültige PLZ';
+      } else {
+        document.getElementById('plz-message').style.color = 'white';
+        document.getElementById('plz-message').innerHTML = 'PLZ:';
+      }
+    }
+    </script>
 
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <script>
-  // Get the modal
-  var modal = document.getElementById("confirm_delete");
-
-  // Get the button that opens the modal
-  var del_row = document.getElementById("delete_row");
-
-  // Get the <Close-Button> element that closes the modal
-  var cls_btn = document.getElementById("close_modal");
-
-  // Get the <Confirm-Button> element that refreshes the page with added $_GET['del']
-  var cnfm_btn = document.getElementById("confirm_modal");
-
-
-  console.log(del_row.classList[0]);
-  console.log(window.location.href);
-  // When the user clicks on the button, open the modal
-  del_row.onclick = function() {
-  modal.style.display = "block";
-  }
-
-  // When the user clicks on <Close-Button> (x), close the modal
-  cls_btn.onclick = function() {
-  modal.style.display = "none";
-  }
-
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-
-  // When the user clicks on <Confirm-Button>, refresh page with $_GET['del']
-  cnfm_btn.onclick = function() {
-  var url = window.location.href;
-  var extension = "&del=".concat(del_row.classList[0]);
-  url = url.concat(extension);
-  window.location.href = url;
-  }
-
-
-  }
-  </script>
-
-
-  <script>
-    var btn = document.getElementById('chDevice');
-    btn.onclick = function() {
-      var Ucookie = document.cookie.split('; ').find(row => row.startsWith('device')).split('=')[1];
-
-      if(Ucookie == 'mobile') {
-        document.cookie = 'device=desktop';
-      } else {
-        document.cookie = 'device=mobile';
-      }
-      window.location.href=window.location.href;
-    }
-  </script>
-
-
 
 </body>
 

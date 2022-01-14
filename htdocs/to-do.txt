@@ -48,7 +48,7 @@ x Administrator*innen können News-Beiträge posten inkl. Bildupload.
 -------------
 | DASHBOARD |
 -------------
-- Administrator*innen können User-Accounts für Gäste und Servicetechniker*innen anlegen.
+x Administrator*innen können User-Accounts für Gäste und Servicetechniker*innen anlegen.
 - Administrator*innen können neue Gäste anlegen, Gäste deaktivieren, News-Beiträge erstellen und löschen.
 x Administrator*innen haben eine Userverwaltung (übersicht bestehender und deaktivieren einzelner Nutzer).
 - Administrator*innen haben eine News-Beiträgeübersicht in der Sie alle News-Beiträge bearbeiten und in einer Liste filtern können.

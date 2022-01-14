@@ -28,7 +28,7 @@
         break;
     }
 
-    $substring = explode('&', $_SERVER['REQUEST_URI']);
+    // $substring = explode('&', $_SERVER['REQUEST_URI']);
     $url = $_SERVER['REQUEST_URI'];//$substring[0] . '&view=';
     echo $d['url1'] . $url . $d['url2'];
     echo $d['url3'] . $view . $d['url4'];
@@ -38,9 +38,7 @@
     } else {
       echo $d['uSelect'];
     }
-
     echo $d['dashBarEnd'];
-
   }
 
   function getJson($file) {

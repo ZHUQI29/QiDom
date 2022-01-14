@@ -22,7 +22,8 @@
     $a = getJson('desktop');
     echo $a['uViewStart1'];
     initializeDashBar();
-    echo $a['uViewStart2'];
+    echo $a['uViewStart2'] . $_GET['view'] . $a['uViewStart3'];
+
     $counter = -1;
     foreach ($data as $key) {
       createRowU($key, $counter, $a);
@@ -30,6 +31,7 @@
     }
     echo $a['end'];
     echo $a['changeDevice'];
+    include('js/addBtn.php');
   }
 
   // Make rows out of database- and uViewDesktop-Fragments
@@ -52,7 +54,7 @@
     $a = getJson('desktop');
     echo $a['tnViewStart1'];
     initializeDashBar();
-    echo $a['tnViewStart2'];
+    echo $a['tnViewStart2'] . $_GET['view'] . $a['tnViewStart3'];
     $counter = 1;
     foreach ($data as $key) {
       if (isset($key[5])) {$key[5] = null;}
@@ -61,6 +63,7 @@
     }
     echo $a['end'];
     echo $a['changeDevice'];
+    include('js/addBtn.php');
   }
 
   // Make rows out of database- and tnViewDesktop-Fragments

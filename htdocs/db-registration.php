@@ -1,4 +1,5 @@
 <?php
+    //include('_BIN/console.php');
     //header("Content-Type: text/html; charset=utf8");
     include('php/utils/connect.php');
 
@@ -12,7 +13,7 @@
           echo "<script>window.location.href='index.php?site=registration';</script>";
         }
         $id=random_int(100000, 999999);
-        $level=0;
+        $level= $_POST['status'];
 
         // personal data
         $gAnrede = $_POST['anrede'];

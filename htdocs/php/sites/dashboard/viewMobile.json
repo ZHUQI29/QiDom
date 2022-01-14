@@ -1,5 +1,7 @@
 {
 	"mobileStart": "<div class='t-mobile container-lg my-3 d-flex flex-column  justify-content-center'>",
+	"addBtn1":"<button id='addBtn' class='",
+	"addBtn2":" add-button ms-auto me-1'>+</button>",
 	"container": "<div class='container-fluid n-card box-1 d-flex m-1 p-0'>",
 	"photo1": "<div class='nph-card-content p-2'>",
 	"photo2": "<img class='p-1' src='",

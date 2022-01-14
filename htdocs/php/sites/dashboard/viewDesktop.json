@@ -1,6 +1,7 @@
 {
 	"uViewStart1": "<div class='t-desktop container my-3 d-flex flex-column justify-content-center'>",
-	"uViewStart2": "<table class = 'box-1'><tr><th>S</th><th>Username</th><th>Vorname</th><th>Nachname</th><th>Email</th><th>Ort</th><th>Adresse</th><th>Birthday</th><th></th></tr>",
+	"uViewStart2": "<table class = 'box-1'><tr><th>S</th><th>Username</th><th>Vorname</th><th>Nachname</th><th>Email</th><th>Ort</th><th>Adresse</th><th>Birthday</th><th><button id='addBtn' class='",
+	"uViewStart3": " add-button ms-auto me-1'>+</button></th></tr>",
 	"row1": "<tr class='row-",
 	"row2": "'><td class='status-",
 	"row3": "'>",
@@ -13,7 +14,8 @@
 	"end": "</table></div>",
 
 	"tnViewStart1": "<div class='t-desktop container my-3 d-flex flex-column justify-content-center'>",
-	"tnViewStart2": "<table class = 'box-1'><tr><th></th><th>Titel</th><th>Text</th><th>Photos</th><th>Author</th><th>Time</th><th>Options</th></tr>",
+	"tnViewStart2": "<table class = 'box-1'><tr><th></th><th>Titel</th><th>Text</th><th>Photos</th><th>Author</th><th>Time</th><th><button id='addBtn' class='",
+	"tnViewStart3": " add-button ms-auto me-1'>+</button></th></tr>",
 	"titel1": "<td class='tdn-title'> <div ><p class = 'td-of-webkit' > ",
 	"titel2": "</p></div></td>",
 	"text1": "<td class='tdn-text'> <div ><p class = 'td-of-webkit' > ",

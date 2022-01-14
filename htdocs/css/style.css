@@ -236,6 +236,16 @@ button:hover {
   text-decoration: none;
 }
 
+.reg-form-con {
+  min-width: 50vw;
+}
+
+@media (min-width: 1350px) {
+  .reg-form-con {
+    min-width: 40%
+  }
+}
+
 
 form {
   color: var(--main-color);
@@ -322,6 +332,13 @@ fieldset {
   color: var(--light-shade);
 }
 
+.add-button {
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--main-color);
+  /* background: rgba(255,255,255,0.1); */
+}
+
 table {
   color: white;
 }
@@ -331,7 +348,7 @@ table, td, th, tr{
 }
 
 th, td {
-  padding: 4px 10px 5px 5px;
+  padding: 4px 5px ;
   vertical-align: top;
 
 }
@@ -460,13 +477,14 @@ table p {
 
 /* LOAD NEXT DASHBOARD PAGE */
 .next-page button {
-  width: 70px;
-  height: 30px;
+  width: 100px;
+  height: 45px;
   border: 1px solid var(--light-shade);
-  font-size: 30px;
+  font-size: 3rem;
 }
 .next-page form {
   width: 100%;
+  background-color: transparent;
 }
 
 
@@ -478,6 +496,8 @@ table p {
   justify-content: center;
   align-items: center;
 }
+
+
 
 .changeDevice button {
   display: flex;

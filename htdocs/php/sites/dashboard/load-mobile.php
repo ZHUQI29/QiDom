@@ -12,12 +12,13 @@
   $result = loadData(0, $view);
   prepareMobile($result);
   createNextPageBtn();
-  
+
   // Prepare User-Dashboard
   function prepareMobile($data) {
     $a = getJson('mobile');
     echo $a['mobileStart'];
     initializeDashBar();
+    echo $a['addBtn1'] . $_GET['view'] . $a['addBtn2'];
     $counter = -1;
     foreach ($data as $key) {
       createRow($key, $counter, $a);
