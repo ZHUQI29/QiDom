@@ -45,115 +45,96 @@
     <img src="../img/banner.png" alt="cool banner" class="img-fluid">
   </div>
 
-  <div class="container-fluid login-container">
-    <form class="qd-bg-light reg-form-con d-lg-flex justify-content-center"name="registration" action="db-registration.php" method="POST">
-      <div class="d-flex flex-column align-items-center justify-content-between">
-        <fieldset class="mx-3">
-          <legend>Login</legend>
-          <br>
-          <br>
-          <label for="username">Username: </label>
-          <br>
-          <input type="text" id="username" name="username" value="">
-          <br>
-          <label for="password">Passwort: </label>
-          <br>
-          <input type="password" id="password1" name="password1" value="" onkeyup="checkPasswordMatch()">
-          <br>
-          <label for="password2">Wiederholen: </label>
-          <br>
-          <input type="password" id="password2" name="password2" value="" onkeyup="checkPasswordMatch()">
-          <br>
-          <span id='pw-message'> </span>
 
-          <?php
-          if (isset($_COOKIE['level']) && $_COOKIE['level'] == '3') {
-            include('php/misc/regStatusSelect.php');
-          }
-           ?>
+  <!-- START -->
 
-        </fieldset>
-        <input class="submit-button mt-3 mb-5 mb-lg-auto" type="submit" name="registration" value="REGISTRATION">
+  <div class='big-view container p-3'>
+    <div class='container-sm qd-bg-dark p-2 d-flex flex-column'>
+        <img class='mx-auto mt-3'src='upload/0105214015446.png' alt='photo'>
+        <h1 class='m-3'>untitled</h1>
+        <p class='mx-3'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus rem sapiente iure voluptas, unde impedit deserunt quidem aut, eaque magni quae quo mollitia. Incidunt laborum nam magni ea, asperiores repudiandae fugiat iure, velit dolore, possimus a, delectus totam accusantium voluptate quo suscipit vel quia. Tempora illo maiores vitae possimus similique incidunt perspiciatis rem omnis nulla harum hic aperiam facilis minima a, ipsum, odit, labore et inventore placeat mollitia totam recusandae! Voluptas excepturi ab qui voluptates, numquam rem eaque labore molestiae quam. Libero iusto, inventore cum nemo dicta unde esse quae, accusamus blanditiis quis voluptatum sed quod placeat sint possimus explicabo?</p>
+    </div>
+
+
+    <div class='container-sm my-3 px-5 d-flex flex-column justify-content-center'>
+
+      <div class='container-fluid box-1 d-flex p-0'>
+
+        <div class='nph-card-content p-2'>
+          <img class='p-1' src='upload/0105214015446.png' alt='preview'>
+        </div>
+
+        <div class='nt-card-content p-1'>
+          <h4 class='td-overflow my-1'>Titel</h4>
+          <p class='td-of-webkit mb-0'>text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text </p>
+
+          <p class='mb-0'>2002-12-31-13:45</p>
+          <p class='mb-0'>author</p>
+        </div>
+
+        <div class='ni-card-content p-1 py-4 d-flex flex-column align-items-center'>
+          <i class='material-icons' style='font-size:36px;'>highlight_off</i>
+          <i class='material-icons mt-auto' style='font-size:36px;'>edit_note</i>
+        </div>
+
       </div>
-
-      <div>
-        <fieldset class="mx-3">
-            <legend>Persönliche Daten</legend>
-            <label for="anrede">Anrede:</label>
-            <br>
-            <select name="anrede" id="anrede">
-              <option value="---">-----</option>
-              <option value="Herr">Herr</option>
-              <option value="Frau">Frau</option>
-              <option value="Divers">Divers</option>
-            </select>
-            <br>
-            <label for="vorname">Vorname:</label>
-            <br>
-            <input type="text" id="vorname" name="vorname" value="">
-            <br>
-            <label for="nachname">Nachname:</label>
-            <br>
-            <input type="text" id="nachname" name="nachname" value="">
-            <br>
-            <label for="email">Email-Adresse:</label>
-            <br>
-            <input type="email" id="email" name="email" value="">
-            <br>
-            <label for="strasse">Straße:</label>
-            <br>
-            <input type="text" id="strasse" name="strasse" value="">
-            <br>
-            <label for="hausnummer">Hausnummer:</label>
-            <br>
-            <input type="text" id="hausnummer" name="hausnummer" value="">
-            <br>
-            <label for="plz" id='plz-message' >PLZ:</label>
-            <br>
-            <input type="text" id="plz" name="plz" value="" onkeyup="checkPlz()">
-            <br>
-            <label for="ort">Ort:</label>
-            <br>
-            <input type="text" id="ort" name="ort" value="">
-            <br>
-            <label for="bday">Geburtstag:</label>
-            <br>
-            <input type="date" id="bday" name="bday" value="">
-
-        </fieldset>
-      </div>
-
-
-        <!-- <h1>username<input type="text" name="username"></h1>
-        <h1>password<input type="password" name="password"></h1>
-        <h1>re-enter<input type="password_Re" name="password_Re"></h1> -->
-
-
-    </form>
-
-    <script type="text/javascript">
-    var checkPasswordMatch = function() {
-      if (document.getElementById('password1').value ==
-        document.getElementById('password2').value) {
-        document.getElementById('pw-message').style.color = 'green';
-        document.getElementById('pw-message').innerHTML = 'ok';
-      } else {
-        document.getElementById('pw-message').style.color = 'red';
-        document.getElementById('pw-message').innerHTML = 'no match';
-      }
-    }
-    var checkPlz = function() {
-      if (document.getElementById('plz').value < 0 || document.getElementById('plz').value > 99999) {
-        document.getElementById('plz-message').style.color = 'red';
-        document.getElementById('plz-message').innerHTML = ' ungültige PLZ';
-      } else {
-        document.getElementById('plz-message').style.color = 'white';
-        document.getElementById('plz-message').innerHTML = 'PLZ:';
-      }
-    }
-    </script>
+    </div>
 
   </div>
+
+  <!-- END -->
+  <!-- START -->
+
+  <div class="d-flex">
+    <div class="container-lg">
+      <div class="row g-0 justify-content-center">
+
+        <div class='col-md-5 m-2 col-md n-card'>
+          <div class='n-div d-flex align-items-end'>
+            <p class='p-2 m-0'>titel</p>
+          </div>
+        </div>
+        <div class='col-md-5 m-2 col-md n-card'>
+          <div class='n-div d-flex align-items-end'>
+            <p class='p-2 m-0'>titel</p>
+          </div>
+        </div>
+        <div class='col-md-5 m-2 col-md n-card'>
+          <div class='n-div d-flex align-items-end'>
+            <p class='p-2 m-0'>titel</p>
+          </div>
+        </div>
+        <div class='col-md-5 m-2 col-md n-card'>
+          <div class='n-div d-flex align-items-end'>
+            <p class='p-2 m-0'>titel</p>
+          </div>
+        </div>
+        <div class='col-md-5 m-2 col-md n-card'>
+          <div class='n-div d-flex align-items-end'>
+            <p class='p-2 m-0'>titel</p>
+          </div>
+        </div>
+        <div class='col-md-5 m-2 col-md n-card'>
+          <div class='n-div d-flex align-items-end'>
+            <p class='p-2 m-0'>titel</p>
+          </div>
+        </div>
+    
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 

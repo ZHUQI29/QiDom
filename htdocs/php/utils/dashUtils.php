@@ -56,6 +56,10 @@
         $json_a = file_get_contents('php/sites/dashboard/dashBar.json');
         break;
 
+      case 'bigview':
+        $json_a = file_get_contents('php/sites/dashboard/bigview.json');
+        break;
+
       default:
         break;
     }

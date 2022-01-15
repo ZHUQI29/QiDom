@@ -1,8 +1,7 @@
 <?php
-    //include('_BIN/console.php');
+    include('_BIN/console.php');
     //header("Content-Type: text/html; charset=utf8");
     include('php/utils/connect.php');
-
     if (isset($_POST["registration"])) {
         $registrationProcess = 0;
         // login data
@@ -16,15 +15,15 @@
         $level= $_POST['status'];
 
         // personal data
-        $gAnrede = $_POST['anrede'];
-        $gVorname = $_POST['vorname'];
-        $gNachname = $_POST['nachname'];
-        $gEmail = $_POST['email'];
-        $gStrasse = $_POST['strasse'];
-        $gHausnummer = $_POST['hausnummer'];
-        $gPlz = $_POST['plz'];
-        $gOrt = $_POST['ort'];
-        $gBday = $_POST['bday'];
+        $gAnrede = ($_POST['anrede'] == NULL) ? '---' : $_POST['anrede'];
+        $gVorname = ($_POST['vorname'] == NULL) ? '---' : $_POST['vorname'];
+        $gNachname = ($_POST['nachname'] == NULL) ? '---' : $_POST['nachname'];
+        $gEmail = ($_POST['email'] == NULL) ? '---' : $_POST['email'];
+        $gStrasse = ($_POST['strasse'] == NULL) ? '---' : $_POST['strasse'];
+        $gHausnummer = ($_POST['hausnummer'] == NULL) ? '---' : $_POST['hausnummer'];
+        $gPlz = ($_POST['plz'] == NULL) ? '0' : $_POST['plz'];
+        $gOrt = ($_POST['ort'] == NULL) ? '---' : $_POST['ort'];
+        $gBday = ($_POST['bday'] == NULL) ? date('Y-m-d') : $_POST['bday'];
 
         // Encrypt password with a strength of 12 (Higher = More time needed to make a stronger pass)
 		    // NOT RECOMMENDED to go above 12, unless the server-hardware can handle it.
@@ -34,7 +33,6 @@
         $stmt->bindParam(":uname", $username);
         $stmt->execute();
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
         // If Account (DOESN'T EXIST) { CREATE IT! }.
         if (!$row) {
             if ($stmt = $conn->prepare("INSERT INTO user (ID,username,password,level) VALUES (?,?,?,?)")) {
@@ -44,6 +42,7 @@
                 $stmt->bindValue(4, $level);
                 $stmt->execute();
                 $registrationProcess++;
+                console_log('check1');
             }
             try {
               if ($stmt = $conn->prepare("INSERT INTO personal_data (ID,anrede,vorname, nachname,plz,ort,strasse,hausnummer,birthday,email) VALUES (?,?,?,?,?,?,?,?,?,?)")) {

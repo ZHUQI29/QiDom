@@ -590,3 +590,29 @@ table p {
 
 
 /* NEWSVIEW */
+
+.big-view img {
+  max-width: 95%;
+}
+
+
+
+.n-card{
+  background: url('/upload/0115000518729.png');
+  background-size: cover;
+  min-height: 20vh;
+}
+
+.n-div {
+  background: linear-gradient(180deg, rgba(38,38,38,1) 0%, rgba(255,255,255,0) 20%, rgba(255,255,255,0) 40%, rgba(38,38,38,1) 100%);
+  min-height: 100%;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+  opacity: 100%;
+}
+
+.n-div:hover {
+  opacity: 0%;
+}

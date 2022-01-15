@@ -26,6 +26,7 @@
     }
     echo $a['mobileEnd'];
     echo $a['changeDevice'];
+    include('js/addBtn.php');
   }
 
   // Make rows out of database- and uViewDesktop-Fragments

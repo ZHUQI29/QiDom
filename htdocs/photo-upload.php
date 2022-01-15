@@ -14,7 +14,7 @@ $eID = date('mdHis') . mt_rand(100, 999);
 $titel = $_POST['title'];
 $text = $_POST['text'];
 $username = $_SESSION['user'];
-$table = $_GET['site'];
+$table = 'comments';
 $maxsize = 10000000;  // approx. 10 MB
 $id = '';
 
