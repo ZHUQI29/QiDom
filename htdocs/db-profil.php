@@ -1,8 +1,8 @@
 <?php include('_BIN/console.php'); ?>
 <div class="container-fluid login-container">
-  <form class="qd-bg-light reg-form-con d-lg-flex justify-content-center"name="change profile" action="db-change profile.php" method="POST">
+  <form class="qd-bg-light reg-form-con d-lg-flex justify-content-center"name="change profile" action="db-change-profile.php" method="POST">
     <div class="d-flex flex-column align-items-center justify-content-between">
-<fieldset class="mx-3">
+      <fieldset class="mx-3">
         <legend>Change profile</legend>
         <br>
         <br>
@@ -26,8 +26,10 @@
         <br>
         <input type="text" id="new_email" name="new_email" value="" >
         <br>
-        <input class="submit-button mt-3 mb-5 mb-lg-auto" type="submit" id="submit" name="submit" value="change Password">
-        </fieldset>
+        <input class="submit-button mt-3 mb-5 mb-lg-auto" type="submit" id="submit" name="submit" value="Change Info">
+      </fieldset>
+
+
 <?php
     $server="localhost";
     $db_username="root";
@@ -41,13 +43,15 @@ $sql = "SELECT ID FROM user WHERE username='" . $_COOKIE['user'] . "'";
 $result = mysqli_query($conn, $sql);
 $id = mysqli_fetch_assoc($result);
 
+echo "<input type='hidden' name='ID' value='" . $id . "'>";
+
 // Get info from personal_data-table
 $sql = "SELECT anrede, vorname, nachname, plz, ort, strasse, hausnummer, birthday, email FROM personal_data WHERE ID='" . $id['ID'] . "'";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
     // 输出数据
-    while($row = mysqli_fetch_assoc($result)) {
+    while ($row = mysqli_fetch_assoc($result)) {
         echo "Anrede: " . $row["anrede"]. "<br>";
         echo "Vorname: " . $row["vorname"]. "<br>";
         echo "Nachname: " . $row["nachname"]. "<br>";
@@ -64,4 +68,3 @@ if (mysqli_num_rows($result) > 0) {
 }
 mysqli_close($conn);
 ?>
-

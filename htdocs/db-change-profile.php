@@ -1,5 +1,7 @@
+<?php include('_BIN/console.php'); ?>
 <?php
-if (isset($_POST["submit"]) && $_POST["submit"] == "Confirm the changes") {
+console_log($_POST);
+if (isset($_POST["submit"])) {
     include "php/utils/connect.php";
     $id = $_POST['ID'];
     $new_plz = $_POST['new_plz'];
@@ -18,4 +20,7 @@ if (isset($_POST["submit"]) && $_POST["submit"] == "Confirm the changes") {
     }
     $login_json = json_encode($json_arr);
     echo $login_json;
+  } else {
+    echo "error";
+  }
     ?>

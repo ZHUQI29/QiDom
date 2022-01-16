@@ -41,10 +41,6 @@ button {
   transition: all .5s;
 }
 
-button:hover {
-
-}
-
 .t-button:hover {
   text-shadow: 0 0 10px var(--main-color);
 }
