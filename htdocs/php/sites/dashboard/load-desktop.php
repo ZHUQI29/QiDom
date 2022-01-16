@@ -46,7 +46,7 @@
     echo $a['userTD1'] . $data['plz'] . ' ' . $data['ort'] . $a['userTD2'];
     echo $a['userTD1'] . $data['strasse'] . ' ' . $data['hausnummer'] . $a['userTD2'];
     echo $a['date1'] . $data['birthday']. $a['date2'];
-    echo $a['userOptions'];
+    echo $a['userOptions1'] . $data['ID'] . ' ' . $_GET['view'] . $a['userOptions2'];
   }
 
   // Prepare TicketsNews-Dashboard
@@ -72,7 +72,7 @@
     // $data[6] = ($data[6]==null) ? $counter : $data[6];
     echo $a['row1'] . $even;
     echo $a['row2'] . $data['status'] . $a['row3'] . $data['status'] . $a['row4'];
-    echo $a['titel1'] . $data['titel'] . $a['titel2'];
+    echo $a['title1'] . $data['title'] . $a['title2'];
     echo $a['text1'] . $data['text'] . $a['text2'];
     echo $a['photos1'];
 
@@ -88,7 +88,8 @@
 
     echo $a['author1'] . $data['username'] . $a['author2'];
     echo $a['date1'] . date('Y-m-d H:i', strtotime($data['timestamp'])) . $a['date2'];
-    echo $a['TNoptions1'] . $data['ID'] . $a['TNoptions2'];
+    echo $a['TNoptions1'] . $data['ID'];
+    echo $a['TNoptions2'] . $data['ID'] . ' ' . $_GET['view'] . $a['TNoptions3'];
   }
 
 

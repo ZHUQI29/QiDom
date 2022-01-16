@@ -51,19 +51,19 @@ x Administrator*innen können News-Beiträge posten inkl. Bildupload.
 x Administrator*innen können User-Accounts für Gäste und Servicetechniker*innen anlegen.
 - Administrator*innen können neue Gäste anlegen, Gäste deaktivieren, News-Beiträge erstellen und löschen.
 x Administrator*innen haben eine Userverwaltung (übersicht bestehender und deaktivieren einzelner Nutzer).
-- Administrator*innen haben eine News-Beiträgeübersicht in der Sie alle News-Beiträge bearbeiten und in einer Liste filtern können.
+x Administrator*innen haben eine News-Beiträgeübersicht in der Sie alle News-Beiträge bearbeiten und in einer Liste filtern können.
 - Administrator*innen können Servicetechniker*innen anlegen und deaktivieren.
 - Administrator*innen können alle User bearbeiten.
 x Administrator*innen können alle Tickets einsehen.
-- Servicetechniker*innen haben eine ticketübersicht in der Sie Tickets bearbeiten und in einer Liste filtern können.
+x Servicetechniker*innen haben eine ticketübersicht in der Sie Tickets bearbeiten und in einer Liste filtern können.
 - Servicetechniker*innen können Tickets aller Gäste einsehen und den Status der Tickets ändern.
 - Servicetechniker*innen können den Status von Tickets ändern (z.B. "erfolgreich abgeschlossen")
-- Servicetechniker*innen können auf Tickets antworten.
+x Servicetechniker*innen können auf Tickets antworten.
 
 -----------
 | TICKETS |
 -----------
-- Gäste können Tickets anlegen inkl. Bildupload, die von Servicetechniker*innen gelesen und bearbeitet werden können.
+x Gäste können Tickets anlegen inkl. Bildupload, die von Servicetechniker*innen gelesen und bearbeitet werden können.
 - Der eingeloggte Nutzer kann neue Tickets anlegen und bereits angelegte Tickets einsehen.
 x Tickets haben 3 Status: offen, erfolgreich geschlossen, und erfolglos geschlossen.
 - Tickets können wieder geöffnet werden.

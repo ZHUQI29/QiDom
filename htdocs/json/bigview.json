@@ -1,0 +1,38 @@
+{
+	"bViewStart": "<div class='big-view container p-3'>",
+	"displayS": "<div class='container-sm qd-bg-dark p-2 d-flex flex-column'>",
+	"photo1": "<img class='mx-auto mt-3'src='upload/",
+	"photo2": ".png' alt='photo'>",
+	"title1": "<h1 class='m-3'>",
+	"title2": "</h1>",
+	"text1": "<p class='mx-3'>",
+	"text2": "</p>",
+	"displayE": "</div>",
+
+	"editView": "<form action='save.php' method='POST' class='container-sm d-flex flex-column'>",
+	"eTitle1": "<input name='title' type='text' value='",
+	"eTitle2": "'>",
+	"eText1": "<textarea name='text' rows='8' cols='70'>",
+	"eText2": "</textarea><button class='b-button w-25 mx-auto p-2 mt-2' type='submit'>save</button>",
+	"id1": "<input type='hidden' name='id' value='",
+	"id2": "'>",
+	"editEnd": "</form>",
+
+	"comment1": "<div class='container-sm my-3 px-md-5 d-flex flex-column justify-content-center'><div class='container-fluid n-card box-1 d-flex p-0'><div class='nph-card-content p-2'>",
+	"cPhoto1": "<img class='mx-auto mt-2' src='upload/",
+	"cPhoto2": ".png' alt='preview'>",
+	"comment2": "</div>",
+	"commentT1": "<div class='nt-card-content p-1'><h4 class='td-overflow my-1'>",
+	"commentT2": "</h4><p class='td-of-webkit mb-0'>",
+	"commentT3": "</p><p class='mb-0'>",
+	"commentT4": "</p><p class='mb-0'>",
+	"commentT5": "</p></div>",
+	"neComment": "</div></div>",
+	"eComment1": "<div class='ni-card-content p-1 py-4 d-flex flex-column ms-auto'><button id='delBtn' class='",
+	"eComment2": " xt-button'><i class='material-icons' style='font-size:36px;'>close</i></button></div></div></div>",
+
+	"pComment1": "<div class='container d-flex justify-content-center'><form action='save.php' method='POST' class='container-sm d-flex flex-column'><label for='title'>Titel: </label><input type='text' name='title' class='w-md-50 mx-auto'><label for='text'>Kommentar: </label><textarea name='comment' rows='4' cols='80'></textarea><button type='submit' class='b-button w-25 mx-auto p-2 mt-3'>absenden</button><input type='hidden' name='id' value='",
+	"pComment2": "'></form></div>",
+
+	"bViewEnd": "</div>"
+}

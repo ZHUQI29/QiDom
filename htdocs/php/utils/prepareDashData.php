@@ -26,7 +26,7 @@
       if ($view == 'personal_data') {
         $sql = $sql . " WHERE (vorname LIKE '%" . $search . "%' or nachname LIKE '%" . $search . "%' or plz LIKE '%". $search . "%' or ort LIKE '%" .$search . "%' or strasse LIKE '%" . $search . "%' or hausnummer LIKE '%" . $search . "%' or email LIKE '%" ."%')";
       } else {
-        $sql = $sql . " WHERE (titel LIKE '%" . $search . "%' or text LIKE '%" . $search . "%' or username LIKE '%". $search . "%')";
+        $sql = $sql . " WHERE (title LIKE '%" . $search . "%' or text LIKE '%" . $search . "%' or username LIKE '%". $search . "%')";
       }
 
       $sql = $sql . " and (timestamp > Convert('" . $_GET['vDate'] . "', datetime)) and (timestamp <= Convert('" . $bDate . "', datetime))";
@@ -93,7 +93,7 @@
 
   // SELECT * FROM `tickets`
   // WHERE
-  // (titel LIKE '%%' or text LIKE '%%' or username LIKE '%%')
+  // (title LIKE '%%' or text LIKE '%%' or username LIKE '%%')
   // and
   // (timestamp > Convert('2022-01-08', datetime))
   // and

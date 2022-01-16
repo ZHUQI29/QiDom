@@ -11,7 +11,7 @@ if (!file_exists($dest_folder)) {
 
 $error = 0;  // status of upload
 $eID = date('mdHis') . mt_rand(100, 999);
-$titel = $_POST['title'];
+$title = $_POST['title'];
 $text = $_POST['text'];
 $username = $_SESSION['user'];
 $table = 'comments';
@@ -63,9 +63,9 @@ include('php/utils/connect.php');
 
 
 try {
-    if ($stmt = $conn->prepare("INSERT INTO ". $table . "(ID,titel,text,photo_id,username) VALUES (?,?,?,?,?)")) {
+    if ($stmt = $conn->prepare("INSERT INTO ". $table . "(ID,title,text,photo_id,username) VALUES (?,?,?,?,?)")) {
         $stmt->bindValue(1, $eID);
-        $stmt->bindValue(2, $titel);
+        $stmt->bindValue(2, $title);
         $stmt->bindValue(3, $text);
         $stmt->bindValue(4, $id);
         $stmt->bindValue(5, $username);

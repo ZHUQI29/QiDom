@@ -45,19 +45,19 @@
     switch ($file) {
 
       case 'mobile':
-        $json_a = file_get_contents('php/sites/dashboard/viewMobile.json');
+        $json_a = file_get_contents('json/viewMobile.json');
         break;
 
       case 'desktop':
-        $json_a = file_get_contents('php/sites/dashboard/viewDesktop.json');
+        $json_a = file_get_contents('json/viewDesktop.json');
         break;
 
       case 'dashbar':
-        $json_a = file_get_contents('php/sites/dashboard/dashBar.json');
+        $json_a = file_get_contents('json/dashBar.json');
         break;
 
       case 'bigview':
-        $json_a = file_get_contents('php/sites/dashboard/bigview.json');
+        $json_a = file_get_contents('json/bigview.json');
         break;
 
       default:

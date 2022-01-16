@@ -48,14 +48,25 @@
 
   <!-- START -->
 
+  <!-- guest view -->
   <div class='big-view container p-3'>
-    <div class='container-sm qd-bg-dark p-2 d-flex flex-column'>
+    <!-- <div class='container-sm qd-bg-dark p-2 d-flex flex-column'>
         <img class='mx-auto mt-3'src='upload/0105214015446.png' alt='photo'>
         <h1 class='m-3'>untitled</h1>
         <p class='mx-3'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus rem sapiente iure voluptas, unde impedit deserunt quidem aut, eaque magni quae quo mollitia. Incidunt laborum nam magni ea, asperiores repudiandae fugiat iure, velit dolore, possimus a, delectus totam accusantium voluptate quo suscipit vel quia. Tempora illo maiores vitae possimus similique incidunt perspiciatis rem omnis nulla harum hic aperiam facilis minima a, ipsum, odit, labore et inventore placeat mollitia totam recusandae! Voluptas excepturi ab qui voluptates, numquam rem eaque labore molestiae quam. Libero iusto, inventore cum nemo dicta unde esse quae, accusamus blanditiis quis voluptatum sed quod placeat sint possimus explicabo?</p>
+    </div> -->
+
+    <!-- edit view -->
+    <div class='container-sm qd-bg-dark p-2 d-flex flex-column'>
+        <img class='mx-auto mt-3'src='upload/0105214015446.png' alt='photo'>
+        <form action="save.php&site=&id=&username=" class='container-sm d-flex flex-column'>
+          <input type="text" value="untitled">
+          <textarea name="text" rows="8" cols="70">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus rem sapiente iure voluptas, unde impedit deserunt quidem aut, eaque magni quae quo mollitia. Incidunt laborum nam magni ea, asperiores repudiandae fugiat iure, velit dolore, possimus a, delectus totam accusantium voluptate quo suscipit vel quia. Tempora illo maiores vitae possimus similique incidunt perspiciatis rem omnis nulla harum hic aperiam facilis minima a, ipsum, odit, labore et inventore placeat mollitia totam recusandae! Voluptas excepturi ab qui voluptates, numquam rem eaque labore molestiae quam. Libero iusto, inventore cum nemo dicta unde esse quae, accusamus blanditiis quis voluptatum sed quod placeat sint possimus explicabo?</textarea>
+          <button type="submit">save</button>
+        </form>
     </div>
 
-
+    <!-- comment show -->
     <div class='container-sm my-3 px-5 d-flex flex-column justify-content-center'>
 
       <div class='container-fluid box-1 d-flex p-0'>
@@ -65,7 +76,7 @@
         </div>
 
         <div class='nt-card-content p-1'>
-          <h4 class='td-overflow my-1'>Titel</h4>
+          <h4 class='td-overflow my-1'>title</h4>
           <p class='td-of-webkit mb-0'>text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text </p>
 
           <p class='mb-0'>2002-12-31-13:45</p>
@@ -73,61 +84,97 @@
         </div>
 
         <div class='ni-card-content p-1 py-4 d-flex flex-column align-items-center'>
-          <i class='material-icons' style='font-size:36px;'>highlight_off</i>
-          <i class='material-icons mt-auto' style='font-size:36px;'>edit_note</i>
+          <button id="editBtn" class='material-icons t-button'>
+            edit_note
+          </button>
         </div>
 
       </div>
     </div>
 
+
+    <!-- post comment -->
+    <div class='container d-flex justify-content-center'>
+      <form action='comment.php$' class='container-sm d-flex flex-column'>
+        <label for='title'>title: </label>
+        <input type='text' name='title' class='w-50 mx-auto'>
+        <label for='text'>Kommentar: </label>
+        <textarea name='comment' rows='4' cols='80'></textarea>
+        <button type='submit' class='w-25 mx-auto p-2 mt-3'>absenden</button>
+        <input type='hidden' name='id' value=''>
+      </form>
+    </div>
+
   </div>
 
   <!-- END -->
-  <!-- START -->
+  <!-- START smallview-->
 
   <div class="d-flex">
     <div class="container-lg">
       <div class="row g-0 justify-content-center">
 
         <div class='col-md-5 m-2 col-md n-card'>
-          <div class='n-div d-flex align-items-end'>
-            <p class='p-2 m-0'>titel</p>
-          </div>
+          <a href="#">
+            <div class='n-div d-flex align-items-end'>
+              <p class='p-2 m-0'>title</p>
+            </div>
+          </a>
+        </div>
+
+        <div class='col-md-5 m-2 col-md n-card'>
+          <a href="#">
+            <div class='n-div d-flex align-items-end'>
+              <p class='p-2 m-0'>title</p>
+            </div>
+          </a>
         </div>
         <div class='col-md-5 m-2 col-md n-card'>
-          <div class='n-div d-flex align-items-end'>
-            <p class='p-2 m-0'>titel</p>
-          </div>
+          <a href="#">
+            <div class='n-div d-flex align-items-end'>
+              <p class='p-2 m-0'>title</p>
+            </div>
+          </a>
         </div>
         <div class='col-md-5 m-2 col-md n-card'>
-          <div class='n-div d-flex align-items-end'>
-            <p class='p-2 m-0'>titel</p>
-          </div>
+          <a href="#">
+            <div class='n-div d-flex align-items-end'>
+              <p class='p-2 m-0'>title</p>
+            </div>
+          </a>
         </div>
         <div class='col-md-5 m-2 col-md n-card'>
-          <div class='n-div d-flex align-items-end'>
-            <p class='p-2 m-0'>titel</p>
-          </div>
+          <a href="#">
+            <div class='n-div d-flex align-items-end'>
+              <p class='p-2 m-0'>title</p>
+            </div>
+          </a>
         </div>
         <div class='col-md-5 m-2 col-md n-card'>
-          <div class='n-div d-flex align-items-end'>
-            <p class='p-2 m-0'>titel</p>
-          </div>
+          <a href="#">
+            <div class='n-div d-flex align-items-end'>
+              <p class='p-2 m-0'>title</p>
+            </div>
+          </a>
         </div>
-        <div class='col-md-5 m-2 col-md n-card'>
-          <div class='n-div d-flex align-items-end'>
-            <p class='p-2 m-0'>titel</p>
-          </div>
-        </div>
-    
 
       </div>
     </div>
   </div>
 
+<!-- END -->
 
 
-
+<div class='container d-flex justify-content-center'>
+  <form action='comment.php' class='container-sm d-flex flex-column'>
+    <label for='title'>title: </label>
+    <input type='text' name='title' class='w-md-50 mx-auto'>
+    <label for='text'>Kommentar: </label>
+    <textarea name='comment' rows='4' cols='80'></textarea>
+    <button type='submit' class='w-25 mx-auto p-2 mt-3'>absenden</button>
+    <input type='hidden' name='id' value=''>
+  </form>
+</div>
 
 
 

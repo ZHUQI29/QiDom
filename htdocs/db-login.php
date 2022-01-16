@@ -1,4 +1,4 @@
-<?php include('_BIN/console.php'); ?>
+<?php //include('_BIN/console.php'); ?>
 <?php
 
     //header("Content-Type: text/html; charset=utf8");
@@ -23,32 +23,51 @@
                   // password MATCHES (HASH) (LOGIN SUCCESSFUL!)
 
                   // get level from database and set cookie
-                  $stmt = $conn->prepare("SELECT level FROM user WHERE username=:username");
+                  $stmt = $conn->prepare("SELECT level, ID FROM user WHERE username=:username");
                   $stmt->bindParam(":username", $username);
                   $stmt->execute();
-                  $result = $stmt->fetchColumn();
+                  $result = $stmt->fetchAll();
 
-                  switch ($result) {
+                  $sql = "SELECT photo_id FROM personal_data WHERE ID='" . $result[0]['ID'] . "'";
+
+                  $stmt = $conn->prepare($sql);
+                  $stmt->execute();
+                  $photoID = $stmt->fetchColumn();
+                  if ($photoID == NULL) {
+                    $photoID = 'banner';
+                  }
+
+
+                  switch ($result[0]['level']) {
                     case '1':
                       setcookie('level', '1', time()+3600*24*30);
                       setcookie('user', $username, time()+3600*24*30);
+                      setcookie('photo_id', $photoID, time()+3600*24*30);
                       break;
 
                     case '2':
                       setcookie('level', '2', time()+3600*24);
                       setcookie('user', $username, time()+3600*24);
+                      setcookie('photo_id', $photoID, time()+3600*24*30);
                       break;
-                      
+
                     case '3':
                       setcookie('level', '3', time()+3600*12);
                       setcookie('user', $username, time()+3600*12);
+                      setcookie('photo_id', $photoID, time()+3600*24*30);
                       break;
 
                     default:
                       setcookie('level', '0', time()+3600*24);
                       setcookie('user', 'error', time()+3600*24);
+                      setcookie('photo_id', $photoID, time()+3600*24*30);
                       break;
                   }
+
+
+
+
+
 
                   $conn = null; // close connection
                   echo "<script>window.location.href='index.php?site=welcome';</script>";

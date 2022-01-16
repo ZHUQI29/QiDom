@@ -50,7 +50,7 @@
           <br>Ab voluptatibus tempora, eveniet fugiat ullam quia.</p>
         <div class="input-group mb-3">
           <input type="text" class="form-control fst-italic" placeholder="Your E-Mail" aria-label="email" aria-describedby="button-addon2">
-          <button class="btn btn-outline-secondary" type="button" id="button-addon2">Newsletter</button>
+          <button class="btn btn-outline-secondary b-button" type="button" id="button-addon2">Newsletter</button>
         </div>
       </div>
 

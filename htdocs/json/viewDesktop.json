@@ -1,7 +1,7 @@
 {
 	"uViewStart1": "<div class='t-desktop container my-3 d-flex flex-column justify-content-center'>",
 	"uViewStart2": "<table class = 'box-1'><tr><th>S</th><th>Username</th><th>Vorname</th><th>Nachname</th><th>Email</th><th>Ort</th><th>Adresse</th><th>Birthday</th><th><button id='addBtn' class='",
-	"uViewStart3": " add-button ms-auto me-1'>+</button></th></tr>",
+	"uViewStart3": " add-button b-button ms-auto me-1'>+</button></th></tr>",
 	"row1": "<tr class='row-",
 	"row2": "'><td class='status-",
 	"row3": "'>",
@@ -10,14 +10,15 @@
 	"userTD2": "</p></div></td>",
 	"date1": "<td>",
 	"date2": "</td>",
-	"userOptions": "<td class='p-0 pt-1 px-1'><i class='material-icons' style='font-size:24px'>edit_note</i></td> </tr>",
+	"userOptions1": "<td class='p-0 pt-1 px-1'><button name='edit_row' id='edit_row' class='",
+	"userOptions2": " material-icons t-button' style='font-size:24px'>edit_note</button></td> </tr>",
 	"end": "</table></div>",
 
 	"tnViewStart1": "<div class='t-desktop container my-3 d-flex flex-column justify-content-center'>",
 	"tnViewStart2": "<table class = 'box-1'><tr><th></th><th>Titel</th><th>Text</th><th>Photos</th><th>Author</th><th>Time</th><th><button id='addBtn' class='",
-	"tnViewStart3": " add-button ms-auto me-1'>+</button></th></tr>",
-	"titel1": "<td class='tdn-title'> <div ><p class = 'td-of-webkit' > ",
-	"titel2": "</p></div></td>",
+	"tnViewStart3": " add-button b-button ms-auto me-1'>+</button></th></tr>",
+	"title1": "<td class='tdn-title'> <div ><p class = 'td-of-webkit' > ",
+	"title2": "</p></div></td>",
 	"text1": "<td class='tdn-text'> <div ><p class = 'td-of-webkit' > ",
 	"text2": "</p></div></td>",
 	"photos1": "<td class='tdn-photos'> <div class = 'd-flex flex-column td-overflow' > ",
@@ -27,6 +28,7 @@
 	"author1": "<td class='tdn-author td-overflow'>",
 	"author2": "</td>",
   "TNoptions1": "<td class='tdn-options d-flex flex-column align-items-center'><button class='",
-	"TNoptions2": " material-icons p-1 tn-options' name='delete_row' id='delete_row' style=''>highlight_off</button><button class='material-icons p-1 tn-options' name='edit_row' id='edit_row' >edit_note</button></td>",
+	"TNoptions2": " material-icons p-1 tn-options xt-button' name='delete_row' id='delete_row' >highlight_off</button><button class='",
+	"TNoptions3": " material-icons p-1 tn-options t-button' name='edit_row' id='edit_row' >edit_note</button></td>",
 	"changeDevice": "<div class='changeDevice mobile'><button id='chDevice'>Mobile Ansicht</button></div><script>var btn = document.getElementById('chDevice');btn.onclick = function() {var Ucookie = document.cookie.split('; ').find(row => row.startsWith('device')).split('=')[1];if(Ucookie == 'mobile') {document.cookie = 'device=desktop';} else {document.cookie = 'device=mobile';}window.location.href=window.location.href;}</script>"
 }

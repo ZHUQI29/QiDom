@@ -2,13 +2,14 @@
   <div class='modal-content'>
     <div>
       <h2>Confirm delete?</h2>
-      <button class='material-icons' id='close_modal'>close</button>
+      <button class='material-icons b-button' id='close_modal'>close</button>
     </div>
-    <button id='confirm_modal'>Delete</button>
+    <button id='confirm_modal' class='xb-button'>Delete</button>
   </div>
 </div>
 
 <script>
+// DELETE ENTRY
 // Get the modal
 var modal = document.getElementById("confirm_delete");
 
@@ -52,5 +53,32 @@ cnfm_btn.onclick = function() {
   var url = window.location.href;
   url = url.concat(extension);
   window.location.href = url;
+}
+
+// EDIT ENTRY
+var edit_row = document.getElementsByName("edit_row");
+for (var i = 0; i < edit_row.length; i++) {
+  edit_row[i].onclick = function() {
+    extension = window.location.href.split("=")[0];
+
+    switch (this.classList[1]) {
+      case 'news':
+        extension = extension.concat("=newsview&id=" + this.classList[0])
+        break;
+
+      case 'tickets':
+        extension = extension.concat("=ticketview&id=" + this.classList[0])
+        break;
+
+      case 'personal_data':
+        extension = extension.concat("=userview&id=" + this.classList[0])
+        break;
+
+      default:
+      break;
+
+    }
+    window.location.href = extension;
+  }
 }
 </script>

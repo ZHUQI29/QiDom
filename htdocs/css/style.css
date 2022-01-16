@@ -32,7 +32,7 @@ button {
   /* display: flex; */
   /* justify-content: center;
   align-items: center; */
-  background: var(--dark-shade);
+  background: transparent;
   border: none;
   color: var(--main-color);
   -webkit-transition: all .5s;
@@ -42,9 +42,42 @@ button {
 }
 
 button:hover {
+
+}
+
+.t-button:hover {
+  text-shadow: 0 0 10px var(--main-color);
+}
+
+.b-button {
+  background: var(--dark-shade);
+  border: 1px solid var(--main-color);
+}
+
+.b-button:hover {
   box-shadow: 0 0 30px var(--main-color);
   color: var(--light-shade);
+  border: 1px solid var(--light-shade);
 }
+
+.xb-button {
+  color: var(--dark-accent);
+}
+
+.xb-button:hover {
+  box-shadow: 0 0 30px var(--dark-accent);
+  color: var(--light-shade);
+}
+
+.xt-button {
+  color: var(--dark-accent);
+}
+
+.xt-button:hover {
+  text-shadow: 0 0 10px var(--dark-accent);
+}
+
+
 
 .qd-bg-dark {
   background: var(--dark-shade);
@@ -430,7 +463,7 @@ th {
 }
 .nt-card-content {
   min-width: 30vw;
-  max-width: 70vw;
+  max-width: 60vw;
 }
 .ni-card-content {
   min-width: 40px;
@@ -585,7 +618,6 @@ table p {
   width: 40%;
   margin: 0 auto;
   border: 1px solid var(--t-status-2);
-  background: rgba(255,255,255,0.9);
 }
 
 
@@ -593,14 +625,17 @@ table p {
 
 .big-view img {
   max-width: 95%;
+  border: 1px solid var(--main-color);
 }
 
 
 
 .n-card{
-  background: url('/upload/0115000518729.png');
+  background: url('/img/banner.png');
   background-size: cover;
+  /* opacity: 95%; */
   min-height: 20vh;
+  border: 1px solid var(--main-color);
 }
 
 .n-div {

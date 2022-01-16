@@ -47,19 +47,20 @@
     }
     echo $a['contentStart'];
     if ($_GET['view'] == 'personal_data') {
-      echo $a['titel1'] . $username . $a['titel2'];
+      echo $a['title1'] . $username . $a['title2'];
       echo $a['text1'] . $data['vorname'] . " " .$data['nachname'] . $a['text2'];
       echo $a['text1'] . $data['plz'] . " " . $data['ort'] . ", " . $data['strasse'] . " " . $data['hausnummer'] . $a['text2'];
       echo $a['dateAuthor1'] . $data['birthday'] . $a['dateAuthor2'];
       echo $a['dateAuthor1'] . $data['email'] . $a['dateAuthor2'];
     } else {
-      echo $a['titel1'] . $data['titel'] . $a['titel2'];
+      echo $a['title1'] . $data['title'] . $a['title2'];
       echo $a['text1'] . $data['text'] . $a['text2'];
       echo $a['dateAuthor1'] . date('Y-m-d H:i', strtotime($data['timestamp'])) . $a['dateAuthor2'];
       echo $a['dateAuthor1'] . $data['username'] . $a['dateAuthor2'];
     }
     echo $a['contentEnd'];
-    echo $a['options1'] . $data['ID'] . $a['options2'] . $data['ID'] . $a['options3'];
+    echo $a['options1'] . $data['ID'];
+    echo $a['options2'] . $data['ID'] . ' ' . $_GET['view'] . $a['options3'];
     echo $a['mobileEnd'];
   }
 
