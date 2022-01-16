@@ -56,8 +56,8 @@ x Administrator*innen haben eine News-Beiträgeübersicht in der Sie alle News-B
 - Administrator*innen können alle User bearbeiten.
 x Administrator*innen können alle Tickets einsehen.
 x Servicetechniker*innen haben eine ticketübersicht in der Sie Tickets bearbeiten und in einer Liste filtern können.
-- Servicetechniker*innen können Tickets aller Gäste einsehen und den Status der Tickets ändern.
-- Servicetechniker*innen können den Status von Tickets ändern (z.B. "erfolgreich abgeschlossen")
+x Servicetechniker*innen können Tickets aller Gäste einsehen und den Status der Tickets ändern.
+x Servicetechniker*innen können den Status von Tickets ändern (z.B. "erfolgreich abgeschlossen")
 x Servicetechniker*innen können auf Tickets antworten.
 
 -----------
@@ -66,7 +66,7 @@ x Servicetechniker*innen können auf Tickets antworten.
 x Gäste können Tickets anlegen inkl. Bildupload, die von Servicetechniker*innen gelesen und bearbeitet werden können.
 - Der eingeloggte Nutzer kann neue Tickets anlegen und bereits angelegte Tickets einsehen.
 x Tickets haben 3 Status: offen, erfolgreich geschlossen, und erfolglos geschlossen.
-- Tickets können wieder geöffnet werden.
+x Tickets können wieder geöffnet werden.
 x Ein Ticket besteht aus: Titel, Beschreibung und Bildupload, sowie aktuelles Datum und Uhrzeit.
 
 -------

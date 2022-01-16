@@ -39,7 +39,8 @@
   }
 
   function postChanges($id, $site, $title, $text) {
-    $sql = "UPDATE " . $site . " SET title='" . $title . "', text='" . $text . "' WHERE ID LIKE '" . $id . "'";
+    $status = $_POST['status'];
+    $sql = "UPDATE " . $site . " SET title='" . $title . "', text='" . $text . "', status='" . $status . "' WHERE ID LIKE '" . $id . "'";
 
     include('php/utils/connect.php');
     if($stmt = $conn->prepare($sql)) {

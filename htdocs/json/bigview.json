@@ -7,15 +7,29 @@
 	"title2": "</h1>",
 	"text1": "<p class='mx-3'>",
 	"text2": "</p>",
+	"status1": "<div><h2 class='status-",
+	"status2": " w-50 mx-auto my-2 text-center'>",
+	"status3": "</h2></div>",
 	"displayE": "</div>",
 
 	"editView": "<form action='save.php' method='POST' class='container-sm d-flex flex-column'>",
 	"eTitle1": "<input name='title' type='text' value='",
 	"eTitle2": "'>",
 	"eText1": "<textarea name='text' rows='8' cols='70'>",
-	"eText2": "</textarea><button class='b-button w-25 mx-auto p-2 mt-2' type='submit'>save</button>",
+	"eText2": "</textarea>",
+
+	"eStatus1": "<select class='w-50 mx-auto my-2 status-",
+	"eStatus2": "' name='status' id='status'>",
+	"option2a": "<option value='2'",
+	"option2b": " >open</option>",
+	"option1a": "<option value='1'",
+	"option1b": " >b-closed</option>",
+	"option0a": "<option value='0'",
+	"option0b": " >closed</option>",
+
 	"id1": "<input type='hidden' name='id' value='",
 	"id2": "'>",
+	"saveBtn": "<button class='b-button w-25 mx-auto p-2 mt-2' type='submit'>save</button>",
 	"editEnd": "</form>",
 
 	"comment1": "<div class='container-sm my-3 px-md-5 d-flex flex-column justify-content-center'><div class='container-fluid n-card box-1 d-flex p-0'><div class='nph-card-content p-2'>",
@@ -28,10 +42,10 @@
 	"commentT4": "</p><p class='mb-0'>",
 	"commentT5": "</p></div>",
 	"neComment": "</div></div>",
-	"eComment1": "<div class='ni-card-content p-1 py-4 d-flex flex-column ms-auto'><button id='delBtn' class='",
+	"eComment1": "<div class='ni-card-content p-1 py-4 d-flex flex-column ms-auto'><button name='delete_row' class='",
 	"eComment2": " xt-button'><i class='material-icons' style='font-size:36px;'>close</i></button></div></div></div>",
 
-	"pComment1": "<div class='container d-flex justify-content-center'><form action='save.php' method='POST' class='container-sm d-flex flex-column'><label for='title'>Titel: </label><input type='text' name='title' class='w-md-50 mx-auto'><label for='text'>Kommentar: </label><textarea name='comment' rows='4' cols='80'></textarea><button type='submit' class='b-button w-25 mx-auto p-2 mt-3'>absenden</button><input type='hidden' name='id' value='",
+	"pComment1": "<div class='container d-flex justify-content-center'><form action='save.php' method='POST' class='container-sm d-flex flex-column'><label for='title'>Titel: </label><input type='text' name='title' class='w-md-50 mx-auto'><label for='text'>Kommentar: </label><textarea name='comment' rows='4' cols='80'></textarea><button type='submit' class='b-button w-25 mx-auto p-2 mt-3'>send</button><input type='hidden' name='id' value='",
 	"pComment2": "'></form></div>",
 
 	"bViewEnd": "</div>"

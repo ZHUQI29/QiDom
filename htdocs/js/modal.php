@@ -31,6 +31,7 @@ for (var i = 0; i < del_row.length; i++) {
     modal.style.display = "block";
     extension = "&del="
     extension = extension.concat(this.classList[0]);
+    // console.log(extension);
   }
 }
 

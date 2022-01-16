@@ -62,8 +62,16 @@
         <form action="save.php&site=&id=&username=" class='container-sm d-flex flex-column'>
           <input type="text" value="untitled">
           <textarea name="text" rows="8" cols="70">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus rem sapiente iure voluptas, unde impedit deserunt quidem aut, eaque magni quae quo mollitia. Incidunt laborum nam magni ea, asperiores repudiandae fugiat iure, velit dolore, possimus a, delectus totam accusantium voluptate quo suscipit vel quia. Tempora illo maiores vitae possimus similique incidunt perspiciatis rem omnis nulla harum hic aperiam facilis minima a, ipsum, odit, labore et inventore placeat mollitia totam recusandae! Voluptas excepturi ab qui voluptates, numquam rem eaque labore molestiae quam. Libero iusto, inventore cum nemo dicta unde esse quae, accusamus blanditiis quis voluptatum sed quod placeat sint possimus explicabo?</textarea>
-          <button type="submit">save</button>
+          <select class='status-' name='status' id='status'>
+            <option value='2' >open</option>
+            <option value='1' selected >b-closed</option>
+            <option value='0' >closed</option>
+          </select>
+          <button type='submit'>save</button>
         </form>
+        <div>
+          <h2 class='status-1 w-50 mx-auto my-2 text-center'>closed</h2>
+        </div>
     </div>
 
     <!-- comment show -->

@@ -480,12 +480,15 @@ th {
 /* TICKETS */
 .status-0 {
   background: var(--t-status-0);
+  color: var(--light-shade);
 }
 .status-1 {
   background: var(--t-status-1);
+  color: var(--dark-shade);
 }
 .status-2 {
   background: var(--t-status-2);
+  color: var(--dark-shade);
 }
 
 .status- {
