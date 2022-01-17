@@ -1,8 +1,9 @@
-<?php //include('_BIN/console.php'); ?>
+<?php include('_BIN/console.php'); ?>
 <?php
 
   $view = $_POST['view'];
   $url = $_POST['url'];
+  console_log($url);
 
   if (isset($_POST['search'])) {
     $url = checkURL('search', $_POST['search'], $url);
@@ -43,6 +44,11 @@
   if (isset($_POST['ob'])) {
     $url = checkURL('ob', $_POST['ob'], $url);
   }
+
+  if (isset($_POST['order'])) {
+    $url = checkURL('order', $_POST['order'], $url);
+  }
+
 
   echo "<script>window.location.href='". $url ."';</script>";
 

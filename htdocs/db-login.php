@@ -1,4 +1,4 @@
-<?php //include('_BIN/console.php'); ?>
+<?php include('_BIN/console.php'); ?>
 <?php
 
     //header("Content-Type: text/html; charset=utf8");
@@ -59,8 +59,9 @@
 
                     default:
                       setcookie('level', '0', time()+3600*24);
-                      setcookie('user', 'error', time()+3600*24);
+                      setcookie('user', 'DEACTIVATED', time()+3600*24);
                       setcookie('photo_id', $photoID, time()+3600*24*30);
+                      echo "<script>window.location.href='index.php?site=error&err=l102';</script>";
                       break;
                   }
 

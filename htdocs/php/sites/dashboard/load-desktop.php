@@ -10,6 +10,7 @@
 
   // Decide on displaying News/Tickets or User-Data
   $result = loadData(0, $view);
+  console_log($result);
   if($view == 'personal_data') {
     prepareDesktopU($result);
   } else {
@@ -37,9 +38,10 @@
   // Make rows out of database- and uViewDesktop-Fragments
   function createRowU($data, $counter, $a) {
     $username = getUserName($data[0]);
+    console_log($username);
     echo $a['row1'] . $counter;
-    echo $a['row2'] . $data['status'] . $a['row3'] . $data['status'] . $a['row4'];
-    echo $a['userTD1'] . $username . $a['userTD2'];
+    echo $a['row2'] . $a['row3'] . $username[0]['level'] . $a['row4'];
+    echo $a['userTD1'] . $username[0]['username'] . $a['userTD2'];
     echo $a['userTD1'] . $data['vorname'] . $a['userTD2'];
     echo $a['userTD1'] . $data['nachname'] . $a['userTD2'];
     echo $a['userTD1'] . $data['email']. $a['userTD2'];

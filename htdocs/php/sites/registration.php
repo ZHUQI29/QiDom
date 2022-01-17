@@ -1,5 +1,5 @@
 <div class="container-fluid login-container">
-  <form class="qd-bg-light reg-form-con d-lg-flex justify-content-center"name="registration" action="db-registration.php" method="POST">
+  <form class="qd-bg-light reg-form-con d-lg-flex justify-content-center"name="registration" action="db-registration.php?site=user" method="POST">
     <div class="d-flex flex-column align-items-center justify-content-between">
       <fieldset class="mx-3">
         <legend>Login</legend>
@@ -18,6 +18,8 @@
         <input type="password" id="password2" name="password2" value="" onkeyup="checkPasswordMatch()">
         <br>
         <span id='pw-message'> </span>
+        <br>
+
 
 
         <?php
@@ -31,7 +33,7 @@
          ?>
 
       </fieldset>
-      <input class="submit-button mt-3 mb-5 mb-lg-auto" type="submit" name="registration" value="REGISTRATION">
+      <input class="submit-button mt-3 mb-5 mb-lg-auto" type="submit" name="submit" value="registration">
     </div>
 
     <div>

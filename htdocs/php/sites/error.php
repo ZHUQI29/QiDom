@@ -37,6 +37,12 @@
         $nextPage = "login";
         break;
 
+      case "l102":
+        $title = "You were banned!";
+        $text = "Sorry, your account was deactivated.";
+        $nextPage = "home";
+        break;
+
       case "u100":
         $title = "Upload Successful!";
         $text = "Thank you for your entry!";

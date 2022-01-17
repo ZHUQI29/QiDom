@@ -34,7 +34,7 @@
       $stmt->execute();
       echo "<script>window.location.href='index.php?site=error&err=u100';</script>";
     }
-    // echo "<script>window.location.href='index.php?site=error&err=u103';</script>";
+    echo "<script>window.location.href='index.php?site=error&err=u103';</script>";
     $conn = NULL;
   }
 

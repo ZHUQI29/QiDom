@@ -72,7 +72,7 @@ for (var i = 0; i < edit_row.length; i++) {
         break;
 
       case 'personal_data':
-        extension = extension.concat("=userview&id=" + this.classList[0])
+        extension = extension.concat("=profile&id=" + this.classList[0])
         break;
 
       default:

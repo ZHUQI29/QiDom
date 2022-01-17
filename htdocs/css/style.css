@@ -48,6 +48,11 @@ button {
 .b-button {
   background: var(--dark-shade);
   border: 1px solid var(--main-color);
+  color: var(--main-color);
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
 }
 
 .b-button:hover {
@@ -58,6 +63,10 @@ button {
 
 .xb-button {
   color: var(--dark-accent);
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
 }
 
 .xb-button:hover {
@@ -67,6 +76,10 @@ button {
 
 .xt-button {
   color: var(--dark-accent);
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
 }
 
 .xt-button:hover {
@@ -640,6 +653,8 @@ table p {
 .n-div {
   background: linear-gradient(180deg, rgba(38,38,38,1) 0%, rgba(255,255,255,0) 20%, rgba(255,255,255,0) 40%, rgba(38,38,38,1) 100%);
   min-height: 100%;
+  position: relative;
+  transform: translateY(-00%);
   -webkit-transition: all .5s;
   -moz-transition: all .5s;
   -o-transition: all .5s;
@@ -649,4 +664,22 @@ table p {
 
 .n-div:hover {
   opacity: 0%;
+}
+
+.n-link {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid var(--main-color);
+  text-decoration: none;
+}
+
+.n-link img, div {
+  grid-row-start: 1;
+  grid-column-start: 1;
+  overflow: hidden;
+}
+
+.bg-image {
+  width: 100%;
+
 }

@@ -6,8 +6,11 @@
 
   function deleteRow($del) {
     include('php/utils/connect.php');
+    $table = $_GET['view'];
+    if ($table == 'personal_data') $table = $table . ', user';
     if($stmt = $conn->prepare("DELETE FROM ".$_GET['view']." WHERE ID=".$del)) {
       $stmt->execute();
+
       $substring = explode('&del=', $_SERVER['REQUEST_URI']);
       $url = $_SERVER['SERVER_NAME'] . $substring[0];
       echo "<script>window.location.href='" . $substring[0] . "';</script>";
@@ -59,6 +62,7 @@
           $sql = $sql . ")";
         }
       }
+      // console_log($sql);
 
     }
 
@@ -69,11 +73,11 @@
     }
 
     if (isset($_GET['le'])) {
-      $sql = $sql . " LIMIT 1," . $_GET['le'] ;
+      $sql = $sql . " LIMIT 0," . $_GET['le'] ;
     } else {
-      $sql = $sql . " LIMIT 1,10";
+      $sql = $sql . " LIMIT 0,10";
     }
-    //console_log($sql);
+    console_log($sql);
 
     include('php/utils/connect.php');
     if($stmt = $conn->prepare($sql)) {

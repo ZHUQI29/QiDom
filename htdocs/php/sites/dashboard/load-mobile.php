@@ -38,16 +38,14 @@
     } else {
       $pics = explode(",", $data['photo_id']);
       echo $a['photo1'];
-      foreach ($pics as $key) {
-        if ($key != '') {
-          echo $a['photo2'] . "upload/" . $key . $a['photo3'];
-        }
-      }
+      if ($key != '') {
+        echo $a['photo2'] . "upload/" . $key . $a['photo3'];
+      } 
       echo $a['photo4'];
     }
     echo $a['contentStart'];
     if ($_GET['view'] == 'personal_data') {
-      echo $a['title1'] . $username . $a['title2'];
+      echo $a['title1'] . $username[0]['username'] . $a['title2'];
       echo $a['text1'] . $data['vorname'] . " " .$data['nachname'] . $a['text2'];
       echo $a['text1'] . $data['plz'] . " " . $data['ort'] . ", " . $data['strasse'] . " " . $data['hausnummer'] . $a['text2'];
       echo $a['dateAuthor1'] . $data['birthday'] . $a['dateAuthor2'];
