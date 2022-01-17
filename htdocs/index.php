@@ -3,7 +3,7 @@
   <?php include "php/head.php" ?>
   <body>
 
-     <?php include('_BIN/console.php'); ?>
+     <?php //include('_BIN/console.php'); ?>
 
      <?php include "php/utils/session.php" ?>
      <?php include "php/utils/navbar.php" ?>

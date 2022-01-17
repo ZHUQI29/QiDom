@@ -1,6 +1,5 @@
 <?php
-    include('_BIN/console.php');
-    //header("Content-Type: text/html; charset=utf8");
+    //include('_BIN/console.php');
 
     // console_log($_FILES);
     switch ($_POST["submit"]) {
@@ -20,7 +19,6 @@
     $conn = null; // close connection
 
     function registration() {
-      // $registrationProcess = 0;
       // login data
       $username=$_POST['username'];//post 获取表单里的 name post to get the name in the form
       if ($_POST['password1'] === $_POST['password2']) {
@@ -49,18 +47,14 @@
               $stmt->bindValue(3, $passwordNew);
               $stmt->bindValue(4, $level);
               $stmt->execute();
-              // $registrationProcess++;
-              console_log('check1');
               handlePersonalData(false, $id, $username);
-              console_log("Success!");
               $conn = null;
           }
 
       } else {
-        console_log("no success!");
           // Else - if account DOES already exist
           $conn = null; // close connection
-          // echo "<script>window.location.href='index.php?site=error&err=r101';</script>";
+          echo "<script>window.location.href='index.php?site=error&err=r101';</script>";
       }
     }
 
@@ -80,7 +74,7 @@
       if ($_FILES != NULL) {
         include('photo-upload.php');
       } else {
-        console_log("no photo");
+        // console_log("no photo");
       }
 
 
@@ -100,7 +94,6 @@
             $stmt->bindValue(9, $gEmail);
             $stmt->bindValue(10, $photo_id);
             $stmt->execute();
-            console_log($stmt);
           }
         } catch (exception $e) {
           $conn = null; // close connection
@@ -121,15 +114,13 @@
             $stmt->bindValue(10, $gEmail);
             $stmt->bindValue(11, $photo_id);
             $stmt->execute();
-            // $registrationProcess++;
-            console_log($stmt);
           }
         } catch (exception $e) {
-          console_log($e->getMessage());
+          // console_log($e->getMessage());
           $conn = null; // close connection
           setcookie('level', '1', time()+3600*24*30);
           setcookie('user', $username, time()+3600*24*30);
-          // echo "<script>window.location.href='index.php?site=welcome&';</script>";
+          echo "<script>window.location.href='index.php?site=welcome&';</script>";
         }
       }
     }
@@ -140,14 +131,14 @@
       $stmt->bindValue(1, $id);
       $stmt->execute();
       $result = $stmt->fetchAll();
-      console_log($result);
+      // console_log($result);
       if ($result) {
         if ($stmt = $conn->prepare("UPDATE user SET level=? WHERE ID=?")) {
           $stmt->bindValue(1, intval($status));
           $stmt->bindValue(2, $id);
           $stmt->execute();
         } else {
-          console_log("error changing status");
+          // console_log("error changing status");
         }
       } else {
       }

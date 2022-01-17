@@ -39,7 +39,7 @@
   }
 
   function postChanges($id, $site, $title, $text) {
-    $status = $_POST['status'];
+    $status = (isset($_POST['status'])) ? $_POST['status'] : '-';
     $sql = "UPDATE " . $site . " SET title='" . $title . "', text='" . $text . "', status='" . $status . "' WHERE ID LIKE '" . $id . "'";
 
     include('php/utils/connect.php');

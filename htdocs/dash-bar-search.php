@@ -1,9 +1,9 @@
-<?php include('_BIN/console.php'); ?>
+<?php //include('_BIN/console.php'); ?>
 <?php
 
   $view = $_POST['view'];
   $url = $_POST['url'];
-  console_log($url);
+  // console_log($url);
 
   if (isset($_POST['search'])) {
     $url = checkURL('search', $_POST['search'], $url);

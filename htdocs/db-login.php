@@ -1,4 +1,4 @@
-<?php include('_BIN/console.php'); ?>
+<?php //include('_BIN/console.php'); ?>
 <?php
 
     //header("Content-Type: text/html; charset=utf8");

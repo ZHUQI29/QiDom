@@ -8,7 +8,6 @@ $dest_folder = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'upload' . DIRE
 if (!file_exists($dest_folder)) {
     mkdir($dest_folder, 0777, true);
 }
-console_log($_FILES == null);
 $error = 0;  // status of upload
 $table = $_GET['site'];
 
@@ -115,5 +114,5 @@ switch ($error) {
     $gotoSite = 'error';
     break;
 }
-// echo "<script>window.location.href='index.php?site=".$gotoSite."';</script>";
+echo "<script>window.location.href='index.php?site=".$gotoSite."';</script>";
  ?>

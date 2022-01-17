@@ -77,7 +77,7 @@
     } else {
       $sql = $sql . " LIMIT 0,10";
     }
-    console_log($sql);
+    // console_log($sql);
 
     include('php/utils/connect.php');
     if($stmt = $conn->prepare($sql)) {
