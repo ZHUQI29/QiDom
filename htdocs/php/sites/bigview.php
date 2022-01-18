@@ -1,7 +1,6 @@
 <?php //include('_BIN/console.php'); ?>
 <?php
 
-
   // If url contains delete-ID, delete this entry and reload page, without delete-ID
   if (isset($_GET['del'])) {
     include('php/utils/dbaccess.php');
@@ -16,6 +15,7 @@
 
   include('php/utils/dashUtils.php');
 
+  // if not id set, load error page
   if (isset($_GET['id']) == false) {
     echo "<script>window.location.href='index.php?site=error';</script>";
   }
@@ -24,6 +24,7 @@
   $viewerLevel = intval($_COOKIE['level']);
   $editMode = checkEditMode($viewerLevel, $site);
   $url = prepareURL($id, $site, $_COOKIE['user']);
+  // check if guest and not own ticket => error page
   if ($site == 'tickets' && $viewerLevel < 2) {
     if (checkEditModeDB($id) != $_COOKIE['user']) {
       "<script>window.location.href='index.php?site=error';</script>";
@@ -34,8 +35,11 @@
   $b = getJson('bigview');
   createDisplay($data[0], $b, $editMode, $url, $site);
   createComments($comments, $b, $editMode);
+
+  // modal for delete-confirmation
   include('js/modal.php');
-  // console_log($b);
+
+  // if not logged in or banned => no comment posting
   if ($viewerLevel > 0) {
     echo $b['pComment1'] . $url . $b['pComment2'];
   }
@@ -43,27 +47,32 @@
   echo $b['bViewEnd'];
 
 
+  // create main view, out of database content + json fragments
   function createDisplay($data, $b, $eMode, $url, $site) {
-    // console_log($data);
     echo $b['bViewStart'] . $b['displayS'];
+    //if a photo-id exists, load first picture
     if ($data['photo_id'] != NULL) {
       $pic = explode(',', $data['photo_id'])[0];
       echo $b['photo1'] . $pic . $b['photo2'];
+      // else load default image
     } else {
       echo "<img class='mx-auto mt-2'src='img/banner.png' alt='photo'>";
     }
+    // if editMode..
     if ($eMode) {
       echo $b['editView'];
       echo $b['eTitle1'] . $data['title'] . $b['eTitle2'];
       echo $b['eText1'] . $data['text'] . $b['eText2'];
-
+      // ..and ticket
       if ($site == 'tickets') {
+        // ..mark present status as 'selected'
         $status = $data['status'];
         echo $b['eStatus1'] . $status . $b['eStatus2'];
         echo $b['option2a'] . checkStatus($status, '2') . $b['option2b'];
         echo $b['option1a'] . checkStatus($status, '1') . $b['option1b'];
         echo $b['option0a'] . checkStatus($status, '0') . $b['option0b'];
       }
+      // add this url to hidden input POST, to use it after posting
       echo $b['id1'] . $url . $b['id2'];
       echo $b['saveBtn'];
       echo $b['editEnd'];
@@ -77,6 +86,7 @@
     echo $b['displayE'];
   }
 
+  // create comments
   function createComments($comments, $b, $eMode) {
     foreach ($comments as $key => $value) {
       echo $b['comment1'];
@@ -101,6 +111,7 @@
 
   }
 
+  // get content from database
   function loadArticle($site, $id) {
     $sql = "SELECT * FROM " . $site . " WHERE ID LIKE '" . $id . "'";
     // console_log($sql);
@@ -112,10 +123,12 @@
     $conn = NULL;
   }
 
+  // check if (admin) or (technician & tickets) for editmode
   function checkEditMode($viewerLevel, $site) {
     return (($viewerLevel == 3) || ($viewerLevel == 2 && $site == 'tickets'));
   }
 
+  // check if guest views his own ticket
   function checkEditModeDB($id) {
     $sql = "SELECT username FROM tickets WHERE ID LIKE " . $id;
     include('php/utils/dbaccess.php');
@@ -127,14 +140,17 @@
     $conn = NULL;
   }
 
+  // set url suffix
   function prepareURL($id, $site, $username) {
     return '&id=' . $id . '&site=' . $site . '&username=' . $username;
   }
 
+  // if (status == select-index) choose this html-select-option
   function checkStatus($id, $a) {
     if ($id == $a) return 'selected';
   }
 
+  // convert status number to string
   function statusToString($status) {
     switch ($status) {
       case '2':

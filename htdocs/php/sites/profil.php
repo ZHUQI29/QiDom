@@ -20,7 +20,7 @@
             $id = mysqli_fetch_assoc($result)['ID'];
         }
 
-        // console_log($id);
+        // sneak in user ID in POST
         echo "<input type='hidden' name='ID' value='" . $id . "'>";
 
         // Get info from personal_data-table

@@ -1,5 +1,6 @@
 <?php
-if (!isset($_SESSION['user'])) {   // if not logged in, in this session,
+
+if (!isset($_SESSION['user'])) {
     session_start();
     if (isset($_COOKIE['user'])) {
         $_SESSION['user'] = $_COOKIE['user'];

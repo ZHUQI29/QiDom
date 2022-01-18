@@ -1,7 +1,8 @@
 {
 	"dashBarStart": "<div class='dash-bar'><form action='dash-bar-search.php' class='dash-form py-1' method='POST'>",
-	"searchDate1": "<label for='search'>Search: </label><input type='text' name='search' value=''><br class='break'><label for='von'>von:</label><input type='date' name='vDate' value='2022-01-01'><br class='break'><label for='bis'>bis:</label><input type='date' name='bDate' value='",
-	"searchDate2": "'><br class='dbreak'>",
+	"search": "<label for='search'>Search: </label><input type='text' name='search' value=''><br class='break'>",
+	"date1": "<label for='von'>von:</label><input type='date' name='vDate' value='2022-01-01'><br class='break'><label for='bis'>bis:</label><input type='date' name='bDate' value='",
+	"date2": "'><br class='dbreak'>",
 	"optionA1": "<label for='C'>",
 	"optionA2": ":</label><input type='checkbox' name='C' checked>",
 	"optionB1": "<label for='B'>",

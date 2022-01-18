@@ -1,12 +1,14 @@
 <?php
-
   if (isset($_GET['del'])) {
     deleteRow($_GET['del']);
   }
 
+  // delete database row and refresh page without $_GET['del']
   function deleteRow($del) {
     include('php/utils/dbaccess.php');
     $table = $_GET['view'];
+
+    // if user data, delete from both: "user" and "personal_data" base
     if ($table == 'personal_data') $table = $table . ', user';
     if($stmt = $conn->prepare("DELETE FROM ".$_GET['view']." WHERE ID=".$del)) {
       $stmt->execute();
@@ -17,7 +19,7 @@
     }
   }
 
-  // get data from database, based on $_GET['view']
+  // get data from database, based on $_GET['view']-variables
   function loadData($startColumn, $view) {
     $counter = 0;
     $sql= "SELECT * FROM " . $view;
@@ -33,8 +35,7 @@
       }
 
       $sql = $sql . " and (timestamp > Convert('" . $_GET['vDate'] . "', datetime)) and (timestamp <= Convert('" . $bDate . "', datetime))";
-      // console_log($_GET['bDate']);
-      // console_log(date('Y-m-d', strtotime($_GET['bDate'] . ' +1 day')));
+
       if (isset($_GET['status'])) {
         $status = intval($_GET['status']);
         if ($status > 0) {
@@ -62,8 +63,6 @@
           $sql = $sql . ")";
         }
       }
-      // console_log($sql);
-
     }
 
     if (isset($_GET['ob'])) {
@@ -83,17 +82,8 @@
     if($stmt = $conn->prepare($sql)) {
       $stmt->execute();
       return $stmt->fetchAll();
-    } else { /*echo "error";*/ }
+    }
   }
-
-  // get data from database, based on $_GET['view']
-  // function loadData($startColumn, $view) {
-  //   include('php/utils/dbaccess.php');
-  //   if($stmt = $conn->prepare("SELECT * FROM ".$view." ORDER BY timestamp DESC LIMIT " . $startColumn . ",10")) {
-  //     $stmt->execute();
-  //     return $stmt->fetchAll();
-  //   } else { /*echo "error";*/ }
-  // }
 
   // SELECT * FROM `tickets`
   // WHERE
@@ -104,5 +94,6 @@
   // (timestamp < Convert('2022-01-11', datetime))
   // and
   // (status = 2)
+  // ORDER BY timestamp ASC
 
  ?>

@@ -2,20 +2,19 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 <?php
-  $username = (isset($_COOKIE['user'])) ? $_COOKIE['user'] : 'Profile';
+  $username = (isset($_COOKIE['user'])) ? $_COOKIE['user'] : 'Profil';
 
-  $navItems = ['news','contact','login'];
+
+  // set depending on user level, different navbar-items
   $dashItems = null;
   switch ($_COOKIE['level']) {
     case 0:
-      // $navItems = ['news','contact','login'];
       $navItems = ['News' => 'smallview',
                     'Kontakt' => 'contact',
                     'Login' => 'login'];
       break;
 
     case 1:
-      // $navItems = ['news','contact','profile','logout'];
       $navItems = ['News' => 'smallview',
                     'Kontakt' => 'contact',
                     'Tickets' => 'ticketsview',
@@ -24,7 +23,6 @@
       break;
 
     case 2:
-      // $navItems = ['news','contact','profile','logout'];
       $navItems = ['News' => 'smallview',
                     'Kontakt' => 'contact',
                     'Tickets' => 'ticketsview',
@@ -34,7 +32,6 @@
       break;
 
     case 3:
-      // $navItems = ['news','contact','profile','logout'];
       $navItems = ['News' => 'smallview',
                     'Kontakt' => 'contact',
                     'Tickets' => 'ticketsview',
@@ -45,8 +42,8 @@
                     'D-Tickets' => 'tickets'];
       break;
 
+
     default:
-      // code...
       break;
   }
 ?>

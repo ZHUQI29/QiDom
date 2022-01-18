@@ -86,24 +86,14 @@
         break;
     }
 
-    // error output
+    // error output and forwarding to the next page
     echo "<h1>" . $title . "</h1><p>" . $text . "</p>";
     if ($nextPage !== '') {
         echo "<script>setTimeout(function(){window.location.href='index.php?site=". $nextPage ."';},5000);</script>";
     }
-
    ?>
 
-
  </div>
-
 </div>
-<div id="loading-bar">
-
-</div>
-<script type="text/javascript">
-  var bar = document.getElementById("loading-bar");
-  for (var i = 0; i < array.length; i++) {
-    array[i]
-  }
-</script>
+<!-- loading animation in style.css -->
+<div id="loading-bar"></div>

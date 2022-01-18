@@ -43,9 +43,6 @@
       <br>
       <input type="date" id="bday" name="bday" value="<?php ?>">
     </fieldset>
-      <!-- <h1>username<input type="text" name="username"></h1>
-      <h1>password<input type="password" name="password"></h1>
-      <h1>re-enter<input type="password_Re" name="password_Re"></h1> -->
 
       <input class="submit-button" type="submit" name="registration" value="REGISTRATION">
   </form>

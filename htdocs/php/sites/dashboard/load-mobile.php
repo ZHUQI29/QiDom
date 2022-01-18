@@ -64,6 +64,7 @@
     echo $a['mobileEnd'];
   }
 
+  // include delete-confirmation
   include('js/modal.php');
 
  ?>

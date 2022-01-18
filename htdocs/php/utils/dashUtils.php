@@ -2,10 +2,10 @@
   function initializeDashBar() {
     $view = $_GET['view'];
     $d = getJson('dashbar');
-    echo $d['dashBarStart'];
+    echo $d['dashBarStart'] . $d['search'];
 
     if ($view != 'personal_data') {
-      echo $d['searchDate1'] . date('Y-m-d') . $d['searchDate2'];
+      echo $d['date1'] . date('Y-m-d') . $d['date2'];
     }
 
     switch ($view) {
@@ -28,8 +28,8 @@
         break;
     }
 
-    // $substring = explode('&', $_SERVER['REQUEST_URI']);
-    $url = $_SERVER['REQUEST_URI'];//$substring[0] . '&view=';
+    // sneak in url of this page
+    $url = $_SERVER['REQUEST_URI'];
     echo $d['url1'] . $url . $d['url2'];
     echo $d['url3'] . $view . $d['url4'];
 
@@ -41,6 +41,7 @@
     echo $d['dashBarEnd'];
   }
 
+  // load JSON-FIle
   function getJson($file) {
     switch ($file) {
 
@@ -75,6 +76,7 @@
     return json_decode($json_a, true);
   }
 
+  // fetch username from database
   function getUserName($ID) {
     include('php/utils/dbaccess.php');
     $stmt = $conn->prepare("SELECT username, level FROM user WHERE ID=".$ID);
@@ -82,6 +84,7 @@
     return $stmt->fetchAll();
   }
 
+  // manipulate url and return it with one changed value
   function changeURL($getVar, $newValue) {
     $url = explode('&', $_SERVER['REQUEST_URI']);
     foreach ($url as $key => $value) {
@@ -97,6 +100,7 @@
 
   }
 
+  // set a button to load more entries
   function createNextPageBtn() {
     $d = getJson('dashbar');
     $url = $_SERVER['REQUEST_URI'];

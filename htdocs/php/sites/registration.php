@@ -82,13 +82,6 @@
 
       </fieldset>
     </div>
-
-
-      <!-- <h1>username<input type="text" name="username"></h1>
-      <h1>password<input type="password" name="password"></h1>
-      <h1>re-enter<input type="password_Re" name="password_Re"></h1> -->
-
-
   </form>
 
   <script type="text/javascript">
@@ -103,8 +96,6 @@
     }
   }
   var checkPlz = function() {
-    // console.log(parseInt(document.getElementById('plz').value));
-    // console.log(checkNumber(document.getElementById('plz').value));
     if (checkNumber(document.getElementById('plz').value)) {
       document.getElementById('plz-message').style.color = 'white';
       document.getElementById('plz-message').innerHTML = 'PLZ:';
