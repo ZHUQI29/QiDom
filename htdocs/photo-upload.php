@@ -1,5 +1,5 @@
-<?php //include('_BIN/console.php'); /* For Debugging & Testing */?>
-
+<?php include('_BIN/console.php'); /* For Debugging & Testing */?>
+<?php include('photo-upload2.php'); ?>
 <?php include "php/utils/session.php" ?>
 <?php
 
@@ -44,7 +44,7 @@ function preparePhoto($dest_folder) {
   $eID = date('mdHis') . mt_rand(100, 999);
   $maxsize = 10000000;  // approx. 10 MB
   $id = '';
-  // console_log($_FILES);
+  console_log($_FILES);
   foreach ($_FILES['photo']['name'] as $key => $value) {
 
     $a=explode(".", $_FILES['photo']['name'][$key]); // Catch file-extension
@@ -87,12 +87,6 @@ function preparePhoto($dest_folder) {
 }
 
 
-
-
-
-
-
-
 $gotoSite = '';
 switch ($error) {
   case 0:
@@ -115,5 +109,6 @@ switch ($error) {
     $gotoSite = 'error';
     break;
 }
-echo "<script>window.location.href='index.php?site=".$gotoSite."';</script>";
- ?>
+// echo "<script>window.location.href='index.php?site=".$gotoSite."';</script>";
+
+?>

@@ -20,7 +20,10 @@
   }
 
   function createGuestFAQ($f) {
+    //"helpCon1": "<div class='help-con m-3 mb-2 px-3 py-3'>",
     echo $f['helpCon1'];
+
+    //      "<h1>" . "Login & Registrierung" . "</h1>"
     echo $f['title1'] . $f['login1'] . $f['title2'];
     echo $f['text1'] . $f['login2'] . $f['text2'];
     echo $f['helpCon2'];

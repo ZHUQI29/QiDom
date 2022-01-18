@@ -3,7 +3,7 @@
   <form class="qd-bg-light reg-form-con d-lg-flex justify-content-center"name="change profile" action="db-registration.php?site=user" method="POST" enctype="multipart/form-data">
     <div class="d-flex flex-column align-items-center justify-content-between">
       <fieldset class="mx-3">
-      <legend>Profile</legend>
+      <legend>Profil</legend>
       <?php
         $server="localhost";
         $db_username="root";
@@ -29,25 +29,24 @@
 
         if (mysqli_num_rows($result) > 0) {
             // 输出数据
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo "Anrede: " . $row["anrede"]. "<br>";
-                echo "Vorname: " . $row["vorname"]. "<br>";
-                echo "Nachname: " . $row["nachname"]. "<br>";
-                echo "PLZ: " . $row["plz"]. "<br>";
-                echo "Ort: " . $row["ort"]. "<br>";
-                echo "Straße: " . $row["strasse"]. "<br>";
-                echo "Hausnummer: " . $row["hausnummer"]. "<br>";
-                echo "Geburtstag: " . $row["birthday"]. "<br>";
-                echo "Email: " . $row["email"]. "<br>";
-                // echo "Photo: " . $row["photo_id"]. "<br>";
-            }
+            $row = mysqli_fetch_assoc($result);
+            echo "Anrede: " . $row["anrede"]. "<br>";
+            echo "Vorname: " . $row["vorname"]. "<br>";
+            echo "Nachname: " . $row["nachname"]. "<br>";
+            echo "PLZ: " . $row["plz"]. "<br>";
+            echo "Ort: " . $row["ort"]. "<br>";
+            echo "Straße: " . $row["strasse"]. "<br>";
+            echo "Hausnummer: " . $row["hausnummer"]. "<br>";
+            echo "Geburtstag: " . $row["birthday"]. "<br>";
+            echo "Email: " . $row["email"]. "<br>";
+
         } else {
             echo "0 ";
         }
         mysqli_close($conn);
         ?>
         <br><br><br>
-        <legend>Change profile</legend>
+        <legend>Daten ändern</legend>
         <br>
         <label for="anrede">Anrede:</label>
         <br>
@@ -60,37 +59,37 @@
         <br>
         <label for="vorname">Vorname:</label>
         <br>
-        <input type="text" id="vorname" name="vorname" value="">
+        <input type="text" id="vorname" name="vorname" value="<?php echo $row['vorname'] ?>">
         <br>
         <label for="nachname">Nachname:</label>
         <br>
-        <input type="text" id="nachname" name="nachname" value="">
+        <input type="text" id="nachname" name="nachname" value="<?php echo $row['nachname'] ?>">
         <br>
-        <label for="plz">New PLZ: </label>
+        <label for="plz">PLZ: </label>
         <br>
-        <input type="text" id="plz" name="plz" value="">
+        <input type="text" id="plz" name="plz" value="<?php echo $row['plz'] ?>">
         <br>
-        <label for="ort">New Ort: </label>
+        <label for="ort">Ort: </label>
         <br>
-        <input type="text" id="ort" name="ort" value="" >
+        <input type="text" id="ort" name="ort" value="<?php echo $row['ort'] ?>" >
         <br>
-        <label for="strasse">New Straße: </label>
+        <label for="strasse">Straße: </label>
         <br>
-        <input type="text" id="strasse" name="strasse" value="" >
+        <input type="text" id="strasse" name="strasse" value="<?php echo $row['strasse'] ?>" >
         <br>
-        <label for="hausnummer">New Hausnummer: </label>
+        <label for="hausnummer">Hausnummer: </label>
         <br>
-        <input type="text" id="hausnummer" name="hausnummer" value="" >
+        <input type="text" id="hausnummer" name="hausnummer" value="<?php echo $row['hausnummer'] ?>" >
         <br>
-        <label for="email">New Email: </label>
+        <label for="email">E-Mail: </label>
         <br>
-        <input type="text" id="email" name="email" value="" >
+        <input type="text" id="email" name="email" value="<?php echo $row['email'] ?>" >
         <br>
-        <label for="bday">New Birthdate: </label>
+        <label for="bday">Geburtstag: </label>
         <br>
-        <input class="" type="date" id="bday" name="bday" value="">
+        <input class="" type="date" id="bday" name="bday" value="<?php echo $row['birthday']; ?>">
         <br>
-        <label for="photo">New Photo: </label>
+        <label for="photo">Photo: </label>
         <br>
         <input type="file" id="photo" name="photo[]" value="" multiple>
         <br>

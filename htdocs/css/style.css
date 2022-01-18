@@ -342,6 +342,24 @@ fieldset {
   color: var(--light-shade);
 }
 
+#loading-bar {
+  width: 100vw;
+  height: 5px;
+  background: var(--main-color);
+  border: 1px solid black;
+  transform: translateX(-100%);
+  animation: loadingAnim 5s ease-in infinite;
+}
+
+@keyframes loadingAnim {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
 
 /* DASHBOARD */
 

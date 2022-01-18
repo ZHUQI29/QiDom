@@ -8,8 +8,8 @@
 
     switch ($err) {
       case "e404":
-        $title = "404, Page not found!";
-        $text = "You've entered a invalid site or this site was deprecated.";
+        $title = "404, Seite nicht gefunden!";
+        $text = "Du hast eine ungültige Addresse eingegeben.";
         $nextPage = "home";
         break;
 
@@ -20,68 +20,68 @@
         break;
 
       case "r100":
-        $title = "Entered passwords are not matching!";
-        $text = "You've entered not matching passwords. Please re-enter them.";
+        $title = "Passwörter stimmen nicht überein!";
+        $text = "Bitte versuche es noch einmal.";
         $nextPage = "registration";
         break;
 
       case "r101":
-        $title = "UserName already taken!";
-        $text = "Enter a new UserName or Login.";
+        $title = "User-Name bereits vergeben!";
+        $text = "Bitte gib einen neuen Namen ein.";
         $nextPage = "home";
         break;
 
       case "l100":
-        $title = "Incomplete Information!";
-        $text = "Please re-enter them.";
+        $title = "Ungenügend Informationen!";
+        $text = "Bitte fülle alles vollständig aus.";
         $nextPage = "login";
         break;
 
       case "l101":
-        $title = "Wrong Password!";
-        $text = "Please re-enter password or contact Administration.";
+        $title = "Falsches Passwort!";
+        $text = "Bitte gib das Passwort nochmal ein, oder kontaktiere die Administration.";
         $nextPage = "login";
         break;
 
       case "l102":
-        $title = "You were banned!";
-        $text = "Sorry, your account was deactivated.";
+        $title = "Du wurdest gebannt!";
+        $text = "Sorry. Dein Account wurde deaktiviert.";
         $nextPage = "home";
         break;
 
       case "l103":
-        $title = "Login needed";
-        $text = "Please login or register yourself, to write tickets";
+        $title = "Login benötigt";
+        $text = "Bitte logge dich ein, oder registriere dich, um Tickets zu schreiben";
         $nextPage = 'login';
         break;
 
       case "u100":
-        $title = "Upload Successful!";
-        $text = "Thank you for your entry!";
+        $title = "Upload Erfolgreich!";
+        $text = "Danke für deinen Eintrag!";
         $nextPage = "home";
         break;
 
       case "u101":
-        $title = "Wrong Image-Format!";
-        $text = "Please upload a valid photo.";
+        $title = "Falsches Foto-Format!";
+        $text = "Bitte lade ein .jpg oder .png hoch.";
         $nextPage = 'upload';
         break;
 
       case "u102":
-        $title = "Upload too big!";
-        $text = "Please upload a smaller photo.<br>MaxSize = 10 MB";
+        $title = "Upload zu groß!";
+        $text = "Bitte lade ein kleineres Foto hoch.<br>Max-Größe = 10 MB";
         $nextPage = 'upload';
         break;
 
       case "u103":
-        $title = "Upload Error!";
-        $text = "Something went wrong. Please try again later or check input.";
+        $title = "Upload Fehler!";
+        $text = "Etwas ist schief gegangen.<br>Bitte versuche es später wieder, oder kontaktiere die Administration.";
         $nextPage = 'upload';
         break;
 
       default:
-        $title = "Unexpected Error!";
-        $text = "Something went wrong. Please try again later or check input.";
+        $title = "Unerwarteter Fehler!";
+        $text = "Etwas ist schief gelaufen.<br>Bitte versuche es später wieder, oder kontaktiere die Administration.";
         $nextPage = "home";
         break;
     }
@@ -94,5 +94,16 @@
 
    ?>
 
+
  </div>
+
 </div>
+<div id="loading-bar">
+
+</div>
+<script type="text/javascript">
+  var bar = document.getElementById("loading-bar");
+  for (var i = 0; i < array.length; i++) {
+    array[i]
+  }
+</script>
