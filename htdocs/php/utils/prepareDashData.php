@@ -5,7 +5,7 @@
   }
 
   function deleteRow($del) {
-    include('php/utils/connect.php');
+    include('php/utils/dbaccess.php');
     $table = $_GET['view'];
     if ($table == 'personal_data') $table = $table . ', user';
     if($stmt = $conn->prepare("DELETE FROM ".$_GET['view']." WHERE ID=".$del)) {
@@ -79,7 +79,7 @@
     }
     // console_log($sql);
 
-    include('php/utils/connect.php');
+    include('php/utils/dbaccess.php');
     if($stmt = $conn->prepare($sql)) {
       $stmt->execute();
       return $stmt->fetchAll();
@@ -88,7 +88,7 @@
 
   // get data from database, based on $_GET['view']
   // function loadData($startColumn, $view) {
-  //   include('php/utils/connect.php');
+  //   include('php/utils/dbaccess.php');
   //   if($stmt = $conn->prepare("SELECT * FROM ".$view." ORDER BY timestamp DESC LIMIT " . $startColumn . ",10")) {
   //     $stmt->execute();
   //     return $stmt->fetchAll();

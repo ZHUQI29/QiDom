@@ -1,7 +1,9 @@
 <?php
   // news upload only for admins
   if($_COOKIE['level'] < 3 && $_GET['site'] == 'news') {
-    // echo "<script>window.location.href='index.php?site=news-view';</script>";
+    echo "<script>window.location.href='index.php?site=smallview';</script>";
+  } else if ($_COOKIE['level'] < 1) {
+    echo "<script>window.location.href='index.php?site=error&err=';</script>";
   }
  ?>
 

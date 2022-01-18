@@ -4,5 +4,8 @@
 	"card2": "'><img class='bg-image'src='",
 	"card3": "' alt='preview'><div class='n-div d-flex align-items-end'><p class='p-2 m-0'>",
 	"card4": "</p></div></a></div>",
-	"smallViewEnd": "</div></div></div>"
+	"smallViewEnd": "</div></div></div>",
+	
+	"addBtn1": "<div class='a-btn container d-flex justify-content-center'><button id='addBtn' class='",
+	"addBtn2":" add-button b-button w-25'>+</button></div>"
 }

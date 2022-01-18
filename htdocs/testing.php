@@ -1,20 +1,40 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+ <?php
+     include('_BIN/console.php');
 
-<?php include "php/utils/session.php" ?>
-<?php include "php/utils/navbar.php" ?>
-<?php include "php/utils/BG-Banner.php" ?>
-<?php include('_BIN/console.php'); ?>
-
-
-<?php
-  $json_a = file_get_contents('php/sites/dashboard/newsView.json');
-  $trimmed = ltrim($json_a, "{\"data\":\"");
-  $a = explode("$", $trimmed);
-  console_log($a);
-?>
+     $server="localhost";
+     $db_username="root";
+     $db_password="";
+     $db_name="technikum-wsp";
+     $sql = "SELECT * FROM news";
 
 
-</body>
+     try {
+       // echo "<br>start connection";
+       $conn = new PDO ("mysql:host=$server;dbname=$db_name", $db_username, $db_password);
+       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+       // echo $conn;
+       // echo "<br>CONNECTED";
+     } catch (PDOException $e) {
+       echo "<br>Connection failed";
+       echo $e->getMessage();
+     }
 
-</html>
+     if($stmt = $conn->prepare($sql)) {
+       $stmt->execute();
+       console_log($stmt->fetchAll());
+     }
+
+
+
+     $conn = new mysqli($server, $db_username, $db_password, $db_name);
+     if ($conn->connect_errno) {
+       echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
+       exit();
+     }
+     $stmt = mysqli_query($conn, $sql);
+     console_log($stmt->fetch_all());
+
+
+
+
+ ?>

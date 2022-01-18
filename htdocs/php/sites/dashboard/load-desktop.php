@@ -8,9 +8,8 @@
   include('php/utils/prepareDashData.php');
   include('php/utils/dashUtils.php');
 
-  // Decide on displaying News/Tickets or User-Data
+  // Decide on displaying Tickets/News or User-Data
   $result = loadData(0, $view);
-  // console_log($result);
   if($view == 'personal_data') {
     prepareDesktopU($result);
   } else {
@@ -19,6 +18,7 @@
   createNextPageBtn();
 
   // Prepare User-Dashboard
+  // load JSON-File with all needed HTML-Fragments and build the page
   function prepareDesktopU($data) {
     $a = getJson('desktop');
     echo $a['uViewStart1'];
@@ -35,7 +35,7 @@
     include('js/addBtn.php');
   }
 
-  // Make rows out of database- and uViewDesktop-Fragments
+  // Make rows out of database-Entries and HTML-Fragments for User-Dashboard
   function createRowU($data, $counter, $a) {
     $username = getUserName($data[0]);
     echo $a['row1'] . $counter;
@@ -50,7 +50,7 @@
     echo $a['userOptions1'] . $data['ID'] . ' ' . $_GET['view'] . $a['userOptions2'];
   }
 
-  // Prepare TicketsNews-Dashboard
+  // Prepare Tickets/News-Dashboard. Same as User-Dashboard
   function prepareDesktopTN($data) {
     $a = getJson('desktop');
     echo $a['tnViewStart1'];
@@ -58,7 +58,6 @@
     echo $a['tnViewStart2'] . $_GET['view'] . $a['tnViewStart3'];
     $counter = 1;
     foreach ($data as $key) {
-      if (isset($key[5])) {$key[5] = null;}
       createRowTN($key, $counter, $a);
       $counter++;
     }
@@ -67,10 +66,9 @@
     include('js/addBtn.php');
   }
 
-  // Make rows out of database- and tnViewDesktop-Fragments
+  // Make rows out of database-Entries and HTML-Fragments for Tickets/News-Dashboard
   function createRowTN($data, $counter, $a) {
     $even = ($counter%2==0) ? '1' : '0';
-    // $data[6] = ($data[6]==null) ? $counter : $data[6];
     echo $a['row1'] . $even;
     echo $a['row2'] . $data['status'] . $a['row3'] . $data['status'] . $a['row4'];
     echo $a['title1'] . $data['title'] . $a['title2'];

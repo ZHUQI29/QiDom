@@ -29,7 +29,7 @@
     $photoID = isset($_COOKIE['photo_id']) ? $_COOKIE['photo_id'] : 'banner';
     $sql = "INSERT INTO comments (ID, title, text, photo_id, username) VALUES('" . $id . "','" .$title . "','" . $comment . "','" . $photoID . "','" . $username . "')";
     console_log($sql);
-    include('php/utils/connect.php');
+    include('php/utils/dbaccess.php');
     if($stmt = $conn->prepare($sql)) {
       $stmt->execute();
       echo "<script>window.location.href='index.php?site=error&err=u100';</script>";
@@ -42,7 +42,7 @@
     $status = (isset($_POST['status'])) ? $_POST['status'] : '-';
     $sql = "UPDATE " . $site . " SET title='" . $title . "', text='" . $text . "', status='" . $status . "' WHERE ID LIKE '" . $id . "'";
 
-    include('php/utils/connect.php');
+    include('php/utils/dbaccess.php');
     if($stmt = $conn->prepare($sql)) {
       $stmt->execute();
       echo "<script>window.location.href='index.php?site=error&err=u100';</script>";

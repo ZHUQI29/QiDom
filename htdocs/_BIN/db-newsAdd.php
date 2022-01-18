@@ -41,6 +41,3 @@
             }
             echo "In Summe".$count."dokumentieren";
             }
-    
-    
-    

@@ -13,6 +13,12 @@
         $nextPage = "home";
         break;
 
+      case "c100":
+        $title = "Verbindungs-Fehler";
+        $text = "Die Verbindung zum Server konnte nicht hergestellt werden";
+        $nextPage = "home";
+        break;
+
       case "r100":
         $title = "Entered passwords are not matching!";
         $text = "You've entered not matching passwords. Please re-enter them.";
@@ -43,6 +49,12 @@
         $nextPage = "home";
         break;
 
+      case "l103":
+        $title = "Login needed";
+        $text = "Please login or register yourself, to write tickets";
+        $nextPage = 'login';
+        break;
+
       case "u100":
         $title = "Upload Successful!";
         $text = "Thank you for your entry!";
@@ -52,19 +64,19 @@
       case "u101":
         $title = "Wrong Image-Format!";
         $text = "Please upload a valid photo.";
-        $nextPage = '';
+        $nextPage = 'upload';
         break;
 
       case "u102":
         $title = "Upload too big!";
         $text = "Please upload a smaller photo.<br>MaxSize = 10 MB";
-        $nextPage = '';
+        $nextPage = 'upload';
         break;
 
       case "u103":
         $title = "Upload Error!";
         $text = "Something went wrong. Please try again later or check input.";
-        $nextPage = '';
+        $nextPage = 'upload';
         break;
 
       default:

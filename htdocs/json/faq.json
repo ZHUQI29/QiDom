@@ -1,0 +1,31 @@
+{
+  "faqStart": "<div class='container-lg'><div class='help py-3'>",
+  "helpCon1": "<div class='help-con m-3 mb-2 px-3 py-3'>",
+  "title1": "<h1>",
+  "title2": "</h1>",
+  "text1": "<p>",
+  "text2": "</p>",
+  "helpCon2": "</div>",
+  "faqEnd": "</div></div>",
+
+  "login1": "Login & Registrierung",
+  "login2": "<a href='index.php?site=login'>Logge dich ein</a> oder <a href='index.php?site=registration'>registriere dich.</a> <br> ODER: <br>Rechts oben findest du den Button für den <b>[Login]</b> und auf der darauffolgenden Seite, den Button zum <b>[Registrieren]</b>. <br><br>Um dich zu erreichen, bitten wir dich um deine persönlichen Kontaktdaten (nicht verpflichtend). <br><br>Wenn du ein Foto von dir hochladen willst, dann kannst du es in deinem <a href='index.php?site=profile'>[Profil]</a> machen. <br>So wird man dich besser in den Kommentaren erkennen. ;)",
+
+  "complaints1": "Beschwerden & Tickets",
+  "complaints2": "Sollte etwas nicht funktionieren, dann scheue nicht uns zu <a href='index.php?site=contact'>kontaktieren</a>! <br><br>Über das <a href='index.php?site=tickets'>Ticket-System</a> kannst du uns Defekte melden! Wir kümmern uns schnellstmöglich darum! <br><br>Über den Nav-Button <b>[Profil]</b> gelangst du zu deinen eingereichten <a href='#'>[Tickets]</a>. Wähle dann ein Ticket, um Antworten einzusehen oder selbst eine zu schreiben. Unsere Servicetechniker kümmern sich schnellstmöglich darum. :)",
+
+  "news1": "News & Kommentare",
+  "news2": "Klicke in den Nav-Button <a href='index.php?site=news'>[News]</a>, um zu den neuesten Nachrichten und Updates zu gelangen. Mit einem aktivierten Profil, kannst du Kommentare, unter den Beiträgen, schreiben. <br><br>Bitte achte auf freundliche Etiquette.",
+
+  "ticketSystem1": "Ticket-System",
+  "ticketSystem2": "Navigiere zur Ticketansicht, über den Nav-Button <a href='index.php?site=dashboard&view=tickets'>[D-Tickets]</a>. <br><br>Um Tickets zu suchen oder zu sortieren, bediene die Dashboard-Leiste und drück anschließend auf <b>[Go!]</b>. <br>Unter der Dash-Leiste werden die Tickets aufgelistet. <br><br>Um ein neues Ticket zu erstellen, drücke den <b>[ + ]</b>-Button. <br>Um ein Ticket zu löschen, den dazugehörigen <span class='material-icons' >highlight_off</span>-Button und zum Bearbeiten eines Tickets, den <span class='material-icons' >edit_note</span>-Button. <br><br>Achte bitte darauf, den Gästen ausschließlich hilfreiche und freundliche Antworten zu schreiben. <br>Bei ''schwierigen'' Gästen, wende dich bitte an das Front-Office.<br><br>Nachdem das Ticket bearbeitet wurde, muss es gesperrt werden, über die Status-Auswahl. <br>Der mittlere <b>b-closed</b>-Status steht für ''bad close'' und ist für Tickets reserviert, die zwar geschlossen werden können, das Problem jedoch weiterhin besteht.",
+
+  "adminBasics1": "Admin - Basics",
+  "adminBasics2": "<i>''Aus großer Macht, folgt große Verantwortung..'' </i> Uncle Ben wusste es und du solltest es auch! <br><br>Als Admin hast du den vollen Zugriff zur Website. <br><br>Bitte handle auch entsprechend, mit Verantwortung. <br><br>Danke. :)",
+
+  "newsSystem1": "News schreiben und verwalten",
+  "newsSystem2": "Das News-Dashboard findest du über den Nav-Button <a href='index.php?site=dashboard&view=news'>[D-News]</a>. <br> <br>Sortiere und filtere die Liste, mithilfe der Dashboard-Leiste, oben und bestätige mit <b>[Go!]</b>.<br>Der <b>[ + ]</b>-Button fügt neue News-Beiträge hinzu.<br>Der <span class='material-icons' >highlight_off</span>-Button löscht den jeweiligen Beitrag. <br>Und der <span class='material-icons' >edit_note</span>-Button erlaubt es den Beitrag zu bearbeiten, kommentieren und unerwünschte Kommentare zu löschen.",
+
+  "userSystem1": "User verwalten",
+  "userSystem2": "Wie das News-Dashboards, findest du das User-Dashboard über den Nav-Button <a href='index.php?site=dashboard&view=news'>[D-Users]</a>. <br> <br>Sortiere und filtere die Liste, mithilfe der Dashboard-Leiste, oben und bestätige mit <b>[Go!]</b>.<br>Der <b>[ + ]</b>-Button fügt neue User-Profile hinzu.<br>Mit dem <span class='material-icons' >edit_note</span>-Button gelangt man zur Profil-Seite des Users und kann die Daten bearbeiten. Außerdem ist es möglich die Kommentarfunktion für einen User zu sperren, indem man seinen Status von <b>[Gast]</b> auf <b>[BAN]</b> ändert. Kann jederzeit wieder rückgängig gemacht werden."
+}

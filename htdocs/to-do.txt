@@ -15,7 +15,7 @@ x Sie haben ein 2er Team gebildet.
 x Sie haben eine index.php mit dem Grundlayout erstellt.
 - Sie haben das Projekt vollständig (inklusive Kopie der MySQL Datenbank) als zip/rar hochgeladen.
 - Sie haben komplexere Abläufe und Funktionen kommentiert.
-- Die gesamte Website ist responisve und "mobile first" gestaltet.
+x Die gesamte Website ist responisve und "mobile first" gestaltet.
 x Der Datenbankzugriff erfolgt mittels mySQLi.
 - Alle Eingaben aller Formulare (Registrierung, Login, etc ...) werden clientseitig und serverseitig überprüft und validiert.
 - Bilder werden serverseitig verkleinert.
@@ -35,10 +35,10 @@ x Passwörter sind gehasht in der Datenbank gespeichert.
 | USER |
 --------
 x Es gibt 4 verschiedene Zustände für User: anonym (nicht eingeloggt), Gast (registrierter User), Administrator*in, Servicetechniker (nur im 2er Team))
-- Alle Usertypen können Hilfebereich, Impressum und die Newsbeiträge auf der Startseite einsehen.
-- Der Login Status ist permanent auf der Seite sichtbar und eingeloggte Nutzer können sich ausloggen.
+x Alle Usertypen können Hilfebereich, Impressum und die Newsbeiträge auf der Startseite einsehen.
+x Der Login Status ist permanent auf der Seite sichtbar und eingeloggte Nutzer können sich ausloggen.
 x Auf Basis des Usertyps (Gast, Administrator*in, Servicetechniker*in) werden auf der Website verschiedene Features freigeschalten.
-- Eingeloggte Nutzer können die eigenen Profildaten einsehen und bearbeiten. Achten Sie darauf dass das Passwort niemals am Client angezeigt wird.
+x Eingeloggte Nutzer können die eigenen Profildaten einsehen und bearbeiten. Achten Sie darauf dass das Passwort niemals am Client angezeigt wird.
 
 --------
 | NEWS |
@@ -49,11 +49,11 @@ x Administrator*innen können News-Beiträge posten inkl. Bildupload.
 | DASHBOARD |
 -------------
 x Administrator*innen können User-Accounts für Gäste und Servicetechniker*innen anlegen.
-- Administrator*innen können neue Gäste anlegen, Gäste deaktivieren, News-Beiträge erstellen und löschen.
+x Administrator*innen können neue Gäste anlegen, Gäste deaktivieren, News-Beiträge erstellen und löschen.
 x Administrator*innen haben eine Userverwaltung (übersicht bestehender und deaktivieren einzelner Nutzer).
 x Administrator*innen haben eine News-Beiträgeübersicht in der Sie alle News-Beiträge bearbeiten und in einer Liste filtern können.
-- Administrator*innen können Servicetechniker*innen anlegen und deaktivieren.
-- Administrator*innen können alle User bearbeiten.
+x Administrator*innen können Servicetechniker*innen anlegen und deaktivieren.
+x Administrator*innen können alle User bearbeiten.
 x Administrator*innen können alle Tickets einsehen.
 x Servicetechniker*innen haben eine ticketübersicht in der Sie Tickets bearbeiten und in einer Liste filtern können.
 x Servicetechniker*innen können Tickets aller Gäste einsehen und den Status der Tickets ändern.
@@ -64,7 +64,7 @@ x Servicetechniker*innen können auf Tickets antworten.
 | TICKETS |
 -----------
 x Gäste können Tickets anlegen inkl. Bildupload, die von Servicetechniker*innen gelesen und bearbeitet werden können.
-- Der eingeloggte Nutzer kann neue Tickets anlegen und bereits angelegte Tickets einsehen.
+x Der eingeloggte Nutzer kann neue Tickets anlegen und bereits angelegte Tickets einsehen.
 x Tickets haben 3 Status: offen, erfolgreich geschlossen, und erfolglos geschlossen.
 x Tickets können wieder geöffnet werden.
 x Ein Ticket besteht aus: Titel, Beschreibung und Bildupload, sowie aktuelles Datum und Uhrzeit.
@@ -72,5 +72,5 @@ x Ein Ticket besteht aus: Titel, Beschreibung und Bildupload, sowie aktuelles Da
 -------
 | FAQ |
 -------
-- Es gibt einen Hilfebereich auf der Website mit Benutzer*innenanleitung.
+x Es gibt einen Hilfebereich auf der Website mit Benutzer*innenanleitung.
 - Es gibt ein Impressum (Standard-Impressum), Namen und Bilder der Hotelverwaltung.

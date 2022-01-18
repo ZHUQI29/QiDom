@@ -56,7 +56,7 @@
 
 
       <!-- StartButtons1 -->
-      <div class="container mt-auto pt-2 d-none d-xxl-grid" id="startbuttons">
+      <div class="container mb-auto mt-3 pt-2 d-none d-xxl-grid" id="startbuttons">
         <div class="row g-1 ">
 
           <div class="col-6 start-button-parent ">
@@ -69,7 +69,7 @@
 
           <div class="col-6 start-button-parent ">
             <div class="start-button-child sb-news">
-              <a class="start-button-grandchild" href='index.php?site=news'>
+              <a class="start-button-grandchild" href='index.php?site=smallview'>
                 News
               </a>
             </div>
@@ -85,8 +85,8 @@
 
           <div class="col-6 start-button-parent ">
             <div class="start-button-child sb-impressum">
-              <a class="start-button-grandchild" href='index.php?site=imprint'>
-                Impress
+              <a class="start-button-grandchild" href='index.php?site=faq'>
+                FAQ
               </a>
             </div>
           </div>
@@ -112,7 +112,7 @@
 
         <div class="col-lg-3 col-6 start-button-parent ">
           <div class="start-button-child sb-news">
-            <a class="start-button-grandchild" href='index.php?site=news'>
+            <a class="start-button-grandchild" href='index.php?site=smallview'>
               News
             </a>
           </div>
@@ -128,8 +128,8 @@
 
         <div class="col-lg-3 col-6 start-button-parent ">
           <div class="start-button-child sb-impressum">
-            <a class="start-button-grandchild" href='index.php?site=imprint'>
-              Impress
+            <a class="start-button-grandchild" href='index.php?site=faq'>
+              FAQ
             </a>
           </div>
         </div>
@@ -137,7 +137,6 @@
       </div>
     </div>
     <!-- End of StartButtons2 -->
-
 
   </div>
   <!-- End of Display -->

@@ -2,7 +2,7 @@
 <?php
 
     //header("Content-Type: text/html; charset=utf8");
-    include('php/utils/connect.php');
+    include('php/utils/dbaccess.php');
 
     $username = $_POST['username'];//post 获得用户名表单值 post to get the username form value
     $password = $_POST['password'];//post 获得用户密码单值 post to obtain the user password single value

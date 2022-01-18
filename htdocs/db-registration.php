@@ -15,7 +15,7 @@
         break;
     }
 
-    echo "end";
+    echo "<script>window.location.href='index.php?site=error=welcome&';</script>";
     $conn = null; // close connection
 
     function registration() {
@@ -34,7 +34,7 @@
       $options = ['cost' => 12,];
       $passwordNew = password_hash($password, PASSWORD_BCRYPT, $options);
 
-      include('php/utils/connect.php');
+      include('php/utils/dbaccess.php');
       $stmt = $conn->prepare('SELECT * FROM user WHERE username=:uname');
       $stmt->bindParam(":uname", $username);
       $stmt->execute();
@@ -78,7 +78,7 @@
       }
 
 
-      include('php/utils/connect.php');
+      include('php/utils/dbaccess.php');
       if ($update) {
         changeStatus($_POST['status'], $_POST['ID']);
         try {
@@ -122,11 +122,12 @@
           setcookie('user', $username, time()+3600*24*30);
           echo "<script>window.location.href='index.php?site=welcome&';</script>";
         }
+        echo "<script>window.location.href='index.php?site=login';</script>";
       }
     }
 
     function changeStatus($status, $id) {
-      include('php/utils/connect.php');
+      include('php/utils/dbaccess.php');
       $stmt = $conn->prepare("SELECT * FROM user WHERE ID=?");
       $stmt->bindValue(1, $id);
       $stmt->execute();

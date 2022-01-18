@@ -1,12 +1,10 @@
 <?php //include('_BIN/console.php'); ?>
 <?php
-  if (($_COOKIE['level'] != '3' && $_COOKIE['level'] != '2') && $_GET['site'] == 'ticketview')
-  {
-    "<script>window.location.href='index.php?site=error';</script>";
-  }
 
+
+  // If url contains delete-ID, delete this entry and reload page, without delete-ID
   if (isset($_GET['del'])) {
-    include('php/utils/connect.php');
+    include('php/utils/dbaccess.php');
     if($stmt = $conn->prepare("DELETE FROM " . 'comments'. " WHERE cid=" . $_GET['del'])) {
       $stmt->execute();
       $substring = explode('&del=', $_SERVER['REQUEST_URI']);
@@ -14,7 +12,6 @@
       echo "<script>window.location.href='" . $substring[0] . "';</script>";
     }
   }
-
 
 
   include('php/utils/dashUtils.php');
@@ -107,7 +104,7 @@
   function loadArticle($site, $id) {
     $sql = "SELECT * FROM " . $site . " WHERE ID LIKE '" . $id . "'";
     // console_log($sql);
-    include('php/utils/connect.php');
+    include('php/utils/dbaccess.php');
     if($stmt = $conn->prepare($sql)) {
       $stmt->execute();
       return $stmt->fetchAll();
@@ -121,7 +118,7 @@
 
   function checkEditModeDB($id) {
     $sql = "SELECT username FROM tickets WHERE ID LIKE " . $id;
-    include('php/utils/connect.php');
+    include('php/utils/dbaccess.php');
     if($stmt = $conn->prepare($sql)) {
       $stmt->execute();
       $conn = NULL;

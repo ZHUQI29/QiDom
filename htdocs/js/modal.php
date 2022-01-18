@@ -14,7 +14,6 @@
 var modal = document.getElementById("confirm_delete");
 
 // Get the button that opens the modal
-// var del_row = document.getElementById("delete_row");
 var del_row = document.getElementsByName("delete_row");
 
 // Get the <Close-Button> element that closes the modal
@@ -31,7 +30,7 @@ for (var i = 0; i < del_row.length; i++) {
     modal.style.display = "block";
     extension = "&del="
     extension = extension.concat(this.classList[0]);
-    // console.log(extension);
+    // first class name is inserted by php, when loading the page
   }
 }
 
@@ -50,13 +49,12 @@ window.onclick = function(event) {
 // When the user clicks on <Confirm-Button>, refresh page with $_GET['del']
 cnfm_btn.onclick = function() {
   modal.style.display = "none";
-
   var url = window.location.href;
   url = url.concat(extension);
   window.location.href = url;
 }
 
-// EDIT ENTRY
+// EDIT ENTRY, same as "delete"
 var edit_row = document.getElementsByName("edit_row");
 for (var i = 0; i < edit_row.length; i++) {
   edit_row[i].onclick = function() {

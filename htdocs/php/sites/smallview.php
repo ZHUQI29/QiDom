@@ -36,7 +36,7 @@
   }
 
   function loadArticles($sql) {
-    include('php/utils/connect.php');
+    include('php/utils/dbaccess.php');
     if($stmt = $conn->prepare($sql)) {
       $stmt->execute();
       $conn = NULL;

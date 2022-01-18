@@ -7,15 +7,15 @@
         <br>
         <label for="username">Username: </label>
         <br>
-        <input type="text" id="username" name="username" value="">
+        <input type="text" id="username" name="username" value="" maxlength="20">
         <br>
         <label for="password">Passwort: </label>
         <br>
-        <input type="password" id="password1" name="password1" value="" onkeyup="checkPasswordMatch()">
+        <input type="password" id="password1" name="password1" value="" onkeyup="checkPasswordMatch()" maxlength="20">
         <br>
         <label for="password2">Wiederholen: </label>
         <br>
-        <input type="password" id="password2" name="password2" value="" onkeyup="checkPasswordMatch()">
+        <input type="password" id="password2" name="password2" value="" onkeyup="checkPasswordMatch()" maxlength="20">
         <br>
         <span id='pw-message'> </span>
         <br>
@@ -50,31 +50,31 @@
           <br>
           <label for="vorname">Vorname:</label>
           <br>
-          <input type="text" id="vorname" name="vorname" value="">
+          <input type="text" id="vorname" name="vorname" value="" maxlength="50">
           <br>
           <label for="nachname">Nachname:</label>
           <br>
-          <input type="text" id="nachname" name="nachname" value="">
+          <input type="text" id="nachname" name="nachname" value="" maxlength="50">
           <br>
           <label for="email">Email-Adresse:</label>
           <br>
-          <input type="email" id="email" name="email" value="">
+          <input type="email" id="email" name="email" value="" maxlength="30">
           <br>
           <label for="strasse">Straße:</label>
           <br>
-          <input type="text" id="strasse" name="strasse" value="">
+          <input type="text" id="strasse" name="strasse" value="" maxlength="50">
           <br>
           <label for="hausnummer">Hausnummer:</label>
           <br>
-          <input type="text" id="hausnummer" name="hausnummer" value="">
-          <br>
-          <label for="plz" id='plz-message' >PLZ:</label>
-          <br>
-          <input type="text" id="plz" name="plz" value="" onkeyup="checkPlz()">
+          <input type="text" id="hausnummer" name="hausnummer" value="" maxlength="20">
           <br>
           <label for="ort">Ort:</label>
           <br>
-          <input type="text" id="ort" name="ort" value="">
+          <input type="text" id="ort" name="ort" value="" maxlength="20">
+          <br>
+          <span id='plz-message' style='color:white;'>PLZ:</span>
+          <br>
+          <input type="text" id="plz" name="plz" value="" onkeyup="checkPlz()">
           <br>
           <label for="bday">Geburtstag:</label>
           <br>
@@ -103,13 +103,18 @@
     }
   }
   var checkPlz = function() {
-    if (document.getElementById('plz').value < 0 || document.getElementById('plz').value > 99999) {
-      document.getElementById('plz-message').style.color = 'red';
-      document.getElementById('plz-message').innerHTML = ' ungültige PLZ';
-    } else {
+    // console.log(parseInt(document.getElementById('plz').value));
+    // console.log(checkNumber(document.getElementById('plz').value));
+    if (checkNumber(document.getElementById('plz').value)) {
       document.getElementById('plz-message').style.color = 'white';
       document.getElementById('plz-message').innerHTML = 'PLZ:';
+    } else {
+      document.getElementById('plz-message').style.color = 'red';
+      document.getElementById('plz-message').innerHTML = 'ungültige PLZ:';
     }
+  }
+  var checkNumber = function(input) {
+    return (parseInt(input) > 0 && parseInt(input) <99999);
   }
   </script>
 

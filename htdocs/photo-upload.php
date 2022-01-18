@@ -24,7 +24,7 @@ function uploadArticle($table, $dest_folder) {
   $username = $_SESSION['user'];
   $id = preparePhoto($dest_folder);
   // database entry
-  include('php/utils/connect.php');
+  include('php/utils/dbaccess.php');
 
   try {
       if ($stmt = $conn->prepare("INSERT INTO ". $table . "(ID,title,text,photo_id,username) VALUES (?,?,?,?,?)")) {
@@ -67,6 +67,7 @@ function preparePhoto($dest_folder) {
 
                     // move photo to /htdocs/upload/
                     move_uploaded_file($_FILES['photo']['tmp_name'][$key], $dest_folder . $name . '.' . $a[1]);
+                    
 
                 } else {
                     $error = 1;

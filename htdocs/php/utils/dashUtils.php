@@ -64,6 +64,10 @@
         $json_a = file_get_contents('json/smallview.json');
         break;
 
+      case 'faq':
+        $json_a = file_get_contents('json/faq.json');
+        break;
+
       default:
         break;
     }
@@ -72,7 +76,7 @@
   }
 
   function getUserName($ID) {
-    include('php/utils/connect.php');
+    include('php/utils/dbaccess.php');
     $stmt = $conn->prepare("SELECT username, level FROM user WHERE ID=".$ID);
     $stmt->execute();
     return $stmt->fetchAll();
@@ -97,7 +101,7 @@
     $d = getJson('dashbar');
     $url = $_SERVER['REQUEST_URI'];
     $view = (isset($_GET['view'])) ? $_GET['view'] : $_GET['site'];
-    
+
     if (isset($_GET['le'])) {
       $le = intval($_GET['le']) + 10;
       $url = changeURL('le', $le);

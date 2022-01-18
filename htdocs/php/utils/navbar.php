@@ -6,20 +6,38 @@
   $dashItems = null;
   switch ($_COOKIE['level']) {
     case 0:
-      $navItems = ['news','contact','login'];
+      // $navItems = ['news','contact','login'];
+      $navItems = ['News' => 'smallview',
+                    'Kontakt' => 'contact',
+                    'Login' => 'login'];
       break;
 
     case 1:
-      $navItems = ['news','contact','profile','logout'];
+      // $navItems = ['news','contact','profile','logout'];
+      $navItems = ['News' => 'smallview',
+                    'Kontakt' => 'contact',
+                    'Tickets' => 'ticketsview',
+                    'Profil' => 'profile',
+                    'Logout' => 'logout'];
       break;
 
     case 2:
-      $navItems = ['news','contact','profile','logout'];
+      // $navItems = ['news','contact','profile','logout'];
+      $navItems = ['News' => 'smallview',
+                    'Kontakt' => 'contact',
+                    'Tickets' => 'ticketsview',
+                    'Profil' => 'profile',
+                    'Logout' => 'logout'];
       $dashItems = ['D-Tickets' => 'tickets'];
       break;
 
     case 3:
-      $navItems = ['news','contact','profile','logout'];
+      // $navItems = ['news','contact','profile','logout'];
+      $navItems = ['News' => 'smallview',
+                    'Kontakt' => 'contact',
+                    'Tickets' => 'ticketsview',
+                    'Profil' => 'profile',
+                    'Logout' => 'logout'];
       $dashItems = ['D-Users' => 'personal_data',
                     'D-News' => 'news',
                     'D-Tickets' => 'tickets'];
@@ -47,7 +65,7 @@
             echo "<li class='nav-item'><a href='index.php?site=dashboard&view=".$value."' class='nav-link qd-btn-hover' style='text-transform: capitalize'>".$key." </a></li>";
           }
           foreach ($navItems as $key => $value) {
-            echo "<li class='nav-item'><a href='index.php?site=".$navItems[$key]."' class='nav-link qd-btn-hover' style='text-transform: capitalize'>".$navItems[$key]." </a></li>";
+            echo "<li class='nav-item'><a href='index.php?site=".$value."' class='nav-link qd-btn-hover' style='text-transform: capitalize'>".$key." </a></li>";
           }
         ?>
       </ul>

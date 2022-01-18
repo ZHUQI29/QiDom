@@ -2,7 +2,7 @@
 
 :root {
   --main-color: #66d7db;
-  --dark-shade: #23222F;
+  --dark-shade: #23222F; /* rgba(35, 34, 47, 1) */
   --dark-accent: #eb5f6c;
   --light-accent: #b0a1a7;
   --light-shade: #fbfafb;
@@ -381,6 +381,10 @@ fieldset {
   /* background: rgba(255,255,255,0.1); */
 }
 
+.a-btn > .add-button{
+ min-height: 50px;
+}
+
 table {
   color: white;
 }
@@ -654,7 +658,7 @@ table p {
   background: linear-gradient(180deg, rgba(38,38,38,1) 0%, rgba(255,255,255,0) 20%, rgba(255,255,255,0) 40%, rgba(38,38,38,1) 100%);
   min-height: 100%;
   position: relative;
-  transform: translateY(-00%);
+  /* transform: translateY(-00%); */
   -webkit-transition: all .5s;
   -moz-transition: all .5s;
   -o-transition: all .5s;
@@ -676,10 +680,45 @@ table p {
 .n-link img, div {
   grid-row-start: 1;
   grid-column-start: 1;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .bg-image {
   width: 100%;
+}
 
+
+/* HELP */
+
+.help {
+  background: rgba(35, 34, 47, 0.4);
+
+}
+
+.help-con {
+  background: var(--dark-shade);
+  /* padding-top: 1rem; */
+}
+
+.help-con span {
+  font-size: 1.2rem;
+  transform: translateY(4px)
+}
+
+
+/* FOOTER */
+.footer {
+  position:absolute;
+  bottom: 0;
+  width: 100%;
+  background: #0f0f0f;
+}
+
+.footer a {
+  text-decoration: none;
+  color: var(--main-color);
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
 }

@@ -8,7 +8,7 @@
   include('php/utils/prepareDashData.php');
   include('php/utils/dashUtils.php');
 
-  // Decide on displaying News/Tickets or User-Data
+
   $result = loadData(0, $view);
   prepareMobile($result);
   createNextPageBtn();
@@ -21,7 +21,7 @@
     echo $a['addBtn1'] . $_GET['view'] . $a['addBtn2'];
     $counter = -1;
     foreach ($data as $key) {
-      createRow($key, $counter, $a);
+      createCard($key, $counter, $a);
       $counter *= -1;
     }
     echo $a['mobileEnd'];
@@ -29,8 +29,8 @@
     include('js/addBtn.php');
   }
 
-  // Make rows out of database- and uViewDesktop-Fragments
-  function createRow($data, $counter, $a) {
+  // Make cards out of database- and uViewDesktop-Fragments
+  function createCard($data, $counter, $a) {
     $username = getUserName($data[0]);
     echo $a['container'];
     if ($data['photo_id'] == '') {
@@ -40,16 +40,18 @@
       echo $a['photo1'];
       if ($key != '') {
         echo $a['photo2'] . "upload/" . $key . $a['photo3'];
-      } 
+      }
       echo $a['photo4'];
     }
     echo $a['contentStart'];
+    // Decide on displaying User-Data..
     if ($_GET['view'] == 'personal_data') {
       echo $a['title1'] . $username[0]['username'] . $a['title2'];
       echo $a['text1'] . $data['vorname'] . " " .$data['nachname'] . $a['text2'];
       echo $a['text1'] . $data['plz'] . " " . $data['ort'] . ", " . $data['strasse'] . " " . $data['hausnummer'] . $a['text2'];
       echo $a['dateAuthor1'] . $data['birthday'] . $a['dateAuthor2'];
       echo $a['dateAuthor1'] . $data['email'] . $a['dateAuthor2'];
+      // ..or displaying Tickets/News
     } else {
       echo $a['title1'] . $data['title'] . $a['title2'];
       echo $a['text1'] . $data['text'] . $a['text2'];
