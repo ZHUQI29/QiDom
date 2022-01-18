@@ -1,5 +1,4 @@
 <?php include('_BIN/console.php'); /* For Debugging & Testing */?>
-<?php include('photo-upload2.php'); ?>
 <?php include "php/utils/session.php" ?>
 <?php
 
@@ -67,7 +66,7 @@ function preparePhoto($dest_folder) {
 
                     // move photo to /htdocs/upload/
                     move_uploaded_file($_FILES['photo']['tmp_name'][$key], $dest_folder . $name . '.' . $a[1]);
-                    
+
 
                 } else {
                     $error = 1;
@@ -109,6 +108,6 @@ switch ($error) {
     $gotoSite = 'error';
     break;
 }
-// echo "<script>window.location.href='index.php?site=".$gotoSite."';</script>";
+ echo "<script>window.location.href='index.php?site=".$gotoSite."';</script>";
 
 ?>
