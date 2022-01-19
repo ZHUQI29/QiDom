@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 19, 2022 at 10:48 PM
+-- Generation Time: Jan 19, 2022 at 11:43 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -80,7 +80,7 @@ CREATE TABLE `personal_data` (
 --
 
 INSERT INTO `personal_data` (`ID`, `status`, `anrede`, `vorname`, `nachname`, `plz`, `ort`, `strasse`, `hausnummer`, `birthday`, `email`, `timestamp`, `photo_id`) VALUES
-(570337, 0, '---', '---', '---', 0, '---', '---', '---', '2022-01-19', '---', '2022-01-19 21:10:22.039198', '');
+(437691, 0, 'Divers', 'ad', 'min', 1010, 'Wien', 'adminstreet', '3/1/4', '1990-01-04', 'admin@mail.com', '2022-01-19 22:42:25.641233', '');
 
 -- --------------------------------------------------------
 
@@ -117,7 +117,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`ID`, `username`, `password`, `level`, `timestamp`) VALUES
-(570337, 'admin', '$2y$12$hYmVs9PE3R/4mJYLcWjqy.LcYI4iM/kHWgSS/EAiAwfZfFiHM.RU.', 3, '2022-01-19 21:10:22.033802');
+(437691, 'admin', '$2y$12$cDNUPxsVrRmnB7WHATO.FeIEoYUSi6ez0bauwVt7wp36A4BnuomdW', 3, '2022-01-19 22:42:25.635204');
 
 --
 -- Indexes for dumped tables
@@ -166,7 +166,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `cid` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `cid` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
