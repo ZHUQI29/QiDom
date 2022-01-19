@@ -51,7 +51,7 @@
   function createDisplay($data, $b, $eMode, $url, $site) {
     echo $b['bViewStart'] . $b['displayS'];
     //if a photo-id exists, load first picture
-    if ($data['photo_id'] != NULL) {
+    if ($data['photo_id'] != ' ') {
       $pic = explode(',', $data['photo_id'])[0];
       echo $b['photo1'] . $pic . $b['photo2'];
       // else load default image
@@ -90,7 +90,7 @@
   function createComments($comments, $b, $eMode) {
     foreach ($comments as $key => $value) {
       echo $b['comment1'];
-      if ($value['photo_id'] != '') {
+      if ($value['photo_id'] != 'banner.png') {
         $pic = explode(",", $value['photo_id'])[0];
         echo $b['cPhoto1'] . $pic . $b['cPhoto2'];
       } else {

@@ -37,7 +37,7 @@
 
   // Make rows out of database-Entries and HTML-Fragments for User-Dashboard
   function createRowU($data, $counter, $a) {
-    $username = getUserName($data[0]);
+    $username = getUserName($data['ID']);
     echo $a['row1'] . $counter;
     echo $a['row2'] . $a['row3'] . $username[0]['level'] . $a['row4'];
     echo $a['userTD1'] . $username[0]['username'] . $a['userTD2'];
@@ -75,7 +75,7 @@
     echo $a['text1'] . $data['text'] . $a['text2'];
     echo $a['photos1'];
 
-    if ($data['photo_id'] != '') {
+    if ($data['photo_id'] != ' ') {
       $pics = explode(",", $data['photo_id']);
       foreach ($pics as $key) {
         if ($key != '') {

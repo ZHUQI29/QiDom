@@ -41,7 +41,7 @@
             $conn->close(); // close connection
 
             if ($photoID == NULL) {
-              $photoID = 'banner';
+              $photoID = 'banner.png';
             }
 
 
@@ -76,7 +76,7 @@
           } else {
               $punishment = (isset($_COOKIE['wrongAttempts'])) ? $_COOKIE['wrongAttempts'] : 0;
               setcookie('wrongAttempts', $punishment + 1, time()+300);
-              
+
               echo "<script>window.location.href='index.php?site=error&err=l101';</script>";
           }
           $conn->close(); // close connection

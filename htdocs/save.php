@@ -22,7 +22,7 @@
 
   // upload comment to database and forward to next page
   function postComment($id, $site, $username, $title, $comment) {
-    $photoID = isset($_COOKIE['photo_id']) ? $_COOKIE['photo_id'] : 'banner';
+    $photoID = isset($_COOKIE['photo_id']) ? $_COOKIE['photo_id'] : 'banner.png';
     $sql = "INSERT INTO comments (ID, title, text, photo_id, username) VALUES('" . $id . "','" .$title . "','" . $comment . "','" . $photoID . "','" . $username . "')";
     include('php/utils/dbaccess.php');
     if($stmt = $conn->prepare($sql)) {

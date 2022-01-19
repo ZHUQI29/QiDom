@@ -264,11 +264,14 @@ button {
 }
 
 .team-img {
-  opacity: 60%;
+  opacity: 80%;
+  max-width: 100%;
+  border: 1px solid var(--main-color);
+  z-index: 1
 }
 
 .team-img img{
-  max-width: 100%;
+
 }
 
 /* LOGIN + REGISTRATION */

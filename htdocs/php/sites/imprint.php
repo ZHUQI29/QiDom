@@ -18,15 +18,15 @@
     <div>
       <p>UID-Nummer: ATU12345678</p>
     </div>
+    <div class="container">
+      <img src="/img/team/random-team.png" alt="Team Photo" class="team-img">
+    </div>
     <div>
       <p>Offenlegungspflicht gemäß § 25 Mediengesetz und Informationspflicht gemäß § 5 E-Commerce-Gesetz:<br>Medieninhaber und Herausgeber</p>
     </div>
     <div>
       <a href="index.php?site=faq" class="qd-text-col-main">FAQ</a>
     </div>
-    <div class="team-img container">
-      <img src="/img/team/team.png" alt="Team Photo">
-    </div>
+    <br>
   </div>
-
 </div>
