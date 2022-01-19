@@ -1,5 +1,5 @@
  <?php
-     include('_BIN/console.php');
+     // include('_BIN/console.php');
 
      $server="localhost";
      $db_username="root";
@@ -21,7 +21,8 @@
 
      if($stmt = $conn->prepare($sql)) {
        $stmt->execute();
-       console_log($stmt->fetchAll());
+       // console_log($stmt->fetchAll());
+       console_log($stmt->fetchColumn());
      }
 
 
@@ -31,9 +32,9 @@
        echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
        exit();
      }
-     $stmt = mysqli_query($conn, $sql);
-     console_log($stmt->fetch_all());
-
+     $stmt = $conn->query($sql);
+     // console_log($stmt->fetch_all(MYSQLI_ASSOC));
+     console_log($stmt->fetch_assoc()['ID']);
 
 
 

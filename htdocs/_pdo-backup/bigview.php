@@ -4,13 +4,13 @@
   // If url contains delete-ID, delete this entry and reload page, without delete-ID
   if (isset($_GET['del'])) {
     include('php/utils/dbaccess.php');
-    $sql ="DELETE FROM " . 'comments'. " WHERE cid=" . $_GET['del'];
-    $conn->query($sql);
-    $substring = explode('&del=', $_SERVER['REQUEST_URI']);
-    $url = $_SERVER['SERVER_NAME'] . $substring[0];
-    echo "<script>window.location.href='" . $substring[0] . "';</script>";
+    if($stmt = $conn->prepare("DELETE FROM " . 'comments'. " WHERE cid=" . $_GET['del'])) {
+      $stmt->execute();
+      $substring = explode('&del=', $_SERVER['REQUEST_URI']);
+      $url = $_SERVER['SERVER_NAME'] . $substring[0];
+      echo "<script>window.location.href='" . $substring[0] . "';</script>";
     }
-
+  }
 
 
   include('php/utils/dashUtils.php');
@@ -114,22 +114,30 @@
   // get content from database
   function loadArticle($site, $id) {
     $sql = "SELECT * FROM " . $site . " WHERE ID LIKE '" . $id . "'";
-    include('php/utils/dbaccess.php');
-    $stmt = $conn->query($sql);
-    return $stmt->fetch_all(MYSQLI_ASSOC);
-  }
-
-  // check if guest views his own ticket
-  function checkEditModeDB($id) {
-    $sql = "SELECT username FROM tickets WHERE ID LIKE " . $id;
-    include('php/utils/dbaccess.php');
-    $stmt = $conn->query($sql);
-    return $stmt->fetch_all(MYSQLI_ASSOC);
+    // console_log($sql);
+    include('php/utils/connect.php');
+    if($stmt = $conn->prepare($sql)) {
+      $stmt->execute();
+      return $stmt->fetchAll();
+    }
+    $conn = NULL;
   }
 
   // check if (admin) or (technician & tickets) for editmode
   function checkEditMode($viewerLevel, $site) {
     return (($viewerLevel == 3) || ($viewerLevel == 2 && $site == 'tickets'));
+  }
+
+  // check if guest views his own ticket
+  function checkEditModeDB($id) {
+    $sql = "SELECT username FROM tickets WHERE ID LIKE " . $id;
+    include('php/utils/connect.php');
+    if($stmt = $conn->prepare($sql)) {
+      $stmt->execute();
+      $conn = NULL;
+      return $stmt->fetchAll();
+    }
+    $conn = NULL;
   }
 
   // set url suffix

@@ -33,12 +33,8 @@
   // fetch data from database
   function loadArticles($sql) {
     include('php/utils/dbaccess.php');
-    if($stmt = $conn->prepare($sql)) {
-      $stmt->execute();
-      $conn = NULL;
-      return $stmt->fetchAll();
-    }
-    $conn = NULL;
+    $stmt = $conn->query($sql);
+    return $stmt->fetch_all(MYSQLI_ASSOC);
   }
 
  ?>

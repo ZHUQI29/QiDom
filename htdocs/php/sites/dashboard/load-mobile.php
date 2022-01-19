@@ -31,15 +31,16 @@
 
   // Make cards out of database- and uViewDesktop-Fragments
   function createCard($data, $counter, $a) {
-    $username = getUserName($data[0]);
+
+    $username = getUserName($data['username']);
     echo $a['container'];
     if ($data['photo_id'] == '') {
       echo $a['photo1'] . $a['photo2'] . "img/banner" . $a['photo3'] . $a['photo4'];
     } else {
-      $pics = explode(",", $data['photo_id']);
+      $pics = explode(",", $data['photo_id'])[0];
       echo $a['photo1'];
-      if ($key != '') {
-        echo $a['photo2'] . "upload/" . $key . $a['photo3'];
+      if ($pics != '') {
+        echo $a['photo2'] . "upload/" . $pics . $a['photo3'];
       }
       echo $a['photo4'];
     }

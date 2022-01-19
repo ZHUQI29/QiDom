@@ -39,7 +39,7 @@
           if (isset($pages[$site])) {
               include $pages[$site];
           } else {
-              echo "<script>window.location.href='index.php?site=error&err=e404';</script>";
+              // echo "<script>window.location.href='index.php?site=error&err=e404';</script>";
           }
 
           // include('php/utils/footer.php');

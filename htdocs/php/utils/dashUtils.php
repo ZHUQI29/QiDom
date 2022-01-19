@@ -79,9 +79,9 @@
   // fetch username from database
   function getUserName($ID) {
     include('php/utils/dbaccess.php');
-    $stmt = $conn->prepare("SELECT username, level FROM user WHERE ID=".$ID);
-    $stmt->execute();
-    return $stmt->fetchAll();
+    $sql = "SELECT username, level FROM user WHERE ID='" . $ID . "'";
+    $stmt = $conn->query($sql);
+    return $stmt->fetch_all(MYSQLI_ASSOC);
   }
 
   // manipulate url and return it with one changed value

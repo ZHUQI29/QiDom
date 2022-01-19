@@ -36,9 +36,13 @@
 
   // fetch data from Database
   function loadArticles($sql) {
-    include('php/utils/dbaccess.php');
-    $stmt = $conn->query($sql);
-    return $stmt->fetch_all(MYSQLI_ASSOC);
+    include('php/utils/connect.php');
+    if($stmt = $conn->prepare($sql)) {
+      $stmt->execute();
+      $conn = NULL;
+      return $stmt->fetchAll();
+    }
+    $conn = NULL;
   }
 
   // extract first picture from photo_id

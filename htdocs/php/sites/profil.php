@@ -27,9 +27,11 @@
         $sql = "SELECT anrede, vorname, nachname, plz, ort, strasse, hausnummer, birthday, email FROM personal_data WHERE ID='" . $id . "'";
         $result = mysqli_query($conn, $sql);
 
+
         if (mysqli_num_rows($result) > 0) {
             // 输出数据
             $row = mysqli_fetch_assoc($result);
+            console_log($row);
             echo "Anrede: " . $row["anrede"]. "<br>";
             echo "Vorname: " . $row["vorname"]. "<br>";
             echo "Nachname: " . $row["nachname"]. "<br>";

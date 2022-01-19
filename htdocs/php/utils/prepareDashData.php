@@ -10,13 +10,10 @@
 
     // if user data, delete from both: "user" and "personal_data" base
     if ($table == 'personal_data') $table = $table . ', user';
-    if($stmt = $conn->prepare("DELETE FROM ".$_GET['view']." WHERE ID=".$del)) {
-      $stmt->execute();
-
-      $substring = explode('&del=', $_SERVER['REQUEST_URI']);
-      $url = $_SERVER['SERVER_NAME'] . $substring[0];
-      echo "<script>window.location.href='" . $substring[0] . "';</script>";
-    }
+    $sql = "DELETE FROM " . $_GET['view'] . " WHERE ID=" . $del;
+    $substring = explode('&del=', $_SERVER['REQUEST_URI']);
+    $url = $_SERVER['SERVER_NAME'] . $substring[0];
+    echo "<script>window.location.href='" . $substring[0] . "';</script>";
   }
 
   // get data from database, based on $_GET['view']-variables
@@ -79,21 +76,24 @@
     // console_log($sql);
 
     include('php/utils/dbaccess.php');
-    if($stmt = $conn->prepare($sql)) {
-      $stmt->execute();
-      return $stmt->fetchAll();
-    }
+    $stmt = $conn->query($sql);
+    return $stmt->fetch_all(MYSQLI_ASSOC);
   }
 
-  // SELECT * FROM `tickets`
-  // WHERE
-  // (title LIKE '%%' or text LIKE '%%' or username LIKE '%%')
-  // and
-  // (timestamp > Convert('2022-01-08', datetime))
-  // and
-  // (timestamp < Convert('2022-01-11', datetime))
-  // and
-  // (status = 2)
-  // ORDER BY timestamp ASC
+  // https://localhost/index.php?site=dashboard
+  // &view=tickets
+  // &search=asd
+  // &vDate=2022-01-01
+  // &bDate=2022-01-19
+  // &status=111
+  // &ob=timestamp
+  // &order=ASC
+
+  // SELECT * FROM tickets
+  // WHERE (title LIKE '%asd%' or text LIKE '%asd%' or username LIKE '%asd%')
+  // and (timestamp > Convert('2022-01-01', datetime))
+  // and (timestamp <= Convert('2022-01-20', datetime))
+  // and ((status = 2) or (status = 1) or (status = 0))
+  // ORDER BY timestamp ASC LIMIT 0,10;
 
  ?>

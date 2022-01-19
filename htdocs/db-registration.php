@@ -1,7 +1,6 @@
 <?php
-    //include('_BIN/console.php');
+    include('_BIN/console.php');
 
-    // console_log($_FILES);
     switch ($_POST["submit"]) {
       case 'update':
         handlePersonalData(true, '', '');
@@ -35,17 +34,13 @@
       $passwordNew = password_hash($password, PASSWORD_BCRYPT, $options);
 
       include('php/utils/dbaccess.php');
-      $stmt = $conn->prepare('SELECT * FROM user WHERE username=:uname');
-      $stmt->bindParam(":uname", $username);
-      $stmt->execute();
-      $row = $stmt->fetch(PDO::FETCH_ASSOC);
+      $sql = "SELECT * FROM user WHERE username='" . $username . "'";
+      $stmt = $conn->query($sql);
+      $row = $stmt->fetch_assoc();
       // If Account (DOESN'T EXIST) { CREATE IT! }.
       if (!$row) {
-          if ($stmt = $conn->prepare("INSERT INTO user (ID,username,password,level) VALUES (?,?,?,?)")) {
-              $stmt->bindValue(1, $id);
-              $stmt->bindValue(2, $username);
-              $stmt->bindValue(3, $passwordNew);
-              $stmt->bindValue(4, $level);
+        if ($stmt = $conn->prepare("INSERT INTO user (ID,username,password,level) VALUES (?,?,?,?)")) {
+              $stmt->bind_param('issi', $id, $username, $passwordNew, $level);
               $stmt->execute();
               handlePersonalData(false, $id, $username);
               $conn = null;
@@ -53,14 +48,13 @@
 
       } else {
           // Else - if account DOES already exist
-          $conn = null; // close connection
-          echo "<script>window.location.href='index.php?site=error&err=r101';</script>";
+        $conn = null; // close connection
+        echo "<script>window.location.href='index.php?site=error&err=r101';</script>";
       }
     }
 
     function handlePersonalData($update, $id, $username) {
       // personal data
-      // console_log($_POST);
       $gAnrede = ($_POST['anrede'] == NULL) ? '---' : $_POST['anrede'];
       $gVorname = ($_POST['vorname'] == NULL) ? '---' : $_POST['vorname'];
       $gNachname = ($_POST['nachname'] == NULL) ? '---' : $_POST['nachname'];
@@ -83,36 +77,17 @@
         changeStatus($_POST['status'], $_POST['ID']);
         try {
           if ($stmt = $conn->prepare("UPDATE personal_data SET anrede=?, vorname=?, nachname=?, plz=?, ort=?, strasse=?, hausnummer=?, birthday=?, email=?, photo_id=? WHERE ID LIKE '" . $_POST['ID'] . "'")) {
-            $stmt->bindValue(1, $gAnrede);
-            $stmt->bindValue(2, $gVorname);
-            $stmt->bindValue(3, $gNachname);
-            $stmt->bindValue(4, $gPlz);
-            $stmt->bindValue(5, $gOrt);
-            $stmt->bindValue(6, $gStrasse);
-            $stmt->bindValue(7, $gHausnummer);
-            $stmt->bindValue(8, $gBday);
-            $stmt->bindValue(9, $gEmail);
-            $stmt->bindValue(10, $photo_id);
+            $stmt->bind_param('sssissssss', $gAnrede,$gVorname,$gNachname,$gPlz,$gOrt,$gStrasse,$gHausnummer,$gBday,$gEmail,$photo_id);
             $stmt->execute();
           }
-        } catch (exception $e) {
+        } catch (Exception $e) {
           $conn = null; // close connection
            echo "<script>window.location.href='index.php?site=error&err=u103';</script>";
         }
       } else {
         try {
           if ($stmt = $conn->prepare("INSERT INTO personal_data (ID,anrede,vorname, nachname,plz,ort,strasse,hausnummer,birthday,email,photo_id) VALUES (?,?,?,?,?,?,?,?,?,?,?)")) {
-            $stmt->bindValue(1, $id);
-            $stmt->bindValue(2, $gAnrede);
-            $stmt->bindValue(3, $gVorname);
-            $stmt->bindValue(4, $gNachname);
-            $stmt->bindValue(5, $gPlz);
-            $stmt->bindValue(6, $gOrt);
-            $stmt->bindValue(7, $gStrasse);
-            $stmt->bindValue(8, $gHausnummer);
-            $stmt->bindValue(9, $gBday);
-            $stmt->bindValue(10, $gEmail);
-            $stmt->bindValue(11, $photo_id);
+            $stmt->bind_param('isssissssss', $id,$gAnrede,$gVorname,$gNachname,$gPlz,$gOrt,$gStrasse,$gHausnummer,$gBday,$gEmail,$photo_id);
             $stmt->execute();
           }
         } catch (exception $e) {
@@ -128,15 +103,13 @@
 
     function changeStatus($status, $id) {
       include('php/utils/dbaccess.php');
-      $stmt = $conn->prepare("SELECT * FROM user WHERE ID=?");
-      $stmt->bindValue(1, $id);
-      $stmt->execute();
-      $result = $stmt->fetchAll();
-      // console_log($result);
+      $sql = "SELECT * FROM user WHERE ID='" . $id . "'";
+      $stmt = $conn->query($sql);
+      $result = $stmt->fetch_assoc()['ID'];
+      console_log($result);
       if ($result) {
         if ($stmt = $conn->prepare("UPDATE user SET level=? WHERE ID=?")) {
-          $stmt->bindValue(1, intval($status));
-          $stmt->bindValue(2, $id);
+          $stmt->bind_param('ii', $status ,$id);
           $stmt->execute();
         } else {
           // console_log("error changing status");

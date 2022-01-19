@@ -1,8 +1,9 @@
-<?php include('_BIN/console.php'); /* For Debugging & Testing */?>
+<?php //include('_BIN/console.php'); /* For Debugging & Testing */?>
 <?php include "php/utils/session.php" ?>
 <?php
 
 // Check for "upload" folder. create it, if not found
+// DIRECTORY_SEPARATOR for windows/mac/linux compitability
 $dest_folder = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'upload' . DIRECTORY_SEPARATOR;
 if (!file_exists($dest_folder)) {
     mkdir($dest_folder, 0777, true);
@@ -27,14 +28,10 @@ function uploadArticle($table, $dest_folder) {
 
   try {
       if ($stmt = $conn->prepare("INSERT INTO ". $table . "(ID,title,text,photo_id,username) VALUES (?,?,?,?,?)")) {
-          $stmt->bindValue(1, $eID);
-          $stmt->bindValue(2, $title);
-          $stmt->bindValue(3, $text);
-          $stmt->bindValue(4, $id);
-          $stmt->bindValue(5, $username);
+          $stmt->bind_param('issss', $eID, $title, $text, $id, $username);
           $stmt->execute();
       }
-  } catch (PDOException $e) {
+  } catch (Exception $e) {
        // console_log($e->getMessage());
   }
 }
@@ -43,7 +40,7 @@ function preparePhoto($dest_folder) {
   $eID = date('mdHis') . mt_rand(100, 999);
   $maxsize = 10000000;  // approx. 10 MB
   $id = '';
-  console_log($_FILES);
+  // console_log($_FILES);
   foreach ($_FILES['photo']['name'] as $key => $value) {
 
     $a=explode(".", $_FILES['photo']['name'][$key]); // Catch file-extension
