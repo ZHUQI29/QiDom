@@ -14,11 +14,11 @@
 x Sie haben ein 2er Team gebildet.
 x Sie haben eine index.php mit dem Grundlayout erstellt.
 - Sie haben das Projekt vollständig (inklusive Kopie der MySQL Datenbank) als zip/rar hochgeladen.
-- Sie haben komplexere Abläufe und Funktionen kommentiert.
+x Sie haben komplexere Abläufe und Funktionen kommentiert.
 x Die gesamte Website ist responisve und "mobile first" gestaltet.
 x Der Datenbankzugriff erfolgt mittels mySQLi.
-- Alle Eingaben aller Formulare (Registrierung, Login, etc ...) werden clientseitig und serverseitig überprüft und validiert.
-- Bilder werden serverseitig verkleinert.
+x Alle Eingaben aller Formulare (Registrierung, Login, etc ...) werden clientseitig und serverseitig überprüft und validiert.
+x Bilder werden serverseitig verkleinert.
 - Sie haben eine gute User Experience für Ihr User Interface umgestezt.
 - Sie haben mehrfach überprüft ob alle Punkte aus der Angabe zum Semesterprojekt umgesetzt wurden.
 
@@ -26,7 +26,7 @@ x Der Datenbankzugriff erfolgt mittels mySQLi.
 | DATABASE |
 ------------
 x Sie haben eine Datenbank für die Hotelverwaltung angelegt
-- Sie haben eine dbaccess.php angelegt, das zentral die Zugangsdaten beinhaltet.
+x Sie haben eine dbaccess.php angelegt, das zentral die Zugangsdaten beinhaltet.
 x Datenbank hat eine geeignete Struktur (Usertypen, News-Beiträge, Tickets, ...)
 x Beim anlegen neuer Accounts wird folgendes gesetzt: Anrede, Vorname, Nachname, E-Mail-Adresse, Benutzername, Passwort.
 x Passwörter sind gehasht in der Datenbank gespeichert.

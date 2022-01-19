@@ -8,7 +8,7 @@
 
   // start creating small Views, out of Database- and JSON-Fragments
   function createSmallViews($amount) {
-    $sql = "SELECT * FROM news ORDER BY timestamp DESC LIMIT 1," . $amount;
+    $sql = "SELECT * FROM news ORDER BY timestamp DESC LIMIT 0," . $amount;
     $data = loadArticles($sql);
     $s = getJson('smallview');
 
@@ -22,7 +22,7 @@
   function generateSmallView($s, $data) {
     $pic = getPic($data['photo_id']);
     if ($pic != NULL) {
-      $pic = 'upload/' . $pic . '.png';
+      $pic = 'upload/' . $pic;
     } else {
       $pic = 'img/banner.png';
     }

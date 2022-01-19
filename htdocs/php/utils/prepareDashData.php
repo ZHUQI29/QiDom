@@ -11,6 +11,8 @@
     // if user data, delete from both: "user" and "personal_data" base
     if ($table == 'personal_data') $table = $table . ', user';
     $sql = "DELETE FROM " . $_GET['view'] . " WHERE ID=" . $del;
+    $conn->query($sql);
+    $conn->close(); // close connection
     $substring = explode('&del=', $_SERVER['REQUEST_URI']);
     $url = $_SERVER['SERVER_NAME'] . $substring[0];
     echo "<script>window.location.href='" . $substring[0] . "';</script>";

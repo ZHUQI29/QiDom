@@ -55,6 +55,12 @@
         $nextPage = 'login';
         break;
 
+      case "l104":
+        $title = "Zu viele falsche Eingaben!";
+        $text = "Sorry. <br>Bitte warte 5 Minuten und versuche es dann nochmal.";
+        $nextPage = 'home';
+        break;
+
       case "u100":
         $title = "Upload Erfolgreich!";
         $text = "Danke für deinen Eintrag!";

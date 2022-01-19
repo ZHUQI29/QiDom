@@ -17,25 +17,29 @@ if ($table == 'user') {
   uploadArticle($table, $dest_folder);
 }
 
+// upload the News/Ticket-Article
 function uploadArticle($table, $dest_folder) {
   $eID = date('mdHis') . mt_rand(100, 999);
   $title = $_POST['title'];
   $text = $_POST['text'];
   $username = $_SESSION['user'];
   $id = preparePhoto($dest_folder);
+
   // database entry
   include('php/utils/dbaccess.php');
-
   try {
       if ($stmt = $conn->prepare("INSERT INTO ". $table . "(ID,title,text,photo_id,username) VALUES (?,?,?,?,?)")) {
           $stmt->bind_param('issss', $eID, $title, $text, $id, $username);
           $stmt->execute();
+          $conn->close(); // close connection
       }
   } catch (Exception $e) {
-       // console_log($e->getMessage());
+    $conn->close(); // close connection
+     // console_log($e->getMessage());
   }
 }
 
+// validate photo and move it to /upload/ folder
 function preparePhoto($dest_folder) {
   $eID = date('mdHis') . mt_rand(100, 999);
   $maxsize = 10000000;  // approx. 10 MB
@@ -45,7 +49,7 @@ function preparePhoto($dest_folder) {
 
     $a=explode(".", $_FILES['photo']['name'][$key]); // Catch file-extension
     $name = date('mdHis') . mt_rand(100, 999); // [date] + [random number] + . + [file-extension]
-    $id .= $name . ',';
+    $id .= $name . "." . $a[1] . ',';
     //check associated error code
     if ($_FILES['photo']['error'][$key] == UPLOAD_ERR_OK) {
 

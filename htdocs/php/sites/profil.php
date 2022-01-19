@@ -5,12 +5,8 @@
       <fieldset class="mx-3">
       <legend>Profil</legend>
       <?php
-        $server="localhost";
-        $db_username="root";
-        $db_password="";
-        $db_name="technikum-wsp";
 
-        $conn = mysqli_connect($server, $db_username, $db_password, $db_name);
+        include('php/utils/dbaccess.php');
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
         } else {
@@ -29,7 +25,7 @@
 
 
         if (mysqli_num_rows($result) > 0) {
-            // 输出数据
+            // 输出数据 Output
             $row = mysqli_fetch_assoc($result);
             echo "Anrede: " . $row["anrede"]. "<br>";
             echo "Vorname: " . $row["vorname"]. "<br>";

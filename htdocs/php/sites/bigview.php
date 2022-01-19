@@ -77,7 +77,7 @@
       echo $b['saveBtn'];
       echo $b['editEnd'];
     } else {
-      echo $b['title'] . $data['title'] . $b['title'];
+      echo $b['title1'] . $data['title'] . $b['title2'];
       echo $b['text1'] . $data['text'] . $b['text2'];
       if ($site == 'tickets') {
         echo $b['status1'] . $data['status'] . $b['status2'] . statusToString($data['status']) . $b['status3'];

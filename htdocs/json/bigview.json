@@ -2,7 +2,7 @@
 	"bViewStart": "<div class='big-view container p-3'>",
 	"displayS": "<div class='container-sm qd-bg-dark p-2 d-flex flex-column'>",
 	"photo1": "<img class='mx-auto mt-3'src='upload/",
-	"photo2": ".png' alt='photo'>",
+	"photo2": "' alt='photo'>",
 	"title1": "<h1 class='m-3'>",
 	"title2": "</h1>",
 	"text1": "<p class='mx-3'>",
@@ -34,7 +34,7 @@
 
 	"comment1": "<div class='container-sm my-3 px-md-5 d-flex flex-column justify-content-center'><div class='container-fluid n-card box-1 d-flex p-0'><div class='nph-card-content p-2'>",
 	"cPhoto1": "<img class='mx-auto mt-2' src='upload/",
-	"cPhoto2": ".png' alt='preview'>",
+	"cPhoto2": "' alt='preview'>",
 	"comment2": "</div>",
 	"commentT1": "<div class='nt-card-content p-1'><h4 class='td-overflow my-1'>",
 	"commentT2": "</h4><p class='td-of-webkit mb-0'>",

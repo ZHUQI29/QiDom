@@ -31,21 +31,18 @@
                   "profile" => "php/sites/profil.php",
                   "faq" => "php/sites/faq.php",
                   "error" => "php/sites/error.php",
-                  "testing" => "testing.php"
+                  "testing" => "testing.php" // testing
                   ];
 
-    ?>
-    <?php
-          if (isset($pages[$site])) {
-              include $pages[$site];
-          } else {
-              // echo "<script>window.location.href='index.php?site=error&err=e404';</script>";
-          }
 
-          // include('php/utils/footer.php');
+      if (isset($pages[$site])) {
+          include $pages[$site];
+      } else {
+          echo "<script>window.location.href='index.php?site=error&err=e404';</script>";
+      }
 
+      // include('php/utils/footer.php');
       ?>
-
 
   </body>
 </html>

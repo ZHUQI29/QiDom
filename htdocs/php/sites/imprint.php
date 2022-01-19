@@ -22,7 +22,10 @@
       <p>Offenlegungspflicht gemäß § 25 Mediengesetz und Informationspflicht gemäß § 5 E-Commerce-Gesetz:<br>Medieninhaber und Herausgeber</p>
     </div>
     <div>
-      <a href="faq.html" class="qd-text-col-main">FAQ</a>
+      <a href="index.php?site=faq" class="qd-text-col-main">FAQ</a>
+    </div>
+    <div class="team-img container">
+      <img src="/img/team/team.png" alt="Team Photo">
     </div>
   </div>
 

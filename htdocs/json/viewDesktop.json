@@ -23,7 +23,7 @@
 	"text2": "</p></div></td>",
 	"photos1": "<td class='tdn-photos'> <div class = 'd-flex flex-column td-overflow' > ",
 	"photos2": "<img class='p-1' src='upload/",
-	"photos3": ".png' alt='preview'>",
+	"photos3": "' alt='preview'>",
 	"photos4": "</div></td>",
 	"author1": "<td class='tdn-author td-overflow'>",
 	"author2": "</td>",

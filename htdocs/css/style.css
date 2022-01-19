@@ -263,6 +263,14 @@ button {
   background-image: url(../img/startbutton/impressum.jpg);
 }
 
+.team-img {
+  opacity: 60%;
+}
+
+.team-img img{
+  max-width: 100%;
+}
+
 /* LOGIN + REGISTRATION */
 .login-container {
   margin: 18px 0px;

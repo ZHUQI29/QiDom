@@ -5,7 +5,7 @@
 	"container": "<div class='container-fluid n-card box-1 d-flex m-1 p-0'>",
 	"photo1": "<div class='nph-card-content p-2'>",
 	"photo2": "<img class='p-1' src='",
-	"photo3": ".png' alt='preview'>",
+	"photo3": "' alt='preview'>",
 	"photo4": "</div>",
 	"contentStart": "<div class='nt-card-content p-1'>",
 	"title1": "<h4 class='td-overflow my-1'>",

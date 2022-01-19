@@ -1,5 +1,5 @@
 <?php
-    include('_BIN/console.php');
+    //include('_BIN/console.php');
 
     switch ($_POST["submit"]) {
       case 'update':
@@ -43,12 +43,12 @@
               $stmt->bind_param('issi', $id, $username, $passwordNew, $level);
               $stmt->execute();
               handlePersonalData(false, $id, $username);
-              $conn = null;
+              $conn->close(); // close connection
           }
 
       } else {
           // Else - if account DOES already exist
-        $conn = null; // close connection
+        $conn->close(); // close connection
         echo "<script>window.location.href='index.php?site=error&err=r101';</script>";
       }
     }
@@ -81,7 +81,7 @@
             $stmt->execute();
           }
         } catch (Exception $e) {
-          $conn = null; // close connection
+          $conn->close(); // close connection
            echo "<script>window.location.href='index.php?site=error&err=u103';</script>";
         }
       } else {
@@ -92,26 +92,29 @@
           }
         } catch (exception $e) {
           // console_log($e->getMessage());
-          $conn = null; // close connection
+          $conn->close(); // close connection
           setcookie('level', '1', time()+3600*24*30);
           setcookie('user', $username, time()+3600*24*30);
           echo "<script>window.location.href='index.php?site=welcome&';</script>";
         }
+        $conn->close(); // close connection
         echo "<script>window.location.href='index.php?site=login';</script>";
       }
     }
 
+    // update user level (admin/technician/guest/BAN)
     function changeStatus($status, $id) {
       include('php/utils/dbaccess.php');
       $sql = "SELECT * FROM user WHERE ID='" . $id . "'";
       $stmt = $conn->query($sql);
       $result = $stmt->fetch_assoc()['ID'];
-      console_log($result);
       if ($result) {
         if ($stmt = $conn->prepare("UPDATE user SET level=? WHERE ID=?")) {
           $stmt->bind_param('ii', $status ,$id);
           $stmt->execute();
+          $conn->close(); // close connection
         } else {
+          $conn->close(); // close connection
           // console_log("error changing status");
         }
       } else {

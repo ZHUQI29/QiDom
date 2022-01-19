@@ -3,8 +3,8 @@
 
   $view = $_POST['view'];
   $url = $_POST['url'];
-  // console_log($url);
 
+  // check for any set $_POST variables and make a long-ass URL out of it
   if (isset($_POST['search'])) {
     $url = checkURL('search', $_POST['search'], $url);
   }
@@ -49,9 +49,9 @@
     $url = checkURL('order', $_POST['order'], $url);
   }
 
-
   echo "<script>window.location.href='". $url ."';</script>";
 
+  // check if the the $_POST-variable exists in URL and change it to $newValue
   function checkURL($getVar, $newValue, $url) {
     $url = explode('&', $url);
     $checker = 0;
