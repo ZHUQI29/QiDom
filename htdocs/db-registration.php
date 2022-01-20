@@ -74,7 +74,8 @@
 
       include('php/utils/dbaccess.php');
       if ($update) {
-        changeStatus($_POST['status'], $_POST['ID']);
+        $status = (isset($_POST['status'])) ? $_POST['status'] : 1;
+        changeStatus(intval($status), $_POST['ID']);
         try {
           if ($stmt = $conn->prepare("UPDATE personal_data SET anrede=?, vorname=?, nachname=?, plz=?, ort=?, strasse=?, hausnummer=?, birthday=?, email=?, photo_id=? WHERE ID LIKE '" . $_POST['ID'] . "'")) {
             $stmt->bind_param('sssissssss', $gAnrede,$gVorname,$gNachname,$gPlz,$gOrt,$gStrasse,$gHausnummer,$gBday,$gEmail,$photo_id);

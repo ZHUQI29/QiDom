@@ -1,4 +1,4 @@
-<?php //include('_BIN/console.php'); /* For Debugging & Testing */?>
+<?php include('_BIN/console.php'); /* For Debugging & Testing */?>
 <?php include "php/utils/session.php" ?>
 <?php
 
